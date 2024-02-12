@@ -1,0 +1,3 @@
+\DeclareDatamodelFields[type=field, format=xsv, datatype=entrykey]{contains}
+\DeclareDatamodelEntryfields[archivalsource]{title,contains}
+\DeclareDatamodelEntryfields[archivalitem]{author,title}

@@ -1,0 +1,58 @@
+\chapter{Problemstellung}
+    \section{Motivation}
+
+        Die Zuverlässigkeit von ATM/ANS Equipment\footnote{Definition nach EU VO 2023/1769 Art. 2 Abs. 1 \cite{2023R1769}}  -- definiert als alle Geräte und Software, von denen die Interoperabilität des \textit{European air traffic management network} (EATMN) abhängt (folglich ATM/ANS Komponenten\footnote{Definition nach EU VO 2018/1139 Art. 3, Abs. 6 \cite{2018R1139}})  sowie die Zusammenfassung dieser für die ,,Unterstützung für Flugsicherungsdienste in allen Flugphasen`` (folglich ATM/ANS Systeme\footnote{Definition nach EU VO 2018/1139 Art. 3, Abs. 7 \cite{2018R1139}}) -- spielt in der Gewährleistung von Sicherheit und Effizienz im internationalen Luftverkehr eine entscheidende Rolle. 
+        Hierbei ist die Einhaltung strikter Regularien zur Funktionalität, Sicherheit und Interoperabilität verschiedener Systeme, vor allem in einem zunehmend einheitlichen europäischen Luftraum, für eine reibungslose, sichere Abwicklung des Luftverkehrs unabdingbar. 
+        Im europäischen Luftraum sollen einheitliche rechtlich bindende Rahmenbedingungen dafür Sorge tragen, dass ATM/ANS Equipment einheitlich und sicher betrieben werden können.
+        Zur Gewährleistung der einheitlichen Anwendung und Einhaltung wurden hierfür durch die Kommission Vorschriften definiert, welche die Verfahren der Nachweisführung zu ATM/ANS Equipment sowie die Rechte und Pflichten dessen Inhaber beschreiben. \cite[Art. 43 Abs. 1]{2018R1139} 
+        
+    
+        Die korrekte Abbildung von rechtlichen Konsolidierungen im Rahmen der Auswirkungen auf die Compliance der ATM/ANS Komponenten durch interne Analysen erfordert aufgrund des großen Umfangs und unterschiedlicher Lifecycle vieler Anforderungsdokumente einen hohen manuellen Aufwand.
+        Durch eine automatisierte regulatorische Impact Analysis(RIA) sollen Betreiber und Entwickler von ATM/ANS Equipment besser abschätzen können, in welchem Umfang ihre Komponenten von Änderungen betroffen sind. 
+
+
+    Auch das Interesse an automatischer Datenverarbeitung von Rechtsdokumenten ist in den letzten Jahren stark gewachsen.
+    Unternehmen profitieren fortgehend von immer neuen Werkzeugen und Prozessen, die es ermöglichen rechtliche Informationen einzulesen, zu verarbeiten oder zu verknüpfen.
+    Jedoch beschränken sich diese bestehenden Lösungen teils auf einzelne Anwendungsfälle, lokale Zuständigkeitsbereiche oder stellen ihre Daten nur intransparent zur Verfügung\cite[385]{eu_open_legal_info}; auch wenn diese Informationen essenziell für rechtliche Datenanalysen -- oder Impact Analysen -- sind.
+    
+        
+    \pagebreak
+    \section{Definition und Rahmen}
+
+        In dem Rahmen dieser Arbeit soll eine grundsätzliche Einführung in die, mit der Entwicklung von ATM/ANS Equipment verbundenen Nachweisführungsprozessen, deren regulativen Basisverordnungen sowie der Beteiligung und Funktion externer Stakeholder darlegen.
+        Für die Evaluation von Betriebsprozessen bezieht sich diese Arbeit auf das Betriebsumfeld der \textit{DFS - Deutsche Flugsicherung GmbH} (DFS) in seiner Position als ANSP und in seiner Funktion sowohl als Hersteller, Inbetriebhalter als auch als Nutzer von ATM/ANS Equipment.
+
+        Fortan soll geprüft werden, welche Anforderungen erforderlich sind, um auf Basis der Anforderungsdokumente -- in digitaler Form -- die Auswirkungen von Änderungen auf interne Anforderungsprozesse und Complianceangaben abzubilden.
+
+    \dots
+
+
+
+        Hierfür analysiert diese Arbeit unter anderem zwei öffentliche Datenquellen, um dessen Integration für eine mögliche Impactanalyse zu evaluieren.
+        \begin{itemize}
+            \item Daten von der EU (Publications Office): Cellar API / FMX4 Format
+            \item Daten von der EASA: Easy Access Ruless
+        \end{itemize}
+
+        Beide Institutionen stellen hierbei Nutzern Daten in Bezug auf regulatorische Anforderungen für ATM/ANS Equipment zur Verfügung.
+        Zwischen der Nutzung dieser Daten sowie der rechtlichen Bedeutung und Wirksamkeit deren Anforderungen gilt es zwischen den Quellen zu unterscheiden.
+        Dieser, sowie weitere Unterschiede der analysierten Daten/-formate, vor allem in Aspekten bzgl. Vergleichbarkeit, Zugang, Lifecycle und Gültigkeit, sollen im Folgenden verglichen werden.
+
+    
+    % \section{Zeitliche Einordnung}
+
+\begin{center}
+    \textsc{Disclaimer: \\
+    Zeitliche Einordnung der Arbeit}
+\end{center}
+
+Diese Arbeit entsteht in der Zeit von Dezember 2023 bis März 2024.
+Auch nach Inkrafttreten der Delegierten Verordnungen (EU) 2023/1768ff. im September 2023 ist die Adoption der darin beschriebenen Prozesse zur Zeit des Verfassens noch nicht vollständig umgesetzt. 
+Das \ac{BAF} stellt zwischenzeitlich eigene Anforderungen zu der Nachweisführung, welche die Zeit der europäischen Adoption und der Übernahme der \ac{EASA} sowie dessen Spezifikation der Prozesse, überbrücken soll.
+Aufgrund der noch fehlenden Spezifikationen zur Nachweisführung der \ac{EASA} sowie den entsprechenden Businessprozessen der Flugsicherungen bezieht sich diese Arbeit in Teilen der Analyse und Definition der Prozesse noch auf Prozesse zur Nachweisführung unter dem \ac{BAF}. 
+
+
+
+    % \begin{quote}
+    %     \textcolor{red}{Inhaltlich: Evtl. wie die DFS diese Prozesse momentan händisch bearbeitet -> Motivation. Evtl. doppelt es sich auch an anderer Stelle. Vielleicht eher "Betriebliches Interesse" o.ä. }
+    % \end{quote}

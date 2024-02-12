@@ -1,0 +1,180 @@
+\chapter{Anforderungen der Impactanalyse}
+
+    Für eine Umsetzung einer automatischen regulativen Impactanalyse, welche die beschriebenen betrieblichen Prozesse des Anforderungsmanagements und der Nachweisführung berücksichtigt und die Lifecycle und Struktur regulatorischen Anforderungen / Anforderungsdokumenten darstellen kann, bedarf es einigen Voraussetzungen.  
+    Nach der Marktanalyse der \ac{EGRC} Plattformen durch Gartner\cite{app_gartner} unterstützt Compliance Management ,,Compliance Fachpersonal bei der Dokumentation, bei Workflows, Berichterstattung und der Visualisierung von Control Objectives [...]``\cite[S.4 (übersetzt)]{app_gartner} für verschiedene branchenspezifischen Regularien, Vereinbarungen und Anforderung durch Partner oder interne Anforderungen.       
+    Die Impactanalyse oder dessen mögliche Implementation in Rahmen einer Anwendung, einer \ac{EGRC} Plattform oder eines Businessprozesses sollte folglich in der Lage sein, einen Mehrwert im Sinne einer Automatisierung oder einer Verringerung des händischen Workloads darzulegen.
+
+    % Genauer sollte eine Implementation im Rahmen dieser Arbeit -- mittels einer Impactanalyse -- herausarbeiten, welche Teile einer Complianceangabe zu einer ATM/ANS-Komponente/-System durch eine Konsolidierung externer Anforderungsdokumente    
+    % Die erarbeiteten Anforderungen sollen folglich auch als Kriterien für die Analyse und Bewertung der zwei Datenquellen dienen, um dessen Mehrwert im Sinne dieser Aufgabe zu bestimmen.  
+
+    
+% \begin{quote}
+% \textcolor{red}{Der Zweck dieses Kapitels soll es sein, vor der Analyse der Datenquellen, Anforderungen herauszuarbeiten, an denen die Quellen bewertet werden können und weiter eine Impact Analyse erstellt werden kann.}
+% \end{quote}
+
+\section{Ziel der Impactanalyse}
+% \begin{quote}
+% \textcolor{green}{Seite füllen (mindestens)}
+% \end{quote}
+
+Ziel der \textit{Regulatory Change Impact Analysis (RCIA)} im Rahmen dieser Implementation ist es, eine Liste jener Anforderungen zu erhalten, welche für die Erbringung der Compliance relevant ist und durch die Änderung betroffen ist. 
+Eine Complianceangabe gilt folglich als \textit{betroffen}, sowie die durch diese Complianceangabe abgedeckte Anforderung verändert, ersetzt, gelöscht oder durch ein anderes Anforderungsdokument -- oder eine andere Anforderung -- konsolidiert wurde.
+Auch neue Anforderungen, hervorgehend aus neuen Anforderungsdokumenten oder der Ergänzung/Konsolidierung bestehender Dokumente, sollten durch die Analyse erkannt und je nach ihrer bewerteten Bedeutung entsprechend berücksichtigt werden.   
+Diese Abbildung hilft folglich dabei, den Umfang größerer regulatorischer Änderungen oder Konsolidierungen besser auf einen kleineren -- für das Projekt relevanten -- Rahmen herunterzubrechen und die Effizienz sowie die Qualität der Nachweisführungsprozesse zu optimieren. 
+Hersteller der betroffenen Komponenten könnten so, auf Basis dieser Analyse, einfach und übersichtlich betroffene Angaben bzgl. der Compliance ändern und fortan eine hohe Qualität der Nachweisführung sicherstellen.
+
+Neben den Ergebnissen der Impact Analyse und dessen Verwendung in den entsprechenden Nachweisführungsprozessen werden im Zuge der Analyse Datensätze erarbeitet, die auch einen Mehrwert für andere Aufgabenbereiche erwirtschaften kann. 
+
+% Die Automatisierung dieser Analyse bedarf, dass alle Anforderungen in einem Format vorliegen, in dem diese maschinell eingelesen und analysiert werden können. 
+% Weiter muss das Format in der Lage sein, inhaltliche wie strukturelle Änderungen der externen Anforderungsdokumente identifizieren oder erarbeiten zu können.  
+
+
+
+\pagebreak
+
+    
+\section{Modellierung der Daten} 
+
+Die Basis der Analyse bedarf der Existenz eines umfassenden Datensatzes, welcher -- unabhängig von dessen Semantik -- in der Lage ist, regulative Anforderungen, ATM/ANS Komponenten, ATM/ANS Systeme, jeweils mit allen wichtigen zugehörigen Informationen, Metadaten, Lifecycle sowie dessen Beziehungen untereinander abzubilden.
+Im Folgenden sollen hierzu Anforderungen erarbeitet und erörtert werden, die eine Analyse unter dem oben definierten Ziel ermöglichen.
+
+
+\subsection{Regulative Anforderungen}\label{model_anforderungen}
+% \begin{quote}
+% \textcolor{red}{Technisch relevante Aspekte und Eigenschaften der regulativen Anforderungen, die für eine funktionierende Impactanalyse verfügbar sein müssen.
+% Einfach gesagt: Welche Informationen brauchen wir? (Zusätzlich: Bei welchen Informationen wäre es schön, sie zu haben?)
+% }
+% \end{quote}
+
+Regulative (externe) Anforderungen beschreiben im Folgenden alle Anforderungen und Definition, welche von gesetzgebenden -- oder hierdurch berechtigten -- Parteien verfasst wurden und eine fortlaufende Bedeutung für die Erklärung der Compliance einer ATM/ANS-Komponente / eines ATM/ANS-Systems hat.   
+Im Rahmen dieser Analyse bilden diese Anforderungen den volatilen Teil, aus welchen die zu analysierenden Änderungen hervorgehen.
+Dementsprechend bedarf es einer Datendarstellung, welche in der Lage ist, die entsprechenden Lifecycle und Änderungen der Anforderungen inkl. aller wichtigen Informationen integer abzubilden.   
+Wichtige Anforderungen an eine solche Abbildung beinhalten:
+
+\subsubsection{Eindeutige Kennung}
+
+    Um eine einheitliche Nachweisführung sicherzustellen, muss durch die Datenmodellierung gewährleistet sein, dass Anforderungen -- auch über Konsolidierungen oder strukturelle Änderungen der Anforderungsdokumente hinweg -- eindeutig identifiziert werden können.
+    Sowie die Anforderungsdokumente und dessen Herausgeber keine eindeutige, struktur- und zeitunabhängige Identifizierung der  einzelnen Anforderungen zur Verfügung stellen, bedarf es eines eigenen Prozesses, zur Durchsetzung eigener Kennungsmethoden.  
+Die Granularität, mit welcher Textabschnitte identifiziert werden können, gilt es gesondert in Bezug auf die Struktur der einzelnen Anforderungsdokumente herauszuarbeiten.
+
+Im Falle von EU Verordnungen oder anderen Gesetzestexten sind die Kennung eines Textabschnittes zumeist an die Struktur des Dokumentes gebunden. 
+In diesem Falle ist die Kennung einer Anforderung in einem Dokumente auch unmittelbar mit dessen Position in der Gliederung verknüpft. 
+In diesen Fällen gilt es zu prüfen, ob strukturelle Änderungen der Anforderungsdokumente Auswirkungen, die Nummerierung bestehender Textabschnitte haben kann.
+Im Beispiel von digitalen Verordnungen der EU\footnote{Publiziert durch das Amt für Veröffentlichungen der Europäischen Union (FMX Format)} besteht aus Basis der Dokumentation die Möglichkeit, dass die Struktur und Nummerierung Textabschnitte im Rahmen einer Konsolidierung oder Korrektur überarbeitet werden\footnote{Nach der Dokumentation zu Annotationen bzgl. Änderungen (siehe ,,CLG.MDFO/MDFC``) im FMX Format kann die Nummerierung ersetzt werden (siehe Codes \textit{(NN): new numbering}, \textit{(ON): old numbering})\cite{eu_fmx4_proc}}. 
+Auch wenn derartige Änderungen nicht im Sinne der Integrität des Anforderungsdokumentes getätigt werden und eine eigene Prüfung der -- für ATM/ANS-Equipment relevanten -- Dokumente ergab, dass kein etwaiger Fall in den Dokumenten gefunden wurde, so gilt es im Einzelfall zu eruieren, ob eine strukturelle Identifizierung einzelner Anforderungen eine ausreichend integre Identifizierungsmethode darstellt. 
+
+% sich deshalb sehr wahrscheinlich nur auf Ausnahmesituationen oder sehr kleine Änderungen kleinerer geordneter Listen bezieht, 
+
+\subsubsection{Regulative Quelle}
+
+Die \textit{regulative Quelle} einer Anforderung soll im Folgenden definieren, aus welchem Anforderungsdokument sich eine gewisse Anforderung ableitet. 
+Diese Angabe soll folglich sicherstellen, dass auch komplexere Lifecycle von Anforderungen, und dessen Änderungsgesetzen\footnote{Definition hier entsprechend  \textit{amending acts} (engl.) \cite{eu_consolidation}} adäquat abgebildet werden können.
+Im möglichen Falle einer Änderung zweiten Grades, bspw. der Korrektur eines Änderungsgesetzes, kann durch den Verweis auf das Änderungsgesetz als \textit{regulative Quelle}, auch dessen Korrektur festgestellt werden. 
+Alle konsolidieren Dokumente, jeden Grades, werden somit in den digitalen Lifecycle des Datenmodells mitaufgenommen und entsprechend abgebildet und berücksichtigt.  
+
+Sowie -- durch die Analyse -- erschlossen, bietet dieses Attribut Auskunft über die Versionierung individueller Anforderungen und ermöglicht es, einfach nachzuvollziehen, welche Anforderungen durch welche Konsolidierung betroffen sind und möglichen inhaltlichen Änderungen unterliegen.
+
+% erlangt die Korrektur durch das Änderungsgesetz ebenfalls Bedeutung für die Integrität des Anforderungsinhaltes.
+% Um auch, eben solche, Änderungen zweiten Grades abbilden und zuordnen zu können, ist es essenziell auch regulative Änderungsdokumente zu berücksichtigen. 
+% Das Attribut der regulativen Quelle kann hierbei abbilden, welches (Änderungs-)Dokument den aktuellen Stand der Anforderung konsolidiert.
+% \cite{eu_consolidation}
+
+\subsubsection{Inkrafttreten / Anwendungszeitraum}
+
+Für die Abbildung einer zeitabhängigen Compliance-Erklärung ist es relevant, die Gültigkeit von Anforderungen an einen genauen Zeitraum zu binden.
+Die Gültigkeit einer Anforderung beginnt -- sowie nicht anderweitig definiert -- mit dem Inkrafttreten des ursprünglichen Anforderungsdokumentes nach dessen Veröffentlichung\footnote{Im Falle von EU Verordnungen am zwanzigsten Tage nach der Veröffentlichung im Amtsblatt der Europäischen Union (bspw. \cite[Art. 141]{2018R1139}, \cite[Art. 14]{2004R0549}) sowie nicht in der Änderungsverordnung abweichend definiert (bspw. Verordnung EU 2017/1347 \textit{(ohne inhaltliche Bedeutung)})}.
+Im Rahmen von Änderungen oder Korrekturen kann sich der Zeitpunkt des Inkrafttretens auf das entsprechende Inkrafttreten des Änderungsdokumentes oder ein anders definierten Zeitpunkt  aktualisieren.\cite{eu_consolidation}
+Die Gültigkeit eines Anforderungsdokumentes endet, im Falle der EU, mit dem Inkrafttreten eines anderen ablösenden oder aufhebenden Anforderungsdokumentes; oder durch die Aufhebung der Verordnung durch die Kommission im Amtsblatt. [??]
+
+\pagebreak
+
+\subsubsection{Lifecycle}
+
+Der Lifecycle einer Anforderung stellt den Hauptfokuspunkt der Analyse dar. 
+Folglich sollte das Datenmodell in der Lage sein, alle möglichen Arten von Änderungen und Auflösungen der Anforderung darstellen zu können.
+Dies beinhaltet im Falle von Verordnungen der EU die Änderung oder Korrektur durch andere Änderungsgesetze oder durch eine Mitteilung im Amtsblatt der EU; die Ablösung einer Verordnung durch eine neue Verordnung oder die Auflösung von dessen Gültigkeit; oder die mögliche Umstrukturierung eines Anforderungsdokumentes.
+
+Weiter benötigen einige Formen der Nachweisführung\footnote{Bspw. das Format der Compliance-Matrix zur Dokumentation der EG-Prüferklärung (Gültigkeit bis 2023)} die Dokumentation der gesamten inhaltlichen Historie einer Anforderung.
+Hierfür ist es notwendig, auch auf vorherige Konsolidierungen/Versionen einer Anforderung inhaltlich zugreifen zu können. 
+\pagebreak
+
+\subsection{ATM/ANS Equipment}
+
+\begin{quote}
+\textcolor{red}{Parallel die gleiche Frage zu dem Equipment / den EGGn/EGKn (nach ELSA Definition). Also, welche Informationen müssen intern vorliegen, damit die Analyse funktioniert (nicht viele) und was wäre sonst noch nennenswert für eine Modellierung von ATM/ANS Eq.}
+\end{quote}
+
+\subsubsection{Komponente}
+\subsubsection{Baselines}
+\subsubsection{Abhängigkeiten von EGKen / EGGen}
+\pagebreak
+
+\subsection{Angaben zur Compliance} \label{model_angaben}
+% \begin{quote}
+% \textcolor{red}{Wie werden Compliance angaben zu den entsprechenden Anforderungen getätigt und wie können diese in Daten abgebildet werden?}
+% \end{quote}
+
+Das Hauptziel der Analyse sowie der Nachweisführung von ATM/ANS-Equipment ist es, dessen Compliance nachzuweisen, um einen sicheren Gebraucht und Inbetriebnahme sicherzustellen. 
+Hierbei wird in den entsprechenden Compliancedokumenten (\ac{SoC}) auf Basis der technischen Dokumentation (bspw. \ac{SSS}) die Compliance zu den einzelnen Anforderungen erklärt.
+Aus Perspektive der Datenmodellierung stellt eine solche Complianceangabe die Relation zwischen den einzelnen regulativen Anforderungen und den entsprechenden Baselines / Komponenten dar.
+Complianceangaben sollten dabei für die Kombination an Equipment und Version der Anforderung einmalig vorliegen. 
+Für die Angabe einer jeden Baseline bestehen folgende Informationen: 
+
+\subsubsection{Anforderungsreferenz}
+
+Dadurch, dass die Anforderungsreferenz sinngemäß beschreibt, welche Anforderung durch die Angabe gerade erklärt wird, ist es notwendig, neben der Anforderung selber, auch zu beschreiben, welche Version der Anforderung gerade erklärt wird. 
+So lässt sich später einfacher ableiten, dass Angaben, dessen Anforderungen bereits konsolidiert wurden, nicht mehr den aktuellen Soll-Zustand der Compliance abbilden. 
+Neben der Möglichkeit, die Gültigkeit der Angabe an dessen Erstellungszeitpunkt zu binden und diesen mit Zeitpunkten neuerer Änderungen gegenzuprüfen, ermöglicht die vorhergehende Modellierung der Anforderungen (siehe \ref{model_anforderungen}) alternativ einen Verweis auf die bereits definierte \textit{regulative Quelle} der Anforderung. 
+So würde eine Angabe beispielsweise die Anforderung \textsf{ATS.OR.130} der Verordnung 2017/373, in ihrem Inhalt zuletzt konsolidiert durch die Durchführungsverordnung (EU) 2020/469, erklären. 
+Der Eintrag verweist so im Modell sowohl auf die Anforderung (\textsf{ATS.OR.130}) als auch auf die Verordnung (DVO EU 2020/469) und kann bei neuen Konsolidierungen des Anforderungsdokumentes mit der hinterlegten regulativen Quelle abgleichen, um die Integrität der Angabe über die Änderung hinweg zu gewährleisten.
+
+
+% \subsubsection{Equipmentreferenz}
+
+% Auf der anderen Seite der Relation referenziert die Relation eine Baseline / Komponente von ATM/ANS-Equipments.
+
+
+\subsubsection{Art der Compliance / Zuständigkeit}
+
+Auch wenn das Ziel der Erklärung einer Anforderung ist, diese auch zu erfüllen, so bestehen Fälle, in denen begründet werden kann, besagte 
+bspw. bei fehlender Implementation anderer EU-Mitgliedstaaten zu Interoperabilitätsstandards, rechtlich definierten Ausnahmeregelungen oder anderer Begründung der non-compliance.
+Die Bewertung einer nicht Compliance wird abhängig von der Begründung abgewägt und unterliegt der zuständigen nationalen Aufsichtsbehörde, 
+
+\subsubsection{Begründung der Compliance}
+
+Die Begründung stellt den Hauptinhalt der Angabe, als Relation zwischen Anforderung und Equipment, dar. 
+In dieser sollte die Compliance zu der Anforderung in seiner zum aktuellen Zeitpunkt geltenden Form begründet und anhand technischer Referenzen belegt werden.
+
+
+% \subsubsection{Technische Referenzen}
+
+
+\subsection{Compliance Matrizen}
+% \begin{quote}
+% \textcolor{red}{Compliance Matrix als Endergebnis des Prozesses, Auflistung aller aktuellen Compliance Angaben. Auch kurze Modellierung}
+% \end{quote}
+
+Compliance Matrizen stellen das Endprodukt der Nachweisführungsprozesse dar\footnote{Format der EASA SoC zum Zeitpunkt dieser Arbeit noch unbekannt.}.
+In der einfachsten Form beschreibt die Compliance Matrix, aus Sicht der Datenmodellierung, eine Auflistung aller eine ATM/ANS-Einrichtung betreffende Anforderungen inklusive dessen jeweiliger Compliancenachweis (siehe \ref{model_angaben}).
+Das genaue Format, in dem die Compliancematrix abgebildet werden soll, ist abhängig von den entsprechenden Vorgaben der zuständigen Aufsichtsbehörde.
+
+
+\pagebreak
+
+
+
+\section{Modellierung der Lifecycle}
+
+\begin{quote}
+\textcolor{red}{Evtl kann ich es auch mit in die Modellierung oben einbinden, ich glaube ich hätte es aber lieber separat.  Ich möchte mir gerne den Modus operandi, wie VOs überarbeitet werden für nächste Kapitel vorbehalten, würde aber grundsätzliche Anforderungen aufstellen wollen, welche Komponenten zeitabhängig sind und wo es den Lifecycle zu beachten gilt.}
+\end{quote}
+
+\subsection{Lifecycle der Anforderungen}
+\subsection{Lifecycle des ATM/ANS Eq.}
+
+\pagebreak
+\section{Modellierung der Impact-Analyse}
+
+\begin{quote}
+\textcolor{red}{Einführung in den Sinn und Zweck der Impact Analyse(IA) für das erarbeitete Datenmodell und wie das Endergebnis der IA auszuschauen hat.}
+\end{quote}

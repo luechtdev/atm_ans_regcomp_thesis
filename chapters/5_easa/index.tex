@@ -1,0 +1,81 @@
+\chapter{Datenquelle 2: EASA Easy Access Rules und Provided Means of Compliance}
+
+    \section{European Union Aviation Safety Agency}
+
+\begin{quote}
+\textcolor{red}{Einführung zur EASA. Neue Position und Bedeutung für den Prozess. Was sind Easy Access Rules und welche Bedeutung haben sie für uns. Hard law / Soft law. Added benefit durch AMC/GM}
+\end{quote}
+\begin{quote}
+\textcolor{green}{1-2 Seiten}
+\end{quote}
+        
+        \subsection{Bedeutung nach VO 2023/1768ff.}
+        
+        \pagebreak
+        \subsection{Easy Access Rules}
+
+\begin{quote}
+\textcolor{green}{\~1.5 Seiten}
+\end{quote}
+
+        \pagebreak
+        \subsection{Annehmbare Nachweisverfahren}
+
+        Die \ac{EASA} ist nach der Anforderung \textsf{ATM/ANS.AR.A.015.a} angehalten, annehmbare Nachweisverfahren (engl. Accepted Means of Compliance (AMC)) zu entwickeln, welche zur Bewertung der Compliance herangezogen werden können und dessen Abdeckung eine vollständige Abdeckung der zugrundeliegenden einschlägigen Verordnung garantiert. 
+        \cite[Anh. II]{2017R0373}
+
+
+    \subsubsection{Alternative Nachweisverfahren}
+        
+        
+
+\subsection{Guidance Material}
+
+\begin{quote}
+\textcolor{green}{\~0.5 Seiten}
+\end{quote}
+        \pagebreak
+    \section{EASA eRules Plattform}
+
+    Die EASA betreibt 
+
+        Am 26. Januar 2023 veröffentlichte die EASA die Entscheidung, Easy Access Rules fortan auch in einem maschinenlesbaren XML Format Endnutzern bereitzustellen. \cite{easa_xml_publication}
+
+    Die EASA beschreibt ihre digitale eRules Plattform als einheitliche, einfach zugängliche, online Datenbank für alle in der Luftfahrt anwendbaren Regeln für Stakeholder im europäischen Luftraum.
+    Als ein Produkt dieser Plattform werden die sogenannten Easy Access Rules definiert und bis dato (24.6.22) in zwei Formaten veröffentlicht. 
+    \cite{easa_xml_doc}
+
+    % The EASA eRules is a platform for storing and sharing of rules. It is the single, easy-access, online database for all aviation rules applicable to European airspace users. One of the eRules’ outputs are Easy Access Rules, which were shared, so far, in two formats – in pdfs and as online publications. These two formats already considerably increased stakeholders’ work efficiency and reduced the need of locally consolidated documents. As part of this project, European Aviation Safety Agency (EASA) offers to its stakeholders Easy Access Rules in the Extensible Markup Language (XML) format. This format allows for machine-to-machine integration and can easily be processed and automated by users, as well as incorporated into local applications, search databases, etc. The document describes the XML publishing format of EASA Easy Access Rules, including the XML schemas used. 
+        
+        
+        \subsection{Aufbau der Dokumente}
+
+            Die für die Publikation der maschinenlesbaren Dokumente wählte die EASA die von Microsoft etablierte und standardisierte \textit{Open Packaging Convention (ECMA-376, ISO/IEC 29500-2)}.
+            Dieser Standard ist Teil der Familie an XML Schemata, welche gemeinsam als \textit{Office Open XML(OOXML)} bezeichnet werden \textit{(ISO/IEC 29500)} und XML Semantik für Textverarbeitungs-, Tabellenkalkulations- und Präsentationsdokumente -- oder mit diesen konform agierenden Dokumenten -- bereitstellen.  \cite{easa_opc_iso}(vii) 
+            Dies bedeutet unter anderem, dass valide Dokumente Teil eines größeren Dokumentes sein können, wessen weitere Daten nicht auf die Benutzung als Office-Dokument Einfluss nehmen.
+            Genau von dieser Eigenschaft hat die EASA Gebrauch gemacht und den Aufbau ihrer digitalen Publikationen in zwei nennenswerte Teile unterteilt.   
+
+            \subsubsection{Anforderungsinhalte}
+
+            Die inhaltlichen Anforderungstexte der Easy Access Rule sind Teil des Textverarbeitungsdokumentes (Part "\textit{/word/document.xml}") und damit auch über eine grafische Textbearbeitungsoberfläche (bspw. MS Word) einsehbar und bearbeitbar.
+            Hierbei wurden die Textinhalte des Dokumentes so strukturiert, dass die einzelnen Entitäten voneinander isoliert und über eine -- innerhalb des Dokumentes -- lokal einzigartige ID, eindeutig identifizierbar sind.
+            So können die Inhalte bei Bedarf beliebig bearbeitet werden, ohne die Struktur des Dokumentes oder die Integrität anderer strukturellen Verweise zu gefährden.
+            Außerdem ist es so möglich, Einträge in den Metadaten auf die entsprechenden Anforderungsinhalte verweisen zu lassen. 
+
+            \pagebreak
+            \subsubsection{Metadaten}
+
+            Zusätzlich zu den Inhalten ermöglicht es der OOXML Standard, weitere Parts an das Textdokument anzuhängen.
+            Die EASA nutzt diese Möglichkeit, um das Dokument und dessen Anforderungen mit eigenen Metadaten aus dem internen EASA CCMS zu bereichern.
+            Diese Metadaten enthalten interne Informationen zu der Struktur des Dokumentes und den einzelnen Anforderungen und stehen dem Endnutzer in Form eines OPC Parts (gemäß 6.2 \cite{easa_opc_iso}) zur Verfügung.
+            Dessen Struktur beruht auf einem eigenen XML Schema, welches in der entsprechenden Dokumentation der EASA definiert ist.
+
+            
+
+            \begin{quote}
+\textcolor{red}{Analyse der Metadaten}
+\end{quote}
+        
+        % \subsection{Vor- \& Nachteile}
+    \pagebreak
+    \section{Integration in die Analyse / Prozesse}
