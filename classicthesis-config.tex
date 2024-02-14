@@ -115,12 +115,12 @@
 \usepackage{mparhack} % get marginpar right
 %\usepackage{fixltx2e} % fixes some LaTeX stuff --> since 2015 in the LaTeX kernel (see below)
 % \usepackage[latest]{latexrelease} % emulate newer kernel version if older is detected
-\PassOptionsToPackage{printonlyused,smaller}{acronym}
+\PassOptionsToPackage{smaller, nohyperlinks, withpage}{acronym} % printonlyused
   \usepackage{acronym} % nice macros for handling all acronyms in the thesis
-  %\renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms --> no longer working
-  %\renewcommand*{\acsfont}[1]{\textsc{#1}}
-  %\renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
-  %\def\bflabel#1{{#1\hfill}}
+  % \renewcommand{\bflabel}[1]{{#1}\hfill} % fix the list of acronyms --> no longer working
+  % \renewcommand*{\acsfont}[1]{\textsc{#1}}
+  % \renewcommand*{\aclabelfont}[1]{\acsfont{#1}}
+  % \def\bflabel#1{{#1\hfill}}
   \def\bflabel#1{{\acsfont{#1}\hfill}}
   \def\aclabelfont#1{\acsfont{#1}}
 % ****************************************************************************************************
