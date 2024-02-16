@@ -1,4 +1,4 @@
-\chapter{Datenquelle 1: Europäische Verordnungen und EurLex}
+\chapter{Datenquelle 1: Europäische Verordnungen und Cellar}
 
 % \begin{quote}
 % \textcolor{red}{Einführung in die EU VOs als Datenquelle. Zuerst thematisch in die Arbeitsweise und anschließenden digital, in die Möglichkeiten auf die Daten zuzugreifen.
@@ -98,21 +98,124 @@ Beispielsweise
 
         
         \pagebreak
-        \subsection{EU Cellar Plattform}
+        \section{EU Cellar Plattform}
 
-        \subsubsection{Motivation}
+        \subsection{Motivation}
         
 Gestützt durch die PSI-Richtlinie, dem Strategiedokument \textit{Europa 2020} für u.a. der ,,Entwicklung einer auf Wissen und Entwicklung gestützten Wirtschaft`` und dem Arbeitsvertrag der Europäischen Union(AEUV), insbesondere Art. 249, beschließt die EU im Jahre 2011 auch die Weiterverwendung der eigenen Kommissionsdokumente. \cite[ErwG. 1]{2011D0833}
 
-        \subsubsection{Umsetzung}
+        \subsection{Implementierung}
 
 Nach dieser Richtlinie legt sich die Kommission fest, ein Datenportal einzurichten, welches einen zentralen Zugang zu ihren strukturierten Daten ermöglicht und folglich die Verknüpfung und Weiterverwendung für kommerzielle oder nichtkommerzielle Zwecke zu erleichtern. \cite[Art. 5]{2011D0833}
-Die hieraus entstandene Cellar Plattform ist ein öffentliches semantisches Repository des \textit{Amts für Veröffentlichung der EU} (OP), welche unter anderem EUR-Lex\footnote{\href{https://eur-lex.europa.eu/homepage.html?locale=de}{https://eur-lex.europa.eu/}}, als digitales Zugangsportal zu europäischem Recht, als auch eine eigene Plattform\footnote{\href{https://bookshop.europa.eu/}{https://bookshop.europa.eu/} (ehemals EU-Bookshop)} zur Publikation von weiteren informativen wie wissenschaftlichen Dokumenten ermöglicht.
+Die hieraus entstandene Cellar Plattform ist ein öffentliches semantisches Repository des \ac{OP}, welche unter anderem EUR-Lex\footnote{\href{https://eur-lex.europa.eu/homepage.html?locale=de}{https://eur-lex.europa.eu/}}, als digitales Zugangsportal zu europäischem Recht, als auch eine eigene Plattform\footnote{\href{https://bookshop.europa.eu/}{https://bookshop.europa.eu/} (ehemals EU-Bookshop)} zur Publikation von weiteren informativen wie wissenschaftlichen Dokumenten ermöglicht.
 Die Struktur der Daten basiert auf \textit{Semantic Technologies} und ermöglicht es, Daten auf Basis von definierten Standards weiterzunutzen und zu teilen. \cite[5]{eu_cellar}
 Weiter sollen Daten auch, soweit sinnvoll und nicht mit einem unverhältnismäßigen Mehraufwand verbunden, in einem maschinenlesbaren Format zur Verfügung gestellt werden. \cite[Art. 8 Abs. 1f]{2011D0833}
 
+Die Plattform stützt sich dabei auf die Technologien des \textit{Semantic Web} und dessen Tech-Stack.
+Das Ziel des \textit{Semantic Web} ist es, durch die Verwendung von bekannten und einheitlichen Formaten, Strukturen und Standards, Automatisierungen von Aufgaben sowie die Kommunikation unter allen teilnehmenden Systemen zu ermöglichen. \cite[10]{eu_cellar}   
+% welcher auch als ,,Evolution des World Wide Web``\cite[10]{eu_cellar} bezeichnet wird und es ermöglichen soll, 
+Im Verwendungsfall der EU wird durch diese Technologie ein offener Zugriff auf alle Inhaltsdatein und Metadaten digitaler Disseminationen des \ac{OP} bereitgestellt. \cite[7]{eu_cellar}
+Hierbei gilt es zu betonen, dass die individuellen Inhalte dieser Disseminationen nicht durch das semantische Modell abgebildet werden und lediglich als Inhaltsdatein gekapselt und in den jeweiligen Formaten bereitgestellt werden.
 
-    
+Im Beispiel einer beliebigen \acf{VO} verfügt das Modell so über sämtliche Metainformationen, bspw. Datum des Inkrafttretens, Datum und Amtsblatt der Veröffentlichung, Änderungen an oder durch andere \acp{VO}, Verweise und Zitate auf oder durch andere \acp{VO}; sowie den Verweis auf alle publizierten Inhaltsdokumente der ausgewählten Sprache in allen publizierten Formaten
+(Bsp.: \ac{VO} (\acs{EG}) 2017/373, deutsch, PDF).
+Die entsprechenden Dateien sind durch das \acl{OP} an der angegebenen \ac{URI} hinterlegt, sodass auch ein Zugriff auf die Inhalte über die Plattform ermöglicht wird.  
+
+    \subsection{Metadaten}
+
+Wie oben bereits beschrieben, stellen Metadaten einen wesentlichen Bestandteil der Cellar Plattform dar.
+Sie bilden alle EU Disseminationen inkl. dessen Eigenschaften sowie aller Beziehungen zu anderen Disseminationen ab. 
+
+\subsubsection{Unique Resource Identifier in Cellar}
+
+Die Basis der gesamten Datenabbildung stellen die \acfp{URI} dar (siehe Abb. \ref{fig:semantic}).
+Eine URI definiert einen registrierten Namen (bspw. einer Ressource) in der Domäne eines vordefinierten Namensraums (engl. Namespace).
+Die Kombination dieser erzeugt einen eindeutigen Eintrag in das übergeordnete einheitliche System.
+\cite[2]{eu_uri_rfc1630}
+Diese eindeutigen \acp{URI} ermöglichen es, Dokumente intern wie extern eindeutig zu identifizieren und Metainformationen wie Relationen auf die entsprechenden Dokumente rückzuführen.
+Im Anwendungsfall der \ac{EU} werden mehrere Namensräume für verschiedene Kategorien oder Identifikationsschemata verwendet, welche auch die gleiche Disseminationen referenzieren können.
+Hierbei ist vorausgesetzt, dass sich \acp{URI} unter keinen Umständen ändern.
+\begin{quote}
+    ,,URIs in Cellar will not change.`` \cite[9]{eu_cellar}
+\end{quote}
+Im folgenden Beispiel ist erkenntlich, wie verschiedene \acp{URI} die Dissemination auf unterschiedliche Weise beschreiben und teils Informationen über jene beinhalten.
+% Beispielsweise wird so eine Verordnung sowohl in dem Namensraum aller Disseminationen (Cellar) als auch in dem Namensraum aller legislativer Dokumente (Celex) definiert sowie. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|l|} \hline 
+         \multicolumn{2}{|c|}{URIs der DVO (EU) 2017/373}\\ \hline 
+         Cellar URI& cellar:b47f7e87-03ce-11e7-8a35-01aa75ed71a1\\ \hline 
+         CELEX URI& celex:32017R0373\\ \hline 
+         ELI URI&eli:reg\_impl:2017:373:oj\\ \hline
+         OJ URI&oj:JOL\_2017\_062\_R\_0001\\ \hline 
+    \end{tabular}
+    \caption{URIs der Durchführungsverordnung (EU) 2017/373}
+    \label{tab:uris}
+\end{table}
+
+Die abgebildete \textit{Cellar URI} (siehe \ref{tab:uris}) entspricht dem Format eines \acf{UUID} in der Version 1 und beschreibt keinerlei Eigenschaften der Disseminationen.
+Die \textit{Cellar URI} ist, wie alle anderen \acp{URI}, sprachunabhängig.
+Ein solches Format ist besonders für eine interne Verwendung vorteilhaft, da \ac{UUID} entwurfsbedingt einzigartig und persistent sind und deshalb dezentral, in hoher Quantität generiert werden können.  
+\cite[2]{eu_uuid_rfc4122}
+Im Rahmen der EU wird die \textit{Cellar \ac{URI}} -- im Gegensatz zu den anderen hier aufgeführten -- für alle Disseminationen erzeugt und ist so in der Lage, sämtliche Publikationen jeden Typs zu identifizieren.  
+
+Die \textit{CELEX URI} beschreibt hingegen die sog. CELEX Nummer, welche die EU für die Verwendung in der Eur-Lex\footnote{ehemals ,,CELEX``} Anwendung definiert hat.
+Sie beschreibt in ihrem Aufbau den Bereich des Dokumentes, dessen Jahr der Veröffentlichung, die Art des Dokuments und dessen Nummer. \cite[2, 24]{eu_celex}
+Im Beispiel aus der Tabelle \ref{tab:uris} (32017R0373): Bereich ,,3`` (Rechtsakte), Jahr ,,2017``, Art ,,R`` (Verordnungen), Nummer ,,0373``.
+
+Die beiden weiteren URI Namensräume, die in der Tabelle \ref{tab:uris} beschrieben wurden, beschreiben die Verordnung auf eine ähnlich deskriptive Weise.
+Der \acf{ELI} wurde in dem Jahre 2017 durch den Rat definiert und zielt ab, in Kombination mit strukturierten Metadaten zur Kategorisierung und Klassifizierung von Rechtsvorschriften, einen einfachen Zugang zu Rechtsinformationen sowie dessen erleichterten Austausch und Weiterverwendung gewährleisten. \cite[Art. 5]{52017XG1222}
+Der deskriptive Aufbau des \ac{ELI} soll es Nutzer:innen explizit erlauben ,,\acp{URI} manuell zusammenzustellen [, um] einen schnelleren und leichteren Zugang zu den [...] gesuchten Rechtsvorschriften (zu) ermöglich(en).``\cite[Art. 6c]{52017XG1222}
+Die \ac{ELI} \ac{URI} wird durch Doppelpunkte, oder je nach Anwendung andere Trennzeichen, in einzelne Parts unterteilt.
+Das \acf{OP} beschreibt für seine registrierte Verwendung des ELI Schemas -- am oben definierten Beispiel -- folgendes Format: 
+Dokumentenart ,,reg\_impl`` Durchführungsverordnung (von engl. ,,Implementing regulation``), Jahr der Verordnung ,,2017``,  laufende Nummer ,,373``, statische Zeichenkette ,,oj``. \cite[vgl.][]{eu_op_eli_register}
+
+Als letzte verwendete Standard\footnote{für das gewählte Beispieldokument. In Fällen von Dokumenten mit offiziellen Zusammenfassungen (LEGISUM) oder anderen Funktionen kommen weitere \acp{URI} zu tragen} kann das Dokument über seine Publikation im \acf{OJ} referenziert werden. \footnote{Es gilt zu beachten, dass der elektronische Zugriff sowie die Identifikation von Publikationen des Amtsblattes nach dem 1.10.2023 geändert wurde \cite[siehe][]{eu_oj_actbyact}. Da zum Zeitpunkt der Arbeit keine ATM/ANS relevanten Publikation von dieser Änderung betroffen sind, wird diese nicht weiter behandelt}
+Die gewählte Durchführungsverordnung (EU) 2017/373 wurde gemäß Art.297 Abs. 1 \ac{AEUV} in der Reihe L des Amtsblatts der Europäischen Union veröffentlicht. 
+Die \ac{URI} spiegelt hierbei wider, wie der Rechtsakt in der \textit{L-Reihe} des Amtsblatts (,,JOL``), in dem Jahre ,,2017`` in der Auflage ,,62`` auf den Seiten 1ff. (,,0001``) veröffentlicht wurde.
+Eine tiefer gehende Bedeutung des Zeichens ,,R`` konnte während der Analyse nicht festgestellt werden.
+Die Verbindung zu der Dokumentenart ähnlich der CELEX-Nummer konnte im Rahmen der Erkenntnisse jedoch ausgeschlossen werden. 
+
+\subsubsection{Resource Description Framework}
+
+Auf Basis von der Fähigkeit, jeder Ressource der Cellar Plattform durch eine \ac{URI} eindeutig zu identifizieren, ist es möglich, das gesamte Wissen der Plattform in den Standards der \textit{Semantic Web Technologies} abzubilden.
+Die Motivation hinter dem \acf{RDF} war es, dass Informationen, welche im Internet -- \textit{maschinenlesbar} -- verfügbar waren, meist nicht \textit{Maschinen-verständlich} (,,\textit{machine-understanable}``) waren.
+Dies erschwerte das automatische Auslesen und Analysieren von Daten sowie die Entwicklung von Automatisierungen im Web.
+Das allgemeine Ziel bei der Entwicklung dieses Standards war es also, einen Mechanismus zu definieren, welcher unabhängig von Domäne und Semantik von Systemen in der Lage ist, Metadaten zu bestehenden Ressourcen zu beschreiben. \cite[Abs. 1]{eu_rdf_w3c} 
+
+Das zentrale Konzept hinter der abstrakten Syntax des \ac{RDF} ist das \textit{Graph-based Data Modell}.
+Dieses beschreibt Informationen als sogenannte (\ac{RDF}) \textit{Triple}, jeweils bestehend aus einem Subjekt, einem Prädikat und einem Objekt. 
+Eine Sammlung dieser Triple werden auch \ac{RDF} Graph bezeichnet und kann auch als Kombination aus Knoten und gerichteten Kanten eines Graphen abgebildet werden.
+Die Knoten stellen hierbei immer \acp{URI}\footnote{nach Definition in Version 1.1 \acp{IRI}} oder feste Werte, sogenannte Literale, dar.
+\cite[Abs. 1.1]{eu_rdf_concepts}
+
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|} \hline
+         Subjekt&  Prädikat& Objekt\\ \hline\hline
+         &  ...\_IN-FORCE$^1$& "true"\\ \cline{2-3}
+         eli:reg\_impl:2017:373:oj&  BASED\_ON& eli:reg:2004:552\\ \cline{2-3} 
+         &  ...\_AMENDED\_BY\_...$^1$& eli:reg\_impl:2020:469:oj\\ \hline
+ \multicolumn{3}{l}{$^1$ ... = RESOURCE\_LEGAL}\\
+    \end{tabular}
+    \caption{Aufbau von RDF Metadaten zu Rechtsdokumenten in Cellar}
+    \label{tab:rdf_example}
+\end{table}
+
+
+
+
+    \pagebreak
+    \subsection{Inhalte}
+
+    \subsubsection{Formex 4}
+
+% Formex describes a file format created by the Publications Office for the exchange of data with its contractors. In particular, it defines the logical markup for documents which are published in the different series of the Official Journal of the European Union. Since Formex v4 is based on XML, it can be reused. Some collections have manifestations in Formex, some examples are shown in chapter 5: look for URIs ending in .fmx4. All the information about Formex, its schema and examples can be found on the website (http://formex.publications.europa.eu).  (cellar S.75)
+
+
 
         % \subsubsection{Unterschiedliche Formate etc}
         \pagebreak
