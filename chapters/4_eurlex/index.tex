@@ -126,7 +126,7 @@ Die entsprechenden Dateien sind durch das \acl{OP} an der angegebenen \ac{URI} h
 Wie oben bereits beschrieben, stellen Metadaten einen wesentlichen Bestandteil der Cellar Plattform dar.
 Sie bilden alle EU Disseminationen inkl. dessen Eigenschaften sowie aller Beziehungen zu anderen Disseminationen ab. 
 
-\subsubsection{Unique Resource Identifier in Cellar}
+\subsubsection{Unique Resource Identifier in Cellar} \label{cellar_uri}
 
 Die Basis der gesamten Datenabbildung stellen die \acfp{URI} dar (siehe Abb. \ref{fig:semantic}).
 Eine URI definiert einen registrierten Namen (bspw. einer Ressource) in der Domäne eines vordefinierten Namensraums (engl. Namespace).
@@ -191,27 +191,87 @@ Die Knoten stellen hierbei immer \acp{URI}\footnote{nach Definition in Version 1
 \cite[Abs. 1.1]{eu_rdf_concepts}
 
 
-
+Im Beispiel der Daten, welche von Cellar bereitgestellt werden, können hierdurch Metadaten zu Verordnungen formuliert werden (siehe Tabelle \ref{tab:rdf_example}).
+Die Durchführungsverordnung, als Knoten durch die \ac{ELI} Nummer in \ac{URI} Form referenziert, stellt hier in dem Beispiel das Subjekt dar und verweist mithilfe der im EU Kontext definierten Prädikate auf Literale (siehe Zeile 1) oder auf andere \acp{URI}, wie andere Verordnungstexte (siehe Zeile 2 \& 3). 
 \begin{table}[h]
     \centering
     \begin{tabular}{|c|c|c|} \hline
          Subjekt&  Prädikat& Objekt\\ \hline\hline
-         &  ...\_IN-FORCE$^1$& "true"\\ \cline{2-3}
+         &  ...\_IN-FORCE$^1$& "true"$^{2,3}$\\ \cline{2-3}
          eli:reg\_impl:2017:373:oj&  BASED\_ON& eli:reg:2004:552\\ \cline{2-3} 
          &  ...\_AMENDED\_BY\_...$^1$& eli:reg\_impl:2020:469:oj\\ \hline
- \multicolumn{3}{l}{$^1$ ... = RESOURCE\_LEGAL}\\
+ \multicolumn{3}{l}{\footnotesize $^1$ ... = RESOURCE\_LEGAL, $^2$ Literal, $^3$ Stand 02.2024}\\
     \end{tabular}
-    \caption{Aufbau von RDF Metadaten zu Rechtsdokumenten in Cellar}
+    \caption{Cellar RDF Metadaten zu Rechtsdokumenten (vereinfachte Darstellung)}
     \label{tab:rdf_example}
 \end{table}
 
+\noindent
+Die Informationen aus diesem Beispiel (Tabelle \ref{tab:rdf_example}) geben uns also nun Aufschluss darüber, dass der Verordnungstext (1.) zum aktuellen Zeitpunkt noch in Kraft ist (Zeile 1), (2.) auf der Interoperabilitätsverordnung (siehe \ref{er_552}) des \ac{SES}-Pakets 1 basiert (Zeile 2) und (3.) im Jahre 2020 durch die Durchführungsverordnung DVO (EU) 2020/469 konsolidiert wurde (Zeile 3).  
+
+Zusätzlich zu diesen Informationen, ergänzt Cellar in einigen Fällen Triples mit weiteren Annotationen, welche weitere Informationen über die beschriebene Metadaten geben können.
+Im Beispiel der Konsolidierung eines Rechtsaktes (fr. Actes modifiés) (MS) werden Annotationen mit den Feldern 
+\begin{itemize}
+    \item ,,\textsf{START\_OF\_VALIDITY}`` (Inkrafttreten der Änderung),
+    \item ,,\textsf{REFERENCE\_TO\_MODIFIED\_LOCATION}`` (Position der Änderung in dem Dokument) und
+    \item ,,\textsf{ROLE2}`` (Art der Änderung) annotiert.
+\end{itemize}
+
+Um eine sprachunabhängige Referenzierung der Änderungsposition zu gewährleisten, werden Wörter wie ,,Anhang``, ,,Absatz``, usw. durch die jeweilige \ac{URI}-Referenz auf die Übersetzungstabellen des \ac{OP} referenziert.
+Im Beispiel ändert so die Verordnung \acs{DVO} (EU) 2020/469 die Verordnung \acs{DVO} (EU) 2017/373 durch Typ ,,R`` (Ersetzung\footnote{Übersetzung nach FD\_Table375 (siehe Tabelle \ref{tab:fd_375})}) an der Stelle 
+\begin{quote}
+    \centering
+    \textsf{
+  ,,\{fd\_370/AN\} V 
+    \{fd\_370/PO\} MET 
+    \{fd\_370/PTA\} (c) PT1``\\
+  ,,Anhang V Nummer MET Buchstabe (c) PT 1`` (deutsch\footnote{Übersetzung nach FD\_Table370 (siehe Tabelle \ref{tab:fd_370})})
+    }
+    
+\end{quote}
+und mit dem Inkrafttreten der Änderung am 05. November. 2020.
 
 
-
-    \pagebreak
     \subsection{Inhalte}
 
-    \subsubsection{Formex 4}
+Die einzelnen Inhalte der Gesetzestext werden unter Cellar, formatspezifisch und sprachabhängig bereitgestellt und ebenfalls über \acp{URI} referenziert. 
+Hierdurch besteht auch durch den \ac{RDF}-Graphen eine nachvollziehbare Relation zwischen der abstrakten Ressource und dessen Manifestierung in einem spezifischen Dateiformat.
+
+    \subsubsection{Funktionale Anforderungen bibliografischer Datensätze}\label{frbr}
+    
+Um die einzelnen Inhalte auf ihren verschiedenen Abstraktionsebenen beschreiben zu können, verwendet Cellar mehrere Implementationen von Hierarchien des \acs{WEMI} Schemas, definiert in der \ac{FRBR}  Studie \cite[S. 29f]{eu_cellar}.
+Das genannte \acs{WEMI}-Schema beschreibt hierbei die Abstufung von \ac{FRBR} Entitäten der Gruppe 1 und dessen Beziehungen untereinander. 
+Die genannten Entitäten beinhalten \ac{WEMI} \cite[12]{eu_frbr}.
+
+Ein \textit{Werk}, im Sinne der \ac{FRBR}, definiert, abweichend von einem physischen Werk, die abstrakte Entität einer intellektuellen Schöpfung, welche sich auf dessen Abbildung in verschiedene Expressionen des gleichen Inhaltes stützt \cite[S. 16f]{eu_frbr}.
+Übertragen auf den Cellar Rahmen stellt ein \textit{Werk} das abstrakte Konzept einer Verordnung oder einer anderen publizierten Rechtstextes dar, wessen Vorliegen erst durch die Existenz von Ausführungen (bspw. in den entsprechenden Sprachen) mit einem einheitlichen Inhalt legitimiert wird. 
+In gewisser Hinsicht beschreibt also das definierte \textit{Werk} der \acs{DVO} (\acs{EU}) 2017/373 lediglich den einheitlich europäische verfassten Gedanken ,,zur Festlegung gemeinsamer Anforderungen an Flugverkehrsmanagementanbieter und Anbieter von Flugsicherungsdiensten [usw.]`` welcher dann durch die Publikation der Verordnung in Expressionen umgesetzt wurde.
+Weiter definiert die Studie, dass Veränderungen eines Werkes, welche intellektuelle Anstrengungen beinhalten und von hohem Maße sind, als Schaffung eines neuen Werkes angesehen werden. \cite[17]{eu_frbr} 
+Dies korreliert sehr gut mit dem Anwendungsmodell der \ac{EU}, da auch hier Änderungen, welche den verfassten Gedanken des \textit{Werkes} unmittelbar abändern, durch die Neuschaffung eines weiteren \textit{Werkes} geschehen und das ursprüngliche Werk in seiner intellektuellen Aussage unangetastet bleibt.
+
+
+\textit{Expressionen} beschreiben, wie bereits angedeutet, eine spezifische Forme, welche bei der intellektuellen Realisierung eines \textit{Werkes} angenommen wird.
+Die \textit{Expression} umfasst hierbei inhaltliche Aspekte des \textit{Werkes}, wie spezifische Wörter, Sätze, Absätze usw., die sich aus dessen Realisierung ableiten. 
+Aspekte der physischen Form, wie Formatierung oder dem Erscheinungsbild der Realisierung, sind hierbei von der Definition einer \textit{Expression} hierbei ausgeschlossen \cite[S. 18f]{eu_frbr}.
+Im Rahmen von Cellar beschreibt die Realisierung eines \textit{Werkes}, so die jeweiligen Publikationen, der Verordnung in den 23 Amtssprachen der EU\footnote{hier ausgenommen Irisch-Gälisch}.
+Diese definieren durch den entsprechenden Wortlaut ihrer Realisierung des \textit{Werkes} fortan eine eigene \textit{Expression}.
+
+Die dritte, in der Gruppe 1 definierte Entität -- die \textit{Manifestation} -- bestimmt die physische Verkörperung einer \textit{Expression} eines \textit{Werkes}.
+Eine \textit{Manifestation} umfasst hierbei alle physischen Objekte, welche in Hinblick auf den intellektuellen Inhalt wie ihre physische Form dieselben Eigenschaften haben.
+Abgegrenzt werden \textit{Manifestationen} folglich dadurch, wenn der Produktionsprozess dieser Änderungen in der physischen Form beinhalten \cite[S. 20f]{eu_frbr}.
+Im Hinblick auf die digitalen \textit{Manifestationen} von Cellar\footnote{ausgenommen physische Kopien der Expressionen etc.} werden die \textit{Expressionen} der \textit{Werke} in den Formaten XHTML, PDF\footnote{Print oder PDF/A1(a)} und Formex realisiert. 
+Auf Basis dieser entstehen weiterführend auch weitere \textit{Manifestationen}, wie der Darstellung in der Webanwendung EUR-Lex, welche eine aufgearbeitete Darstellung jener Informationen ist und nach dieser Definition eine neue \textit{Manifestation} darstellt.
+
+Die letzte Abstraktionsebene des \acs{WEMI} beschreibt das einzelne \textit{Exemplar} einer \textit{Manifestation}.
+Wenn das \textit{Exemplar} in der  
+
+    \subsubsection{Cellar Formex}
+
+Formex beschreibt ein Dateiformat, welches von dem \acf{OP} für den Austausch von Daten mit seinen Auftragnehmern entwickelt wurde.
+Im Genaueren definiert es den logischen Aufbau und die Struktur von Rechtsakten, welche in den verschiedenen Reihen des \acf{OJ} veröffentlicht wurden.
+Seit der Version 4 basiert Formex auf \ac{XML}, was dessen Weiterverwendung ermöglicht.
+Dateien im Formex Format werden durch die Dateiendung ,,.fmx4`` charakterisiert. 
+\cite[75]{eu_cellar}
 
 % Formex describes a file format created by the Publications Office for the exchange of data with its contractors. In particular, it defines the logical markup for documents which are published in the different series of the Official Journal of the European Union. Since Formex v4 is based on XML, it can be reused. Some collections have manifestations in Formex, some examples are shown in chapter 5: look for URIs ending in .fmx4. All the information about Formex, its schema and examples can be found on the website (http://formex.publications.europa.eu).  (cellar S.75)
 
