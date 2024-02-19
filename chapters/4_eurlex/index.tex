@@ -1,22 +1,21 @@
-\chapter{Datenquelle 1: Europäische Verordnungen und Cellar}
+\chapter{Datenquelle 1: EU Verordnungen und Cellar}
 
 % \begin{quote}
 % \textcolor{red}{Einführung in die EU VOs als Datenquelle. Zuerst thematisch in die Arbeitsweise und anschließenden digital, in die Möglichkeiten auf die Daten zuzugreifen.
 % Zuerst kurze Einführung, warum EU (naheliegend)}
 % \end{quote}
 
-
-
     \section{Europäische Verordnungen}
 
 
-    Die regulative Grundlage für alle, in dieser Arbeit thematisierten, Anforderungen werden in europäischen Verordnungen -- und jene konsolidierende Medien -- festgehalten.
-    Die Arbeitsweise der EU und dessen beteiligte Organe zur Erstellung  wird durch den Vertrag über Europäische Union (EUV) und den Vertrag über die Arbeitsweise der Europäischen Union (AEUV) festgelegt.
+Die regulative Grundlage für alle, in dieser Arbeit thematisierten, Anforderungen werden in europäischen Verordnungen -- und jene konsolidierende Medien -- festgehalten.
+Die Arbeitsweise der EU und dessen beteiligte Organe zur Erstellung wird durch den \acf{EUV} und dem \acf{AEUV} festgelegt.
     
         
         
         \subsection{Beteiligte Organisationen}
 
+\graffito{Hier fehlt noch eine KURZE Vorstellung der jeweiligen Organe nach EUV/AEUV. Teils noch unvollständig}
 
 \subsubsection{Europäische Kommission}
 
@@ -32,11 +31,6 @@ Sie kann – u.U. nach der Aufforderung von Rat, Parlament oder Bürgerinitiativ
 \end{center}
 
 \noindent
-%\lipsum[]
-
-%%%%%%%%
-%%%%%%%%
-%%%%%%%%
 
 \subsubsection{Rat der Europäischen Union}
 
@@ -247,7 +241,7 @@ Ein \textit{Werk}, im Sinne der \ac{FRBR}, definiert, abweichend von einem physi
 Übertragen auf den Cellar Rahmen stellt ein \textit{Werk} das abstrakte Konzept einer Verordnung oder einer anderen publizierten Rechtstextes dar, wessen Vorliegen erst durch die Existenz von Ausführungen (bspw. in den entsprechenden Sprachen) mit einem einheitlichen Inhalt legitimiert wird. 
 In gewisser Hinsicht beschreibt also das definierte \textit{Werk} der \acs{DVO} (\acs{EU}) 2017/373 lediglich den einheitlich europäische verfassten Gedanken ,,zur Festlegung gemeinsamer Anforderungen an Flugverkehrsmanagementanbieter und Anbieter von Flugsicherungsdiensten [usw.]`` welcher dann durch die Publikation der Verordnung in Expressionen umgesetzt wurde.
 Weiter definiert die Studie, dass Veränderungen eines Werkes, welche intellektuelle Anstrengungen beinhalten und von hohem Maße sind, als Schaffung eines neuen Werkes angesehen werden. \cite[17]{eu_frbr} 
-Dies korreliert sehr gut mit dem Anwendungsmodell der \ac{EU}, da auch hier Änderungen, welche den verfassten Gedanken des \textit{Werkes} unmittelbar abändern, durch die Neuschaffung eines weiteren \textit{Werkes} geschehen und das ursprüngliche Werk in seiner intellektuellen Aussage unangetastet bleibt.
+Dies korreliert sehr gut mit dem Anwendungsmodell der \ac{EU}, da auch hier Änderungen, welche den verfassten Gedanken des \textit{Werkes} unmittelbar abändern, die Neuschaffung eines neuen \textit{Werkes} (einer Konsolidierung) einleiten und das ursprüngliche Werk in seiner intellektuellen Aussage unangetastet bleibt.
 
 
 \textit{Expressionen} beschreiben, wie bereits angedeutet, eine spezifische Forme, welche bei der intellektuellen Realisierung eines \textit{Werkes} angenommen wird.
@@ -262,29 +256,86 @@ Abgegrenzt werden \textit{Manifestationen} folglich dadurch, wenn der Produktion
 Im Hinblick auf die digitalen \textit{Manifestationen} von Cellar\footnote{ausgenommen physische Kopien der Expressionen etc.} werden die \textit{Expressionen} der \textit{Werke} in den Formaten XHTML, PDF\footnote{Print oder PDF/A1(a)} und Formex realisiert. 
 Auf Basis dieser entstehen weiterführend auch weitere \textit{Manifestationen}, wie der Darstellung in der Webanwendung EUR-Lex, welche eine aufgearbeitete Darstellung jener Informationen ist und nach dieser Definition eine neue \textit{Manifestation} darstellt.
 
-Die letzte Abstraktionsebene des \acs{WEMI} beschreibt das einzelne \textit{Exemplar} einer \textit{Manifestation}.
-Wenn das \textit{Exemplar} in der  
+Die letzte Abstraktionsebene des \acs{WEMI} beschreibt das spezifische, einzelne \textit{Exemplar} einer \textit{Manifestation}. \cite[22]{eu_frbr}
+Cellar verwendet für die Verbreitung von \textit{Manifestationen} Content-Streams, welche in ihrer Hierarchie die I-Rolle des \ac{WEMI} Schemas implementieren (siehe Abb. \ref{fig:eu_wemi}) \cite[29]{eu_cellar}. 
 
+Neben dem abstrakten Rahmen bestimmen \acs{FRBR} auch konkret die Abbildung der verfügbaren Metadaten der in Cellar geführten \textit{Werke}.
+Cellar präsentiert für die Darstellung der Metadaten folglich das Konzept eines ,,Notice``, welcher in unterschiedlichen Ausführungen, unterschiedlich granular die Metadaten zu einem \textit{Werk} abbildet.
+Dieses \textit{Notices} stellen dabei eine einheitliche Quelle dar, welche alle Metadaten des \textit{Werkes} und je nach Granularität, Metadaten von allen oder ausgewählten \textit{Expressionen} und \textit{Manifestationen} bündelt und nach dieser Hierarchie strukturiert bereitstellt.
+\cite[S. 31f]{eu_cellar}
+
+\pagebreak
     \subsubsection{Cellar Formex}
 
-Formex beschreibt ein Dateiformat, welches von dem \acf{OP} für den Austausch von Daten mit seinen Auftragnehmern entwickelt wurde.
-Im Genaueren definiert es den logischen Aufbau und die Struktur von Rechtsakten, welche in den verschiedenen Reihen des \acf{OJ} veröffentlicht wurden.
-Seit der Version 4 basiert Formex auf \ac{XML}, was dessen Weiterverwendung ermöglicht.
-Dateien im Formex Format werden durch die Dateiendung ,,.fmx4`` charakterisiert. 
-\cite[75]{eu_cellar}
+Das \acf{OP} startete bereits in dem Jahre 1985 mit der Produktion von \ac{SGML} Instanzen von -- im \ac{OJ} veröffentlichten -- Dokumenten, um den Austausch mit Auftragnehmern des \ac{OP} zu vereinfachen. \cite[75]{eu_cellar, eu_fmx4_intro}
+Diese verwendete Spezifikation hierfür wurde Formex (Formalised exchange of electronic documents) genannt.
+Nach der Veröffentlichung der Celex Version 3 (ab 04/1999) und unter dem nachlassenden Erfolg des \ac{SGML} Formates migrierte das Celex Format zu der kommenden Version 4 (ab 2004) zu dem strikterem \ac{XML} Dateiformat.
+Dies ermöglichte weiter auch die Adoption anderer entwickelter Standards und Werkzeugen, wie bspw. \ac{XSL}, \ac{XSLT} oder \ac{XSLFO} zur Darstellung und der weiteren Transformation der Daten für deren Anwendungs- oder Präsentationszwecke.
+Die endgültige Definition des Standards in der Version 4 setzt sich also aus den bestehenden Standards \ac{XML} und Unicode\footnote{zuvor ISO-2022} zusammen, auf Basis dessen eine Grammatik mittels \ac{XML}-Schema (ehemals \ac{DTD}) definiert wird. \cite{eu_fmx4_intro}
+% Das Formex Format wird durchgehend weiterentwickelt und befindet sich aktuell in der Version 6\footnote{Version 6.02.1 nach 10/2023}.
 
-% Formex describes a file format created by the Publications Office for the exchange of data with its contractors. In particular, it defines the logical markup for documents which are published in the different series of the Official Journal of the European Union. Since Formex v4 is based on XML, it can be reused. Some collections have manifestations in Formex, some examples are shown in chapter 5: look for URIs ending in .fmx4. All the information about Formex, its schema and examples can be found on the website (http://formex.publications.europa.eu).  (cellar S.75)
+Inhaltlich definiert Formex den logischen Aufbau, die Struktur aber auch den Inhalt  dieser \textit{Expressionen} der Rechtsakten.
+Das \ac{XML}-Schema bildet dabei alle strukturellen Aspekte wie Artikel, Absätze, Anhänge, etc. durch ein jeweiliges, in dem Schema definierten, Element ab. 
+Inhalte werden, integer zur \textit{Expression}, inklusive aller wichtigen Hinweise zur Textformatierung, Verweisen und Zitaten abgebildet. 
+Unter den Inhalten können -- entsprechend dieser Arbeit -- auch Anforderungen identifiziert werden, welche entweder, implizit in dem Gesetzestext (etwa einem Absatz) oder explizit durch eine aufgeführte Anforderung mit Anforderungsnummer\footnote{vgl. Anhänge von \acs{DVO} (\acs{EU}) 2017/373} in dem \textit{Manifestation} realisiert werden.
 
+Das Format ermöglicht es zumeist, einzelne strukturelle Komponenten und Elemente einer \textit{Manifestation} in Bezug auf das nächst übergeordnete Element zu referenzieren; eine absolute Referenzierung einzelner Elemente ist, über dessen Referenzierung der Position im Dokument\footnote{etwa mittels XPath}, nur in Ausnahmefällen möglich.
+Artikel und Absätze (\textsf{ARTICLE} und \textsf{PARAG} nach Formex) verfügen so über ein verpflichtendes geteiltes Attribut ,,\textsf{@IDENTIFIER}``, welches Auskunft über die Laufnummer in Bezug auf das aktuelle Dokument\footnote{\textit{Manifestation} umfasst mehrere Dokumente, bspw. Anhänge} bietet. 
+Explizite Anforderungen, welche in Anhängen dieses Dokumentes definiert sind, oder eine kleinere Granularität benötigen, lassen sich nur durch diese Information nicht identifizieren.
+Es gilt im Kommenden abzuwiegen, ob eine solche 
 
+Weiter werden auch Textabschnitte, welche nicht der Expression des \textit{Ursprungswerkes} entstammen, sondern der Expression eines Änderungstextes, in den entsprechenden \textit{Manifestationen} der \textit{Expressionen} der konsolidierten \textit{Werke} maschinenlesbar, aber der \textit{Expression} gegenüber integer, annotiert. 
+Im technischen Sinne bezeichnet dies sogenannte \ac{XML}-Processing Instructions, welche per se nicht einen Teil des \ac{XML} Inhaltes darstellen, aber weitere Verarbeitungsinformationen für Interpretation dieses bereitstellen. 
+Die entsprechenden Anweisungen ,,\textsf{CLG.MDFO}`` (Open) und ,,\textsf{CLG.MDFC}`` (Close) markieren dabei den jeweiligen Anfang und das Ende einer Änderung. 
+Attribute der Markierungen verweisen hierbei auf die jeweils andere Begrenzung, um eine Verwirrung bei mehreren oder verschachtelten Änderungen zu vermeiden.
+Zusätzlich hierzu verfügt die öffnende Anweisung über Informationen wie der Aktion der Änderung, ob es eine strukturelle oder inhaltliche Änderung ist und aus welchem \textit{Änderungswerk} diese Änderung hervorgeht. 
+\cite[vgl. S. 76 -- 79]{eu_fmx4_proc}
 
-        % \subsubsection{Unterschiedliche Formate etc}
-        \pagebreak
     
-    \section{Integration in die Analyse / Prozesse}
-    
-\begin{quote}
-\textcolor{green}{1-2 Seiten}
-\end{quote}
+    \section{Bewertung der Datenquelle}
 
-\subsection{Übertrag auf das erarbeitete Datenmodell}
-\pagebreak
+Das \acf{OP} bereitet Nutzer:innen durch Cellar und dessen untergeordnete Plattformen einen weitreichend und sehr tiefgehenden Zugang zu allen verfügbaren Informationen.
+% Dies stellt sehr wohl eine gesicherte Basis für beliebige Integrationen 
+Im Folgenden soll erörtert werden, inwiefern -- und mit welchem Aufwand -- diese Daten genutzt werden können, um die Automatisierung einer Impact-Analyse zu ATM/ANS-Equipment gemäß den in Kapitel \ref{model_anforderungen} dieser Arbeit definierten Anforderungen zu realisieren.
+
+Die Anforderungen, auf welchen die Analyse basiert, gehen zumeist aus der Verordnung \ac{DVO} (\ac{EU}) 2017/373 -- und künftig auch \ac{VO} (\ac{EU}) 2023/1769ff. -- hervor. 
+Auf dieser Basis stellt die \ac{EU}, und damit das \ac{OP}, die naheliegendste Quelle der Informationen dar, um eine möglichst hohe Integrität der Inhalte zu garantieren.
+Cellar verfügt weiter über alle relevanten Dokumente der Gesetzgebungsorgane, welche für die Erfüllung der Compliance relevant sein könnten. 
+
+\subsection{Integration in das erarbeitete Datenmodell}
+
+In Bezug auf die definierten Anforderungen bedarf es für eine ausreichende Abbildung der regulativen Anforderungen einer Eindeutigen Kennung, einer regulativen Quelle, einem nachvollziehbaren Lifecycle der einzelnen Verordnung sowie dessen Gültigkeitszeitraum.
+
+\subsubsection{Eindeutige Kennung}
+
+Neben der eindeutigen Kennung der Anforderungsdokumente, bei welcher Cellar gleich mehrere eindeutige Identifikationsmöglichkeiten bietet, besteht unter Cellar keine Möglichkeit der eindeutigen Kennung einzelner Anforderungen, sowie diese nicht inhaltlich gegeben ist. 
+Die große Diversität der Anforderungsdokumente, welche alle u.U. eine Relevanz für die Nachweisführung mit sich tragen, bedürfen hier sehr ausgearbeitete Prozesse zur Erkennung und Referenzierung von neuen Anforderungen.  
+
+
+\subsubsection{Regulative Quelle}
+
+Die regulative Quelle eines Textes, sowie vom ursprünglichem \textit{Werk} abweichend, lässt sich unter Cellar anhand von Metadaten oder Änderungsanweisungen im Inhalt ablesen.
+Im Falle der Metadaten beschreibt die Annotation die nächste übergeordnete Position der Änderung.
+Alternativ beschreiben inhaltlich Verarbeitungsanweisungen den betroffenen Bereich einer Änderung. 
+Sogleich eine Anforderung inhaltlich im Bereich einer, oder mehrerer, Änderungen liegt, gilt diese als von dieser betroffen.
+Dies erlaubt es sehr detailliert nachzuverfolgen, welche Texte, welche Änderungen an der Anforderungen bewirkt haben.
+In Bezug auf die Regulative Quelle im Sinne der Analyse gilt es lediglich die Differenz aller Änderungen in Bezug einer Anforderung zu bestimmen.
+Die Quelle der aktuellsten Änderung kann im Folgenden als regulative Quelle angenommen werden.
+
+Das Erheben der regulativ Quelle bedarf hier eines tiefen Verständnisses über die Struktur der \textit{Expression}, um sicherzustellen, dass Änderungsinformationen richtig auf modellierte Anforderungen abgebildet werden können.
+Sowie die Granularität der Anforderungsmodellierung nicht mit der Granularität der Änderungsmeldungen übereinstimmt, bedarf es der Translationsebene in Form einer (zweiten) inhaltlichen Impact-Analyse, welche in der Lage ist, Änderungen entsprechend auf die jeweiligen Anforderungen abzubilden.
+
+
+\subsubsection{Inkrafttreten / Anwendungszeitraum}
+
+Analog zur Erhebung der Regulativen Quelle bedarf die Ermittlung des Anwendungszeitraums einer regulativen Anforderung, dessen genaue Historie aller Änderungen.
+Cellar stellt, wie oben beschrieben, im Rahmen der Metadaten-Änderungsannotationen Informationen über das Inkrafttreten der beschriebenen Änderungen zur Verfügung.
+Sowie die Implementierung es erlaubt, Änderungen den betroffenen Anforderungen zuzuweisen, kann auch dessen explizites Inkrafttreten der Anforderung zugewiesen werden.
+Dies weißt im Vergleich zum implizierten Annehmen des Anwendungszeitraums des Gesamtdokuments den Vorteil auf, dass Gesamtänderungen, welche sich heterogen auf die einzelnen Anforderungen auswirken, integrer abgebildet werden können.
+
+\subsubsection{Lifecycle}
+
+Der Lifecycle einer Cellar Ressource kann allein an dessen Metadaten bestimmt werden.
+Neben teils weitreichenden Informationen über den Entwicklungsprozess der Anforderungsdokumenten\footnote{In Fällen von Rechtsakten, die durch das ordentliche Gesetzgebungsverfahren entwickelt wurden, umfasst Cellar zusätzliche Verfahrensinformationen. \cite[vgl.][]{2004R0552}}, bilden Cellars Metadaten und der RDF-Graph alle wichtigen Ereignisse in Bezug auf das untersuchte Dokument ab.  
+Im Falle des Übertrags von bestehenden Anforderungen in ein neues Anforderungsdokument bedürfte es einer manuellen Migration.
+
