@@ -3,42 +3,55 @@
     \section{Begriffsdefinitionen}
         \input{chapters/2_regulations/00_definition}
         \pagebreak
-
         
     \section{Europäische Rahmenbedingungen}
         \subsection{Single European Sky (\acsfont{SES})}
+            \acused{SES}
             \input{chapters/2_regulations/0_ses}
-            \pagebreak
+            % \pagebreak
             
-        \subsection{Implementing Rules (IR)}
+        \subsection{Durchführungsvorschriften (\acsfont{IR})}
+            \acused{IR}
             \input{chapters/2_regulations/2_ir}
-            \pagebreak
+                \pagebreak
         
-        \subsection{Community Specifications (CS)}
+        \subsection{Gemeinschaftliche Spezifikationen (\acsfont{CS})}
+            \acused{CS}
             \input{chapters/2_regulations/3_cs}
                 \pagebreak
 
     \section{Sonstige internationale Rahmenbedingungen}
 
-    \begin{quote}
-\textcolor{red}{Wenn sinnvoll: Kurzer Exkurs zu anderen Anforderungen wie ICAO Annex, etc}
-\end{quote}
-\begin{quote}
-\textcolor{green}{1 Seite sollte reichen}
-\end{quote}
+Neben den oben beschriebenen europäischen Regularien und Anforderungen an \atmans-Equipment wurde bereits seid den Anfängen der Zivilluftfahrt verstanden, dass standardisierte Abläufe und Spezifikationen ein unabdingbares Mittel für eine weltweit einheitliche Luftverkehrssicherheit darstellen.
+\cite[156]{eu_icao_milde}
+Auf dieser Basis bestehen bereits viele internationale Rahmenbedingungen, welche unter anderem auch wesentliche Spezifikationen und Anforderungen von \atmans-Equipment definieren.
+Sämtliche Anforderungen, bspw. für den europäischen Raum in \ac{SES} definiert, beziehen sich so auf die gleiche Basis international einheitlich definierter Standards.
 
-ATM/ANS Produkte sind Produkte, die für die Flugsicherung und die Flugverkehrsdienste verwendet werden. Sie müssen bestimmten Rahmenbedingungen entsprechen, die von internationalen Organisationen festgelegt werden. Die wichtigsten Rahmenbedingungen sind:
-
-\subsection{ICAO}
-- ICAO: Die Internationale Zivilluftfahrt-Organisation ist eine Sonderorganisation der Vereinten Nationen, die Standards und Empfehlungen für die zivile Luftfahrt erlässt. Die ICAO veröffentlicht die Standards and Recommended Practices (SARP), die die Mindestanforderungen für ATM/ANS Produkte definieren.
-
-Weiter bieten Richtlinien der \ac{ICAO} eine wichtige Grundlage für internationale Arbeitsmethodiken und Betriebsverfahren, die aus dem Abkommen von Chicago hervorgehen.
-Beispielsweise als Referenz in der Anforderung zu den ,,Arbeitsmethodiken und Betriebsverfahren für die Erbringung von Flugberatungsdiensten``(\textsf{AIS.TR.100}) welche sich auf die ICAO Anhänge 4(\textit{Aeronautical Charts}) und 15(\textit{Aeronautical Information Services}) beziehen.
+\subsubsection{ICAO}
+Die \acf{ICAO} ist eine Sonderorganisation der \acf{UN}, welche mit dem Abkommen über die Internationale Zivilluftfahrt (auch Chicagoer Abkommen) gegründet wurde und fortan Standards, Empfehlungen und Richtlinien für die zivile Luftfahrt erlässt. 
+Diese bieten eine wichtige Grundlage als Referenz von definierten Anforderungen. 
+Beispielsweise in den ,,Arbeitsmethodiken und Betriebsverfahren für die Erbringung von Flugberatungsdiensten`` (\textsf{AIS.TR.100}) aus der \vo{DVO}{EU}{2017/373} welche sich auf die \ac{ICAO} Anhänge 4 (\textit{Aeronautical Charts}) und 15 (\textit{Aeronautical Information Services}) beziehen.
 \cite[Anh. IV]{2017R0373}
 
-\subsection{PANS}
-- PANS: Die Procedures for Air Navigation Services sind Dokumente, die von der ICAO herausgegeben werden und die Verfahren für die Flugsicherung und die Flugverkehrsdienste beschreiben. Die PANS ergänzen die SARP und geben praktische Anleitungen für ATM/ANS Produkte.
+\subsubsection{SARP / PANS}
 
-\subsection{EUROCAE}
-- EUROCAE: Die European Organisation for Civil Aviation Equipment ist eine gemeinnützige Organisation, die technische Spezifikationen für ATM/ANS Produkte entwickelt. Die EUROCAE arbeitet eng mit der ICAO und anderen Organisationen zusammen, um harmonisierte Standards zu fördern.
+
+% \graffito{Hier schreib ich bis morgen noch fertig}
+% Standards And Recommended Practices (SARPs) are technical specifications adopted by the Council of ICAO in accordance with Article 38 of the Convention on International Civil Aviation in order to achieve "the highest practicable degree of uniformity in regulations, standards, procedures and organization in relation to aircraft, personnel, airways and auxiliary services in all matters in which such uniformity will facilitate and improve air navigation".
+% SARPs are published by ICAO in the form of Annexes to Chicago Convention. SARPs do not have the same legal binding force as the Convention itself, because Annexes are not international treaties. Moreover States agreed to "undertake to collaborate in securing (...) uniformity", not to "comply with".[1] Each Contracting State may notify the ICAO Council of differences between SARPs and its own regulations and practices.[2] Those differences are published in the form of Supplements to Annexes. 
+
+Internationale \acf{SARP} beschreiben die spezifischen technische Spezifikationen, welche in den \ac{ICAO} Anhängen definiert sind.
+Sie umfassen alle in Art. 37 a--k beschriebenen Themenbereiche, darunter auch \atmans.  \cite[S. 43f.]{icao_convention}
+% nach Art. 38 der \ac{ICAO} Convention von dem \ac{ICAO}-Council angenommen wurden.
+% \acp{SARP} werden in Form von Anhängen
+Da die Anhänge selber rechtlich keinen Stellenwert internationaler Abkommen haben, fehlt diesen die unmittelbare Rechstverbindlichkeit. 
+\cite[156--159]{eu_icao_milde}
+Eine abweichende Nichteinhaltung gilt es dem Council nach Art. 38 mitzuteilen. \cite[S. 45f.]{icao_convention}
+
+\ac{SARP} werden durch \ac{PANS} ergänzt, diese beschreiben genaue Verfahren, welche für Anwendungen der Flugsicherung und dessen Flugverkehrsdienste implementiert werden können. 
+
+
+\subsubsection{EUROCAE}
+Die \acf{EUROCAE}\footnote{\href{https://www.eurocae.net/}{https://www.eurocae.net/}} ist eine gemeinnützige Organisation der Europäischen Union, welche \acf{CS} für \atmans-Produkte entwickelt. 
+\ac{EUROCAE} arbeitet hierbei eng mit der oben genannten\ac{ICAO}, anderen beteiligten Organisationen, Herstellern, Betreiber und weiteren Luftfahrt-Stakeholder:innen zusammen, um das Erschaffen von harmonisierten Standards zu fördern.
 
