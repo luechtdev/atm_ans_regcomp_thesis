@@ -8,6 +8,7 @@
 \begin{quote}
 \textcolor{green}{1-2 Seiten}
 \end{quote}
+
         
         \subsection{Bedeutung nach VO 2023/1768ff.}
         
@@ -42,38 +43,52 @@ Auch wenn die \ac{EAR} den Umfang bestehender \textit{Manifestationen} inhaltlic
         \pagebreak
     \section{EASA eRules Plattform}
 
-    Die EASA betreibt 
+    Die \ac{EASA} eRules Plattform ist ,,einheitliche, einfach zugängliche, online Datenbank für alle in der Luftfahrt anwendbaren Regeln für Stakeholder im europäischen Luftraum``.
+    \cite[5]{easa_xml_doc}
 
-        Am 26. Januar 2023 veröffentlichte die EASA die Entscheidung, Easy Access Rules fortan auch in einem maschinenlesbaren XML Format Endnutzern bereitzustellen. \cite{easa_xml_publication}
-
-    Die EASA beschreibt ihre digitale eRules Plattform als einheitliche, einfach zugängliche, online Datenbank für alle in der Luftfahrt anwendbaren Regeln für Stakeholder im europäischen Luftraum.
     Als ein Produkt dieser Plattform werden die sogenannten Easy Access Rules definiert und bis dato (24.6.22) in zwei Formaten veröffentlicht. 
-    \cite{easa_xml_doc}
 
-    % The EASA eRules is a platform for storing and sharing of rules. It is the single, easy-access, online database for all aviation rules applicable to European airspace users. One of the eRules’ outputs are Easy Access Rules, which were shared, so far, in two formats – in pdfs and as online publications. These two formats already considerably increased stakeholders’ work efficiency and reduced the need of locally consolidated documents. As part of this project, European Aviation Safety Agency (EASA) offers to its stakeholders Easy Access Rules in the Extensible Markup Language (XML) format. This format allows for machine-to-machine integration and can easily be processed and automated by users, as well as incorporated into local applications, search databases, etc. The document describes the XML publishing format of EASA Easy Access Rules, including the XML schemas used. 
-        
-        
-        \subsection{Aufbau der Dokumente}
+    
+Am 26. Januar 2023 veröffentlichte die EASA die Entscheidung, Easy Access Rules fortan auch in einem maschinenlesbaren XML Format Endnutzern bereitzustellen. \cite{easa_xml_publication}
 
-            Die für die Publikation der maschinenlesbaren Dokumente wählte die EASA die von Microsoft etablierte und standardisierte \textit{Open Packaging Convention (ECMA-376, ISO/IEC 29500-2)}.
-            Dieser Standard ist Teil der Familie an XML Schemata, welche gemeinsam als \textit{Office Open XML(OOXML)} bezeichnet werden \textit{(ISO/IEC 29500)} und XML Semantik für Textverarbeitungs-, Tabellenkalkulations- und Präsentationsdokumente -- oder mit diesen konform agierenden Dokumenten -- bereitstellen.  \cite{easa_opc_iso}(vii) 
+
+\subsection{Informationsarchitektur}
+
+    Im Rahmen der eRules Plattform und des maschinenlesbaren \ac{XML} Formates, werden Inhalte in kleine sogenannte ,,Topics`` unterteilt.
+    Ein Topic repräsentiert eine \ac{EU} Durchführungsbestimmung (siehe \ref{ch:ir}); eine \ac{EU} Delegierte Bestimmung; ein Annehmbares Nachweisverfahren der \ac{EASA}; \ac{EASA} Guidance Material; oder sog. \ac{EASA} \acf{CertS}\footnote{(CS) wegen Überschneidung mit \acf{CS} geändert}. \cite[S. 5f]{easa_xml_doc}
+    
+Topics werden repräsentativ ihrer konzeptuellen Beziehungen zwischen den unterschiedlichen Topics in der baumartigen Struktur abgebildet.
+Hierbei werden Topics, welche Verordnungen oder \acp{CertS} abbilden meist auf einem strukturell höheren Level und alle diesem zugeordneten Topics wie. \acsp{AMC}, \acsp{GM}, oder anderen Gesetzesgrundlagen dargestellt.
+
+
+        
+        \subsubsection{Publikationsformat}
+
+            Die für die Publikation der maschinenlesbaren Dokumente wählte die \ac{EASA} die von \acf{MS} etablierte und standardisierte \textit{Open Packaging Convention (ECMA-376, ISO/IEC 29500-2)}.
+            Dieser Standard ist Teil der Familie an \ac{XML} Schemata, welche gemeinsam als \acf{OOXML} bezeichnet werden \textit{(ISO/IEC 29500)} und \ac{XML} Semantik für Textverarbeitungs-, Tabellen\-kal\-ku\-lations- und Präsentationsdokumente -- oder mit diesen konform agierenden Dokumenten -- bereitstellen. 
+            \cite[vii]{easa_opc_iso} 
             Dies bedeutet unter anderem, dass valide Dokumente Teil eines größeren Dokumentes sein können, wessen weitere Daten nicht auf die Benutzung als Office-Dokument Einfluss nehmen.
-            Genau von dieser Eigenschaft hat die EASA Gebrauch gemacht und den Aufbau ihrer digitalen Publikationen in zwei nennenswerte Teile unterteilt.   
+            Genau von dieser Eigenschaft hat die \ac{EASA} Gebrauch gemacht und den Aufbau ihrer digitalen Publikationen in zwei nennenswerte Teile unterteilt.   
 
             \subsubsection{Anforderungsinhalte}
 
-            Die inhaltlichen Anforderungstexte der Easy Access Rule sind Teil des Textverarbeitungsdokumentes (Part "\textit{/word/document.xml}") und damit auch über eine grafische Textbearbeitungsoberfläche (bspw. MS Word) einsehbar und bearbeitbar.
-            Hierbei wurden die Textinhalte des Dokumentes so strukturiert, dass die einzelnen Entitäten voneinander isoliert und über eine -- innerhalb des Dokumentes -- lokal einzigartige ID, eindeutig identifizierbar sind.
-            So können die Inhalte bei Bedarf beliebig bearbeitet werden, ohne die Struktur des Dokumentes oder die Integrität anderer strukturellen Verweise zu gefährden.
-            Außerdem ist es so möglich, Einträge in den Metadaten auf die entsprechenden Anforderungsinhalte verweisen zu lassen. 
+    Inhalte von Topics werden unter Release 1.0.0 der eRules \ac{XML} Spezifikation als ,,opaque data structure`` angesehen.
+    Dies bedeutet, dass im Zug dieses Releases keine inhaltliche Struktur der Topics definiert wurde.
+    Es bleibt jedoch den Anwender:innen überlassen, Implementationen auf die Angaben innerhalb des beschriebenen \acs{OOXML} Formates zu stützen.
+    \cite[6]{easa_xml_doc}
+
+            Hiernach sind inhaltlichen Anforderungstexte der Easy Access Rules Teil des Textverarbeitungsdokumentes (Part "\textit{/word/document.xml}") und damit auch über eine grafische Textbearbeitungsoberfläche (bspw. \ac{MS} Word) einsehbar und bearbeitbar.
+            Hierbei werden Textinhalte des Dokumentes so strukturiert, dass die einzelnen Entitäten voneinander isoliert und über eine -- innerhalb des Dokumentes -- lokal einzigartige ID, eindeutig identifizierbar gemacht werden.
+            So können die Inhalte bei Bedarf beliebig bearbeitet werden, ohne die Struktur der Topics oder die Integrität anderer strukturellen Verweise zu gefährden.
+            % Außerdem ist es so möglich, Einträge in den Metadaten auf die entsprechenden Anforderungsinhalte verweisen zu lassen. 
 
             \pagebreak
             \subsubsection{Metadaten}
 
-            Zusätzlich zu den Inhalten ermöglicht es der OOXML Standard, weitere Parts an das Textdokument anzuhängen.
-            Die EASA nutzt diese Möglichkeit, um das Dokument und dessen Anforderungen mit eigenen Metadaten aus dem internen EASA CCMS zu bereichern.
-            Diese Metadaten enthalten interne Informationen zu der Struktur des Dokumentes und den einzelnen Anforderungen und stehen dem Endnutzer in Form eines OPC Parts (gemäß 6.2 \cite{easa_opc_iso}) zur Verfügung.
-            Dessen Struktur beruht auf einem eigenen XML Schema, welches in der entsprechenden Dokumentation der EASA definiert ist.
+            Zusätzlich zu den Inhalten ermöglicht es der \ac{OOXML} Standard, weitere Parts an das Textdokument anzuhängen.
+            Die \ac{EASA} nutzt diese Möglichkeit, um das Dokument und dessen Anforderungen mit eigenen Metadaten aus dem internen \ac{EASA} \ac{CCMS} zu bereichern.
+            Diese Metadaten enthalten interne Informationen zu der Struktur des Dokumentes und den einzelnen Anforderungen und stehen dem Endnutzer in Form eines \ac{OPC} Parts (gemäß 6.2 \cite{easa_opc_iso}) zur Verfügung.
+            Dessen Struktur beruht auf einem eigenen \ac{XML} Schema, welches in der entsprechenden Dokumentation der \ac{EASA} definiert ist.
 
             
 
