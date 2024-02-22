@@ -60,7 +60,7 @@
 \newcommand{\vo}[3]{\acs{#1} (\acs{#2}) #3}
 \newcommand{\vofont}[3]{\acsfont{#1} (\acsfont{#2}) #3}
 
-\newcommand{\atmans}{\acs{ATM}/\acs{ANS} {}}
+\newcommand{\atmans}{\acs{ATM}/\-\acs{ANS} {}}
 \renewcommand{\textdagger}{$^\dagger$}
 
 
@@ -95,7 +95,7 @@
 %\cleardoublepage\include{frontbackmatter/Dedication}
 %\cleardoublepage\include{frontbackmatter/Foreword}
 \cleardoublepage\include{frontbackmatter/Declaration}
-\cleardoublepage\include{frontbackmatter/AbstractEN}
+% \cleardoublepage\include{frontbackmatter/AbstractEN}
 \cleardoublepage\include{frontbackmatter/AbstractDE}
 %\cleardoublepage\include{frontbackmatter/Publications}
 %\cleardoublepage\include{frontbackmatter/Acknowledgments}
@@ -109,13 +109,13 @@
 %*************************************************************************
 \pagestyle{scrheadings}
 
+\pagenumbering{arabic}
 \renewcommand{\thechapter}{\Roman{chapter}} 
 \cleardoublepage
 \part{Definitionen}
-\include{chapters/2_regulations/00_definition}
+\include{chapters/00_definition}
 
 \renewcommand{\thechapter}{\arabic{chapter}} 
-\pagenumbering{arabic}
 \cleardoublepage
 \part{Thesis}\label{pt:thesis}
 
