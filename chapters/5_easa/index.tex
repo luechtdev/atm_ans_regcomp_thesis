@@ -53,6 +53,7 @@ Am 26. Januar 2023 veröffentlichte die EASA die Entscheidung, Easy Access Rules
 
 
 \subsection{Informationsarchitektur}
+\label{ch:easa_arch}
 
     Im Rahmen der eRules Plattform und des maschinenlesbaren \ac{XML} Formates, werden Inhalte in kleine sogenannte ,,Topics`` unterteilt.
     Ein Topic repräsentiert eine \ac{EU} Durchführungsbestimmung (siehe \ref{ch:ir}); eine \ac{EU} Delegierte Bestimmung; ein Annehmbares Nachweisverfahren der \ac{EASA}; \ac{EASA} Guidance Material; oder sog. \ac{EASA} \acf{CertS}\footnote{(CS) wegen Überschneidung mit \acf{CS} geändert}. \cite[S. 5f]{easa_xml_doc}
@@ -96,7 +97,7 @@ Hierbei werden Topics, welche Verordnungen oder \ac{CertS} abbilden meist auf ei
 \subsection{Analyse der Metadaten}
 
     Die für diese Analyse relevanten Attribute, welche Metadaten der oben definierten Topics beschreiben, werden im Rahmen der Dokumentation unter der Gruppe ,,\textsf{topic-metadata}``\footnote{\ac{XSL} Attribute Group} festgehalten.
-    Diese Gruppe beinhaltet die im Folgenden analysierte Attribute.\footnote{Alle beschriebenen Attribute werden durch den Typ String und ohne jegliche Einschränkungen abgebildet} \cite[9]{easa_xml_schema}
+    Diese Gruppe beinhaltet die im Folgenden analysierte Attribute.\footnote{Alle beschriebenen Attribute werden durch den Typ String ohne jegliche Einschränkungen abgebildet und im Folgenden durch ,,[AttributName] Attribut`` oder -- gemäß dem XPath Standard -- ,,@[AttributName]`` referenziert} \cite[9]{easa_xml_schema}
 
     \subsubsection{ERulesId}
 
@@ -205,24 +206,61 @@ Im Genaueren definiert die \textit{Regulatory Source} den Rechtsakt, welcher das
 
     \subsubsection{Regulatory Subject}
 
+Der Regulierungsgegenstand (\textit{Regulatory Subject}) referenziert das relevante Material des \textit{Topics}. 
+Dieses beschreibt den strukturellen Teil, in welchem es durch das Amtsblatt oder die \ac{EASA} Website publiziert wurde \cite[28]{easa_xml_doc}.
+Im Falle der \atmans Anforderungen aus der \vo{DVO}{EU}{2017/373} bezieht sich dieses Attribut entweder auf den eigenen Verordnungstext\footnote{Wert ,,cover regulation``} oder einer der, in den Anhängen, definierten ,,Parts``.
+\begin{quote}
+    Beispiel:
+    \textsf{RegulatorySubject="Part-ATS;"}
+\end{quote}
 
 
-    \subsubsection{TechnicalSubjectMatter}
+    \subsubsection{TechnicalSubjectMatter / EASACategory}
 
+Referenziert zumeist technische Systeme von Flughäfen oder \ac{EASA} Kategorisierungen von Landebahnen und findet für \atmans Equipment keine Anwendung. \cite[28--29, 31]{easa_xml_doc} 
 
-
-
-    
+   \pagebreak
     \subsubsection{TypeOfContent}
+
+Das \textit{TypeOfContent} Attribut definiert den Typ und die Funktion des \textit{Topics}.
+Neben den oben definierten Typen von \textit{Topics} spezifiziert das Attribut im Falle von untergeordneten Topics auch den Typen des nächsthöheren, referenzierten \textit{Topics} 
+(bspw.: ,,AMC to IR``\footnote{Annehmbare Nachweisverfahren von Anforderungen}, ,,GM to AMC``\footnote{Anleitungen zu Annehmbaren Nachweisverfahren}, ,,GM to IR``\footnote{Anleitungen zu Anfoderungen})
+
+    \begin{quote}
+    Beispiel:
+    \textsf{TypeOfContent=\\"{}AMC to IR (Acceptable means of compliance to implementing rule);"}
+\end{quote}
 
     
     \subsubsection{ParentIR}
 
-    
-    \subsubsection{EASACategory}
+    Das \textit{ParentIR} Attribut referenziert\footnote{durch das Titel-Attribut (@source-title) des anderen Topics (nicht Teil von topic-metadata)} das jeweils -- nach der Table Of Content (ToC) Hierarchie -- direkt-übergeordnete \textit{Topic}.
+    Befindet sich das Topic bereits auf der obersten Ebene, bleibt dieses Feld leer.
+    Diese Eigenschaft ermöglicht es, die Position eines \textit{Topics} innerhalb der Hierarchie zu bestimmen und im Falle eines \ac{AMC} oder \ac{GM} \textit{Topics} die jeweils abgedeckte Grundlage zu bestimmen.
+    Wie in der Abbildung \ref{fig:parent_ir} dargestellt, referenzieren alle untergeordneten \textit{Topics} durch dieses Attribut das jeweils übergeordnete. 
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.75\linewidth]{gfx/parentir.png}
+        \caption{Referenzierung des @ParentIR Attributs }\cite[31]{easa_xml_doc}
+        \label{fig:parent_ir}
+    \end{figure}
 
     
 
     % \subsection{Vor- \& Nachteile}
     \pagebreak
-    \section{Integration in die Analyse / Prozesse}
+    \section{Bewertung der Datenquelle}
+
+    Die \acf{EASA} stellt der Öffentlichkeit -- auf Basis ihrer definierten Aufgaben -- \textit{annehmbare Nachweisverfahren} und \textit{Guidance Material} zur Verfügung.
+    Diese werden im Weiteren zusammen mit den entsprechenden Durchführungsbestimmungen in der Form von \acf{EAR} veröffentlicht. 
+    Um die Integration ihrer Daten fortlaufend zu stärken, ist die \ac{EASA} bemüht, nützliche Informationen Nutzer:innen in zugänglichen und maschinenlesbaren Formaten bereitzustellen. 
+
+    Das publizierte Datenschema (Version 1.0.0) in Kombination mit den maschinenlesbaren Daten der \acp{EAR} ermöglicht Nutzer:innen einen Zugang zu den internen Metadaten der \ac{EASA} zu sämtlichen ihrer Publikationen.
+    Diese analysierte Datenquelle ermöglicht es ebenfalls Inhalte auf die verfügbaren Metadaten referenzieren zu können.
+
+
+    Die große Schwachstelle dieser Datenquelle besteht in dessen Verfügbarkeit.
+    Die \ac{EASA} kuriert folglich nur ausgewählte Durchführungsbestimmungen und publiziert nach Entwicklung oder der Anpassung entsprechender \textit{Annehmbaren Nachweisverfahren} und \textit{Guidance Materials} dessen neue Version für alle Nutzer:innen.
+    \footnote{Zum aktuellen Zeitpunkt (02/2024) wurden die Änderungen der \vo{DVO}{EU}{2023/1771} bzgl. der \vo{DVO}{EU}{2017/373} aus 09/2023 noch nicht auf die entsprechende \ac{EAR} (Easy Access Rule for \atmans) übertragen.}
+     
