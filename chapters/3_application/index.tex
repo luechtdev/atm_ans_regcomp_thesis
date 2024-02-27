@@ -80,7 +80,8 @@ Sowie -- durch die Analyse -- erschlossen, bietet dieses Attribut Auskunft über
 Für die Abbildung einer zeitabhängigen Compliance-Erklärung ist es relevant, die Gültigkeit von Anforderungen an einen genauen Zeitraum zu binden.
 Die Gültigkeit einer Anforderung beginnt -- sowie nicht anderweitig definiert -- mit dem Inkrafttreten des ursprünglichen Anforderungsdokumentes nach dessen Veröffentlichung\footnote{Im Falle von EU Verordnungen am zwanzigsten Tage nach der Veröffentlichung im Amtsblatt der Europäischen Union (bspw. \cite[Art. 141]{2018R1139}, \cite[Art. 14]{2004R0549}) sowie nicht in der Änderungsverordnung abweichend definiert (bspw. Verordnung EU 2017/1347 \textit{(ohne inhaltliche Bedeutung)})}.
 Im Rahmen von Änderungen oder Korrekturen kann sich der Zeitpunkt des Inkrafttretens auf das entsprechende Inkrafttreten des Änderungsdokumentes oder ein anders definierten Zeitpunkt  aktualisieren.\cite{eu_consolidation}
-Die Gültigkeit eines Anforderungsdokumentes endet, im Falle der EU, mit dem Inkrafttreten eines anderen ablösenden oder aufhebenden Anforderungsdokumentes; oder durch die Aufhebung der Verordnung durch die Kommission im Amtsblatt. [??]
+Die Gültigkeit eines Anforderungsdokumentes endet, im Falle der EU, mit dem Inkrafttreten eines anderen ablösenden oder aufhebenden Anforderungsdokumentes; oder durch die Aufhebung der Verordnung durch die Kommission im Amtsblatt. 
+Die Übergangsbestimmungen werden hierbei innerhalb der ablösenden Verordnung\footnote{meist am Ende} definiert.
 
 \pagebreak
 
@@ -146,17 +147,12 @@ In dieser sollte die Compliance zu der Anforderung in seiner zum aktuellen Zeitp
 
 
 \subsection{Compliance Matrizen}
-% \begin{quote}
-% \textcolor{red}{Compliance Matrix als Endergebnis des Prozesses, Auflistung aller aktuellen Compliance Angaben. Auch kurze Modellierung}
-% \end{quote}
 
-Compliance Matrizen stellen das Endprodukt der Nachweisführungsprozesse dar\footnote{Format der EASA SoC zum Zeitpunkt dieser Arbeit noch unbekannt.}.
-In der einfachsten Form beschreibt die Compliance Matrix, aus Sicht der Datenmodellierung, eine Auflistung aller eine ATM/ANS-Einrichtung betreffende Anforderungen inklusive dessen jeweiliger Compliancenachweis (siehe \ref{model_angaben}).
+Compliance Matrizen stellen das Endprodukt der Nachweisführungsprozesse dar\footnote{Format der \ac{EASA} \ac{SoC} zum Zeitpunkt dieser Arbeit noch unbekannt.}.
+In der einfachsten Form beschreibt die Compliance Matrix, aus Sicht der Datenmodellierung, eine Auflistung aller eine\atmans-Einrichtung betreffende Anforderungen inklusive dessen jeweiliger Compliancenachweis (siehe \ref{model_angaben}).
 Das genaue Format, in dem die Compliancematrix abgebildet werden soll, ist abhängig von den entsprechenden Vorgaben der zuständigen Aufsichtsbehörde.
 
-
 \pagebreak
-
 
 
 \section{Modellierung der Lifecycle}
@@ -171,8 +167,37 @@ Das genaue Format, in dem die Compliancematrix abgebildet werden soll, ist abhä
 \pagebreak
 \section{Modellierung der Impact-Analyse}
 
-\graffito{Dieser Teil braucht noch am ehesten Aufwand und Quellen der Rest lässt sich ziemlich runterschreiben}
+Das Ziel dieser Arbeit ist es, zu erarbeiten, inwiefern eine automatisierte \acf{IA} in Bezug auf den analysierten Datensätzen anwendbar ist, um die Auswirkungen regulativer Änderungen auf Complianceangaben abzubilden.
 
-\begin{quote}
-\textcolor{red}{Einführung in den Sinn und Zweck der Impact Analyse(IA) für das erarbeitete Datenmodell und wie das Endergebnis der IA auszuschauen hat.}
-\end{quote}
+
+Um verschiedene Ansätze der Impact-Analyse zu vergleichen, definierten Arnold und Bohner (1993) \cite{app_bohner} ein abstraktes Framework, welches die Analyse betroffener Entitäten\footnote{oder sekundären Änderungen} auf Basis von bekannten primären Änderungen definiert und verschiedene Ansätze der Impact-Analyse vergleichen kann.
+\cite[22]{app_lindvall}
+Das Framework identifiziert u.a. die folgenden Bestandteile:
+
+\paragraph{Änderung}
+    Die angenommene Änderung, wessen Auswirkungen auf die einzelnen Entitäten des Systems analysiert werden soll.
+
+\paragraph{System}
+    Das System, als Gesamtheit aller Entitäten, über welche die Auswirkungen der Änderung analysiert werden soll und welches die Abhängigkeiten von Entitäten beschreibt.
+
+\paragraph{Interface}
+    Das Interface\footnote{,,interface object model``}, welches die Kommunikation mit der \ac{IA} übernimmt und die Änderung formell, und auf Basis der verfügbaren Entitäten und Relationen, beschreibt. 
+
+\paragraph{Interna}
+    Die Interna\footnote{,,internal object model`` (auch internals)}, welche die internen Abbildungen der Entitäten, Abhängigkeiten und Metadaten beinhalten und genutzt werden, um die \ac{IA} zu realisieren.  
+
+\paragraph{Impact Modell}
+    Das Impact Modell, welches beschreibt, wie Abhängigkeiten modelliert werden und wie diese im Rahmen der \ac{IA} berücksichtigt werden.
+
+\bigskip
+\noindent
+Im Folgenden sollen auch die analysierten Datenmodelle anhand dieses Frameworks auf die Effizienz einer Impact-Analyse verglichen werden. 
+
+
+
+% \graffito{Dieser Teil braucht noch am ehesten Aufwand und Quellen der Rest lässt sich ziemlich runterschreiben}
+
+% \begin{quote}
+% \textcolor{red}{Einführung in den Sinn und Zweck der Impact Analyse(IA) für das erarbeitete Datenmodell und wie das Endergebnis der IA auszuschauen hat.}
+% \end{quote}
+
