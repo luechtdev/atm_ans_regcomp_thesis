@@ -1,7 +1,7 @@
 \chapter{Anforderungen der Impactanalyse}
 
     Für eine Umsetzung einer automatischen regulativen Impactanalyse, welche die beschriebenen betrieblichen Prozesse des Anforderungsmanagements und der Nachweisführung berücksichtigt und die Lifecycle und Struktur regulatorischen Anforderungen / Anforderungsdokumenten darstellen kann, bedarf es einigen Voraussetzungen.  
-    Nach der Marktanalyse der \ac{EGRC} Plattformen durch Gartner\cite{app_gartner} unterstützt Compliance Management ,,Compliance Fachpersonal bei der Dokumentation, bei Workflows, Berichterstattung und der Visualisierung von Control Objectives [...]``\cite[S.4 (übersetzt)]{app_gartner} für verschiedene branchenspezifischen Regularien, Vereinbarungen und Anforderung durch Partner oder interne Anforderungen.       
+    Nach der Marktanalyse der \ac{EGRC} Plattformen durch Gartner\cite{app_gartner} unterstützt Compliance Management ,,Compliance Fachpersonal bei der Dokumentation, bei Workflows, Berichterstattung und der Visualisierung von Control Objectives [...]``\cite[S.4 (übersetzt)]{app_gartner} für verschiedene branchenspezifischen Regularien, Vereinbarungen und Anforderung externe oder interne Anforderungen.       
     Die Impactanalyse oder dessen mögliche Implementation in Rahmen einer Anwendung, einer \ac{EGRC} Plattform oder eines Businessprozesses sollte folglich in der Lage sein, einen Mehrwert im Sinne einer Automatisierung oder einer Verringerung des händischen Workloads darzulegen.
 
     % Genauer sollte eine Implementation im Rahmen dieser Arbeit -- mittels einer Impactanalyse -- herausarbeiten, welche Teile einer Complianceangabe zu einer ATM/ANS-Komponente/-System durch eine Konsolidierung externer Anforderungsdokumente    
@@ -93,23 +93,18 @@ Dies beinhaltet im Falle von Verordnungen der EU die Änderung oder Korrektur du
 
 Weiter benötigen einige Formen der Nachweisführung\footnote{Bspw. das Format der Compliance-Matrix zur Dokumentation der EG-Prüferklärung (Gültigkeit bis 2023)} die Dokumentation der gesamten inhaltlichen Historie einer Anforderung.
 Hierfür ist es notwendig, auch auf vorherige Konsolidierungen/Versionen einer Anforderung inhaltlich zugreifen zu können. 
-\pagebreak
 
 \subsection{ATM/ANS Equipment}
 
-\begin{quote}
-\textcolor{red}{Parallel die gleiche Frage zu dem Equipment / den EGGn/EGKn (nach ELSA Definition). Also, welche Informationen müssen intern vorliegen, damit die Analyse funktioniert (nicht viele) und was wäre sonst noch nennenswert für eine Modellierung von ATM/ANS Eq.}
-\end{quote}
+Die Aufgabe des einzelnen \atmans-Equipments im Rahmen dieser Datenmodellierung ist es lediglich, einen Körper zu definieren, für welchen eine bestimmte Sammlung an Anforderungen nachgewiesen wird.
+Hierbei gilt es zwischen den einzelnen Komponenten und Baselines der Ausrüstung zu differenzieren.
 
-\subsubsection{Komponente}
-\subsubsection{Baselines}
-\subsubsection{Abhängigkeiten von EGKen / EGGen}
+% \subsubsection{Komponente}
+% \subsubsection{Baselines}
+% \subsubsection{Abhängigkeiten von EGKen / EGGen}
 \pagebreak
 
 \subsection{Angaben zur Compliance} \label{model_angaben}
-% \begin{quote}
-% \textcolor{red}{Wie werden Compliance angaben zu den entsprechenden Anforderungen getätigt und wie können diese in Daten abgebildet werden?}
-% \end{quote}
 
 Das Hauptziel der Analyse sowie der Nachweisführung von ATM/ANS-Equipment ist es, dessen Compliance nachzuweisen, um einen sicheren Gebraucht und Inbetriebnahme sicherzustellen. 
 Hierbei wird in den entsprechenden Compliancedokumenten (\ac{SoC}) auf Basis der technischen Dokumentation (bspw. \ac{SSS}) die Compliance zu den einzelnen Anforderungen erklärt.
@@ -152,48 +147,158 @@ Compliance Matrizen stellen das Endprodukt der Nachweisführungsprozesse dar\foo
 In der einfachsten Form beschreibt die Compliance Matrix, aus Sicht der Datenmodellierung, eine Auflistung aller eine\atmans-Einrichtung betreffende Anforderungen inklusive dessen jeweiliger Compliancenachweis (siehe \ref{model_angaben}).
 Das genaue Format, in dem die Compliancematrix abgebildet werden soll, ist abhängig von den entsprechenden Vorgaben der zuständigen Aufsichtsbehörde.
 
-\pagebreak
+% \pagebreak
 
 
-\section{Modellierung der Lifecycle}
+% \section{Modellierung der Lifecycle}
 
-\begin{quote}
-\textcolor{red}{Evtl kann ich es auch mit in die Modellierung oben einbinden, ich glaube ich hätte es aber lieber separat.  Ich möchte mir gerne den Modus operandi, wie VOs überarbeitet werden für nächste Kapitel vorbehalten, würde aber grundsätzliche Anforderungen aufstellen wollen, welche Komponenten zeitabhängig sind und wo es den Lifecycle zu beachten gilt.}
-\end{quote}
+% \begin{quote}
+% \textcolor{red}{Evtl kann ich es auch mit in die Modellierung oben einbinden, ich glaube ich hätte es aber lieber separat.  Ich möchte mir gerne den Modus operandi, wie VOs überarbeitet werden für nächste Kapitel vorbehalten, würde aber grundsätzliche Anforderungen aufstellen wollen, welche Komponenten zeitabhängig sind und wo es den Lifecycle zu beachten gilt.}
+% \end{quote}
 
-\subsection{Lifecycle der Anforderungen}
-\subsection{Lifecycle des ATM/ANS Eq.}
+% \subsection{Lifecycle der Anforderungen}
+% \subsection{Lifecycle des ATM/ANS Eq.}
 
 \pagebreak
 \section{Modellierung der Impact-Analyse}
+\label{model_ia}
 
 Das Ziel dieser Arbeit ist es, zu erarbeiten, inwiefern eine automatisierte \acf{IA} in Bezug auf den analysierten Datensätzen anwendbar ist, um die Auswirkungen regulativer Änderungen auf Complianceangaben abzubilden.
+Automatisch beschreibt hierbei, dass Änderungen durch mögliche Implementationen selbstständig erkannt und beschrieben werden können.
 
-
-Um verschiedene Ansätze der Impact-Analyse zu vergleichen, definierten Arnold und Bohner (1993) \cite{app_bohner} ein abstraktes Framework, welches die Analyse betroffener Entitäten\footnote{oder sekundären Änderungen} auf Basis von bekannten primären Änderungen definiert und verschiedene Ansätze der Impact-Analyse vergleichen kann.
+\medskip
+Um verschiedene Ansätze der Impact-Analyse zu vergleichen, definierten Arnold und Bohner (1993) \cite{app_bohner} ein abstraktes Framework, welches die Analyse betroffener Entitäten\footnote{oder sekundären Änderungen} auf Basis von bekannten primären Änderungen definiert und deren Effektivität bewerten kann.
 \cite[22]{app_lindvall}
-Das Framework identifiziert u.a. die folgenden Bestandteile:
+Das Framework identifiziert u.a. die folgenden Bestandteile:\footnote{Definitionen, welche sich mehr auf die Implementierung der \ac{IA} als auf die Modellierung (bspw. ,,repository``) beziehen, wurden ausgelassen}
 
 \paragraph{Änderung}
-    Die angenommene Änderung, wessen Auswirkungen auf die einzelnen Entitäten des Systems analysiert werden soll.
+    Die angenommene primären Änderungsdefinition,\hspace{1pt} wessen Auswirkungen auf die einzelnen Entitäten des Systems analysiert werden soll.
+    Die Erarbeitung dieser Definition fällt in den Rahmen einer automatisierten \ac{IA}. 
 
 \paragraph{System}
-    Das System, als Gesamtheit aller Entitäten, über welche die Auswirkungen der Änderung analysiert werden soll und welches die Abhängigkeiten von Entitäten beschreibt.
+    Das System, als Gesamtheit aller Entitäten, über welche die Auswirkungen der primären Änderungsdefinition analysiert werden soll und welches die Abhängigkeiten von Entitäten beschreibt.
 
-\paragraph{Interface}
-    Das Interface\footnote{,,interface object model``}, welches die Kommunikation mit der \ac{IA} übernimmt und die Änderung formell, und auf Basis der verfügbaren Entitäten und Relationen, beschreibt. 
+\paragraph{Interface Object Model}
+    Das \textit{interface object model}, ermöglicht die Kommunikation mit der \ac{IA}\footnote{\ac{IA} findet auf der Ebene des \textit{internal object model} statt} und wird dazu verwendet, zu analysierende Artefakte\footnote{bspw. die eine regulative Durchführungsbestimmung}$^,$\footnote{definiert auf dem \textit{artifact object model level}} an der Schnittstelle der Analyse bereitzustellen und die Ergebnisse der Analyse entgegenzunehmen.  
 
-\paragraph{Interna}
-    Die Interna\footnote{,,internal object model`` (auch internals)}, welche die internen Abbildungen der Entitäten, Abhängigkeiten und Metadaten beinhalten und genutzt werden, um die \ac{IA} zu realisieren.  
+\paragraph{Internal Object Model}
+    Das \textit{internal object model} beschreibt, auf welche Informationen der Ansatz zurückgreift, um die \ac{IA} durchzuführen.
+    Dies beinhaltet alle Informationen zu den Entitäten und den Abhängigkeiten untereinander.
+    Die Verwendung dieser Daten setzt meist eine Art ,,repository`` voraus, was einen Zugriff und die Bearbeitung der vorhandenen Daten ermöglicht. \cite[295]{app_bohner}
 
 \paragraph{Impact Modell}
     Das Impact Modell, welches beschreibt, wie Abhängigkeiten modelliert werden und wie diese im Rahmen der \ac{IA} berücksichtigt werden.
 
 \bigskip
 \noindent
-Im Folgenden sollen auch die analysierten Datenmodelle anhand dieses Frameworks auf die Effizienz einer Impact-Analyse verglichen werden. 
+Im Folgenden sollen auch die analysierten Datenmodelle anhand dieser Definitionen auf ihre mögliche Integration einer \ac{IA} analysiert und bewertet werden.
+
+\pagebreak
+\section{Bewertung der Impact-Analyse}
+
+Zur Bewertung der einzelnen Impact-Analysen ziehen Arnold et al. ein Modell heran, welche verschiedene Mengen über alle Entitäten des Gesamtsystems definieren.
+Die Impact-Analyse beschreibt hierbei einen Vorgang, welche eine geschätzte Menge aller betroffenen sekundär Entitäten\footnote{Estimated Impact Set (EIS\#)}$^,$\footnote{Arnold et al. benennen Mengen, welche sich auf dem ,,interface object model level`` befinden, mit dem ,,\#`` Suffix.} -- auf Basis der primären Änderungsdefinition\footnote{Starting Impact Set (SIS\#)} -- bildet.
+Im Rahmen der automatisierten \ac{IA} (\acsfont{AIA}, siehe Abbildung \ref{fig:aia}) soll ebenfalls die Menge primärer Änderungen (\acsfont{SIS\#}) durch mögliche Implementierungen erarbeitet werden.
+Die Ein- und Ausgaben der \acf{IA} und der \acf{AIA} lassen sich wie folgt beschreiben\footnote{Die Eingabe der \ac{AIA} ist abhängig von den vorhanden Daten der später analysierten Datensätze. Im Rahmen der Analyse (siehe \ref{anal}) kann hierfür ein Wert angenommen werden.}:
+\begin{align}
+    IA(\text{\acsfont{SIS\#}}) &\mapsto \text{\acsfont{EIS\#}} \\
+    AIA(?)                     &\mapsto \text{\acsfont{EIS\#}}
+\end{align}
+
+\noindent
+Die \acsfont{EIS\#} Menge kann im Folgenden auf den eigentlichen analysierten Prozess\footnote{Im Fall dieser Arbeit der Nachweisführungsprozess zu \atmans-Equipment} übertragen werden, um die eigentlichen Änderungen -- unter Berücksichtigung  aller wichtigen Spezifikationen -- durchzuführen.
+Das Ergebnis dessen Kontrolle ist eine Menge eigentlich betroffener Entitäten (\acsfont{AIS}) welche, zur Bewertung der \ac{IA}, mit dem \acsfont{EIS\#} verglichen werden kann.\footnote{Hierfür wird das \acsfont{AIS} wieder auf das \textit{interface object model level} abgebildet (\acsfont{AIS\#})}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{gfx/IA35.drawio.png}
+    \caption{Hauptmetriken der \ac{IA} Effektivität nach Arnold et al. \cite[296]{app_bohner}}
+    [Eigene Darstellung]
+    \label{fig:aia}
+\end{figure}
+
+\pagebreak
+
+\noindent
+Die definierten Mengen und Transformationen erlauben es im Folgenden Metriken zu definieren, welche Aussagen über die Genauigkeit und Effizienz des Verfahrens\footnote{der Impact-Analyse} treffen können.
+Hierbei entstehen drei sinnvolle Relationen, welche man im Folgenden betrachten kann:
+Die Relation zwischen der primären Anforderungsdefinition und der erarbeiteten Menge betroffener Entitäten\footnote{Bewertung der primären Änderungsdefinition}; das Verhältnis zwischen der erarbeiteten Menge betroffener Entitäten und dem Gesamtsystem\footnote{Bewertung der Eingrenzung}; und dem Abgleich der projizierten Menge betroffener Entitäten mit den eigentlich Betroffenen\footnote{Bewertung des Ergebnisses}.
 
 
+\subsection{Bewertung der primären Änderungsdefinition}
+
+Die Bewertung der primären Änderungsdefinition beschäftigt sich mit dem Verhältnis von \acsfont{SIS\#} und \acsfont{EIS\#}. 
+Diese Metrik gibt Auskunft darüber, wie viele Entitäten -- die nicht durch die Änderungsdefinition vorgegeben waren -- durch die \ac{IA} als betroffen gekennzeichnet wurden.
+Definitionsgemäß\footnote{nach Arnold et al.} ist es jedoch nicht möglich, dass die Analyse primär markierte Entitäten aus der Schätzung ausschließt, weshalb dessen Menge immer eine Obermenge zur Menge der primären Änderungsdefinition darstellt.
+
+$$
+    K = \dfrac{|\text{\acsfont{SIS\#}}|}{|\text{\acsfont{EIS\#}}|} \leq 1
+$$
+
+Im Rahmen der Bewertung der Impact-Analysen zu dem Thema dieser Arbeit gilt es als vorteilhaft, sowie die primäre Änderungsdefinition so genau wie möglich die Änderung des Systemes beschreibt. 
+
+% \begin{figure}[H]
+%     \centering
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%             ybar stacked,
+%         	bar width=15pt,
+%         	nodes near coords,
+%             enlargelimits=0.15,
+%             legend style={at={(0.5,-0.20)},
+%               anchor=north,legend columns=-1},
+%             ylabel={\#participants},
+%             symbolic x coords={Erwünscht, Erwartet, Ziel},
+%             xtick=data,
+%             x tick label style={rotate=45,anchor=east},
+%             ]
+%         \addplot+[ybar] plot coordinates {(Erwünscht,1) (Erwartet,0.05) (Ziel,0.2)};
+%         \addplot+[ybar] plot coordinates {(Erwünscht,0) (Erwartet,0.4) (Ziel,0.6)};
+%         \addplot+[ybar] plot coordinates {(Erwünscht,0) (Erwartet,0.55) (Ziel,0.1)};
+%         \legend{\strut K = 1, \strut 0.7 < K < 1, \strut K $\leq$ 0.7}
+%         \end{axis}
+%     \end{tikzpicture}
+%     \caption{Caption}
+%     \label{fig:enter-label}
+% \end{figure}
+
+\input{chapters/3_application/table1}
+
+\pagebreak
+
+\subsection{Bewertung der Eingrenzung}
+
+Im Weiteren kann bewertet werden, wie gut die Ergebnismenge eingeschränkt ist.
+Bei der Natur einiger Änderungen kann diese Metrik auch eine Aussage darüber treffen, wie Änderungen innerhalb von Abhängigkeiten propagiert werden. 
+So beschreibt ein hoher Wert der Metrik entweder ein stark vernetztes System, welches Änderungen leicht propagiert oder eine \ac{IA}, welche viele abhängige Entitäten in die Ergebnismenge mit einschließt.
+Je genauer die \ac{IA} die Ergebnismenge einschränken kann, desto nützlicher ist das Ergebnis für den weiteren Prozess, da der Arbeitsaufwand so gering wie möglich bleibt. 
+
+$$
+    J = \dfrac{|\text{\acsfont{EIS\#}}|}{|\text{System\#}|} \leq 1
+$$
+
+Für die Prozesse der Nachweisführung regulativer Anforderungen ist diese Metrik direkt mit dem Arbeitsaufwand des Änderungsprozesses verknüpft.
+Es gilt also im für die Bewertung einer \ac{IA} als vorteilhaft, sowie Änderungen möglichst präzise auf die betroffenen Anfoderungen eingegrenzt werden kann, da hierdurch Effizienz der Nachweisführungsprozesse verbessert werden kann.
+
+\input{chapters/3_application/table2}
+
+\subsection{Bewertung des Ergebnisses}
+
+Die letzte Metrik, welche verwendet werden kann, um die \ac{IA} zu bewerten, ist der Vergleich der ermittelten Menge mit der tatsächlich betroffenen Menge.
+Die beiden Mengen\footnote{\acsfont{EIS\#} und \acsfont{AIS\#}} stellen hierbei gegenseitige keine Teil- oder Obermengen dar, weshalb die Metrik nicht begrenzt ist.
+Eine zweite Metrik gibt an wie groß die Schnittmenge der beiden Mengen ist um auszuschließen, dass die Mengen keine Elemente teilen (siehe Fall 7, Tabelle \ref{tab:eis_ais}). 
+
+$$
+    H = \dfrac{|\text{\acsfont{AIS\#}}|}{|\text{\acsfont{EIS\#}}|}; \quad
+    % M = \dfrac{|\text{\acsfont{EIS\#}}|}{|\text{\acsfont{AIS\#}}|}; \quad
+    N = |\acsfont{AIS\#} \cap \acsfont{EIS\#}|
+$$
+
+Der Optimalfall für die Nachweisführungprozesse der Flugsicherung sollte einer der sicheren Fälle (Fälle 1-3, Tabelle \ref{tab:eis_ais}) umfassen, da diese Fälle die Vollständigkeit der Nachweisführung nicht gefährden.
+Weiter beläuft sich die Differenz der Mengen im Optimalfall gegen Null, da hierdurch der manuelle Arbeitsaufwand -- Änderungen als nicht relevant zu markieren -- so gering wie möglich ausfällt.
+\bigskip
+
+\input{chapters/3_application/table3}
 
 % \graffito{Dieser Teil braucht noch am ehesten Aufwand und Quellen der Rest lässt sich ziemlich runterschreiben}
 
