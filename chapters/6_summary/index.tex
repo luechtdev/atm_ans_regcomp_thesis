@@ -1,26 +1,74 @@
-\chapter{Verwendung der Daten und Impact Analyse}\label{anal}
 
-% \begin{quote}
-% \textcolor{red}{Erörterung der Datenquellen zur Verwendung in diesem Kontext}
-% \end{quote}
+\chapter{Implementation der Datenquellen} \label{anal}
 
-    Die beiden Datenquellen
-
+    Die beiden analysierten Datenquellen ermöglichen Nutzer:innen einen teils weitreichenden Zugriff auf Metadaten regulativer Anforderungsdokumente.
+    Um diese Daten auch sinnvoll in die Prozesse der regulativen Nachweisführung einzubinden, bedarf es unter anderem automatisierte Mechanismen, welche in der Lage sind Änderungen in regulativen Anfoderungsdokumente zu identifizieren und diese auf die entsprechenden Nachweisführungsprozesse abzubilden.
+    Im Folgenden soll diese möglichen Implementationen der Datenquellen in einer \acf{IA} erörtert und -- nach den oben definierten Kriterien (siehe \ref{model_wa}, \ref{model_ia_bew}) -- bewertet werden.
 
     \section{Verfügbarkeit der Daten}
-    \section{Impact Analyse}
-    \section{Fehlende Informationen}
 
-\chapter{Ausblick}
-\begin{quote}
-\textcolor{green}{1-2 Seiten}
-\end{quote}
+    Die Grundlage für ein zeitgerechtes Erbringen einer Nachweisführung\footnote{auf Basis einer \ac{IA}} ist die Verfügbarkeit der zugrundeliegenden Daten.
+    Sollten Daten erst verspätet bereitgestellt werden, so kann hiervon eine Gefahr oder eine Verzögerung der abhängigen Prozesse ausgehen.
 
-\label{ch:ausblick}
+    \medskip
+    Da die Daten, welche durch die \ac{EU} (Cellar) bereitgestellt werden, direkt an die Publikation der verbundenen Rechtsakte gekoppelt ist, ist hier bereits dessen Verfügbarkeit vorausgesetzt.
+    Man kann folglich annehemen, dass alle notwendigen Daten immer über Cellar abrufbar sind\footnote{Wartungsarbeiten der Plattform ausgenommen: Während der Analyse von Cellar konnten einige Einschränkungen festgestellt werden. Wartungsarbeiten der Plattform werden jedoch durch die EurLex Plattform kommuniziert.} und immer den aktuellen regulativen Stand abbilden.
 
-\subsubsection{Bemühungen der EASA}
+    \medskip
+    Im Fall von den Daten aus der zweiten analysierten Datenquelle (\ac{EASA} Easy Access Rules) ist die Bereitstellung der Daten nicht an die Publikation der Rechtsakte -- aber an die Erarbeitung von deren Zusatzmaterialien und dessen Abbildung in den \ac{EAR} -- gebunden.
+    Diese Prozesse erschaffen definitionsgemäß bereits eine Verzögerung in der Bereitstellung der Daten.
+    Da die \ac{EAR} im Weiteren keine regulative Relevanz besitzen und lediglich die regulativ relevanten Daten in einer weiteren Form präsentieren, bestehen keine Informationen -- oder Bestrebungen der \ac{EASA} \cite{easa_xml_export} -- in welchem Zeitrahmen die entsprechenden Informationen Nutzer:innen zur Verfügung gestellt werden.    
 
+    \medskip
+In puncto Verfügbarkeit und Verbindlichkeit der Daten lässt sich sehr klar schlussfolgern, dass die \ac{EU} die bessere Datenquelle darstellt.
+Auch wenn die Erarbeitung von Nachweisführung in großen Teilen von dem entwickelten Zusatzmaterial der \ac{EASA} abhängig ist, so birgt deren verzögerte Bereitstellung der Daten ein vermeidbares Risiko für die durchgeführten Prozesse.
+
+\pagebreak
+    
+    \section{Impact-Analyse}
+
+Auch die Struktur der Daten, in welcher sie bereitgestellt werden, hat einen Einfluss auf die Effizienz einer Impact-Analyse.
+Im Folgenden sollen die einzelnen Definitionen und Vorgänge auf die Datenmodelle übertragen werden, um zu bewerten, wie effizient und mit welcher Qualität eine \ac{IA} betrieben werden kann.
+
+\subsubsection{Primäre Änderungsdefinition}
+
+Wie in der Modellierung beschrieben, bedarf es für die automatisierte \ac{IA} einer Möglichkeit, eine primäre Änderungsdefinition abzustecken. 
+Diese Menge definiert, welche Anforderungen durch eine Änderung von ihrem Inhalt oder ihrer Aussage abgeändert wurden.
+Sie wird nach den Definitionen in \ref{model_ia_bew}  als \textit{Starting Impact Set} \acsfont{SIS\#} bezeichnet.
+
+\medskip
+In Bezug auf die Daten aus Cellar lässt sich diese Änderungsdefinition ziemlich gut durch die analysierten Metadaten im \ac{RDF}-Graphen beschreiben (vgl. \ref{ch:eu_meta}).
+Hiernach annotiert Cellar Änderungen an regulativen Anforderungsdokumenten mit der entsprechenden geänderten Stelle im Dokument.
+Wenn beispielsweise eine Änderung den Punkt ,,Anhang II Art. 40--45`` eines Dokumentes betrifft\footnote{und so annotiert wurde}, so können alle eingeschlossenen Anforderungen in die Menge aufgenommen werden.
+Diese Informationen können auch aus dem Inhalt aufgenommen, bedürfen in beiden Fällen jedoch eine sehr gute Abbildung auf das \textit{Internal Object Model Level}, damit alle Anforderungen der Definition zugeordnet werden können.
+Die Bewertung dieser Definition ist abhängig der Form, es gilt aber anzunehmen, dass Definitionen auf Basis der Verarbeitungsanweisungen des Inhalts (siehe \ref{ch:eu_content}) eine genauere Definition abbilden als Definitionen auf Basis der Metadaten-Annotationen (siehe \ref{ch:eu_meta}). 
+Für letztere wäre es sogar möglich, dass -- entgegen der Annahme von Arnold et al. -- die \ac{IA} Metrik $K$ einen Wert von $K > 1$ annimmt, da ungenaue Angaben der Änderung\footnote{Bsp.: Änderung in Anhang II} Anforderungen mit einschließen, welche inhaltlich nicht geändert wurden. 
+
+\medskip
+Die Strukturierung der Daten der \ac{EASA} beschreibt, anders als Cellar, keine direkte Änderungsdefinition.
+Änderungen im Datensatz werden hier einzig über die Attribute @RegulatorySource und @AmendedBy beschrieben.
+Diese Herangehensweise bestimmt bereits eine Menge an Anforderungen, welche aus den Daten des \textit{Internal Object Model} hervorgehen.
+Dies vereinfacht sowohl die Übersetzung der Daten zwischen \textit{Internal Object Model} und \textit{Interface Object Model} als auch den allgemeinen Ablauf der \ac{IA}.
+Es ist hiernach davon auszugehen, dass die primäre Änderungsdefinition bereits ziemlich genau beschreibt, welche Anforderungen betroffen sind (Fall 1, Tabelle \ref{tab:sis_eis}, $K \approx  1$).
+
+\subsubsection{Bewertung der Eingrenzung}
+
+Eine weitere Metrik, die in der Modellierung definiert wurde, ist die Eingrenzung der Ergebnismenge bzw. dem Verhältnis der Mächtigkeit der Ergebnismenge zu der Mächtigkeit des Gesamtsystems.
+Je genauer eine \ac{IA} das \textit{Estimated Impact Set} (\acsfont{EIS\#}) bestimmen kann, desto höher ist dessen Mehrwert für den Gesamtprozess.
+
+\medskip
+Im Vergleich beider Datenquellen lässt 
+
+
+    
+    \section{Fehlende Informationen / Impedance Mismatch}
+
+\chapter{Ausblick}\label{ch:ausblick}
+    
+    \subsubsection{Bemühungen der EASA}
+    
+    \subsubsection{Mögliche Implementationen}
+    
 \chapter{Zusammenfassung}
 
-\graffito{fehlt: Kurze Zusammenfassung der Teile 1-2}
 
