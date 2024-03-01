@@ -1,13 +1,11 @@
 
 \chapter{Implementation der Datenquellen} \label{anal}
 
-\graffito{Ursprünglich hieß dieses Kapitel Bewertung der Datenquellen, ich möchte es aber nicht identisch zu dem}
-
     Die beiden analysierten Datenquellen ermöglichen Nutzer:innen einen teils weitreichenden Zugriff auf Metadaten regulativer Anforderungsdokumente.
     Um diese Daten auch sinnvoll in die Prozesse der regulativen Nachweisführung einzubinden, bedarf es unter anderem automatisierte Mechanismen, welche in der Lage sind Änderungen in regulativen Anforderungsdokumente zu identifizieren und diese auf die entsprechenden Nachweisführungsprozesse abzubilden.
     Im Folgenden soll diese möglichen Implementationen der Datenquellen in einer \acf{IA} erörtert und -- nach den oben definierten Kriterien (siehe \ref{model_wa}, \ref{model_ia_bew}) -- bewertet werden.
 
-    \section{Verfügbarkeit der Daten}
+\section{Verfügbarkeit der Daten}
 
     Die Grundlage für ein zeitgerechtes Erbringen einer Nachweisführung\footnote{auf Basis einer \ac{IA}} ist die Verfügbarkeit der zugrundeliegenden Daten.
     Sollten Daten erst verspätet bereitgestellt werden, so kann hiervon eine Gefahr oder eine Verzögerung der abhängigen Prozesse ausgehen.
@@ -22,131 +20,144 @@
     Da die \ac{EAR} im Weiteren keine regulative Relevanz besitzen und lediglich die regulativ relevanten Daten in einer weiteren Form präsentieren, bestehen keine Informationen -- oder Bestrebungen der \ac{EASA} \cite{easa_xml_export} -- in welchem Zeitrahmen die entsprechenden Informationen Nutzer:innen zur Verfügung gestellt werden.    
 
     \medskip
-In puncto Verfügbarkeit und Verbindlichkeit der Daten lässt sich sehr klar schlussfolgern, dass die \ac{EU} die bessere Datenquelle darstellt.
-Auch wenn die Erarbeitung von Nachweisführung in großen Teilen von dem entwickelten Zusatzmaterial der \ac{EASA} abhängig ist, so birgt deren verzögerte Bereitstellung der Daten ein vermeidbares Risiko für die durchgeführten Prozesse.
-
-\pagebreak
+    In puncto Verfügbarkeit und Verbindlichkeit der Daten lässt sich sehr klar schlussfolgern, dass die \ac{EU} die bessere Datenquelle darstellt.
+    Auch wenn die Erarbeitung von Nachweisführung in großen Teilen von dem entwickelten Zusatzmaterial der \ac{EASA} abhängig ist, so birgt deren verzögerte Bereitstellung der Daten ein vermeidbares Risiko für die durchgeführten Prozesse.
     
-    \section{Impact-Analyse}
-
-Auch die Struktur der Daten, in welcher sie bereitgestellt werden, hat einen Einfluss auf die Effizienz einer Impact-Analyse.
-Im Folgenden sollen die einzelnen Definitionen und Vorgänge auf die Datenmodelle übertragen werden, um zu bewerten, wie effizient und mit welcher Qualität eine \ac{IA} betrieben werden kann.
-
+\pagebreak
+\section{Impact-Analyse}
+    
+    Auch die Struktur der Daten, in welcher sie bereitgestellt werden, hat einen Einfluss auf die Effizienz einer Impact-Analyse.
+    Im Folgenden sollen die einzelnen Definitionen und Vorgänge auf die Datenmodelle übertragen werden, um zu bewerten, wie effizient und mit welcher Qualität eine \ac{IA} betrieben werden kann.
+    
 \subsubsection{Primäre Änderungsdefinition}
 
-Wie in der Modellierung beschrieben, bedarf es für die Automatisierte \ac{IA} einer Möglichkeit, eine primäre Änderungsdefinition abzustecken. 
-Diese Menge definiert, welche Anforderungen durch eine Änderung von ihrem Inhalt oder ihrer Aussage abgeändert wurden.
-Sie wird nach den Definitionen in \ref{model_ia_bew}  als \textit{Starting Impact Set} \acsfont{SIS\#} bezeichnet.
-
-\medskip
-In Bezug auf die Daten aus Cellar lässt sich diese Änderungsdefinition ziemlich gut durch die analysierten Metadaten im \ac{RDF}-Graphen beschreiben (vgl. \ref{ch:eu_meta}).
-Hiernach annotiert Cellar Änderungen an regulativen Anforderungsdokumenten mit der entsprechenden geänderten Stelle im Dokument.
-Wenn beispielsweise eine Änderung den Punkt ,,Anhang II Art. 40--45`` eines Dokumentes betrifft\footnote{und so annotiert wurde}, so können alle eingeschlossenen Anforderungen in die Menge aufgenommen werden.
-Diese Informationen können auch aus dem Inhalt aufgenommen, bedürfen in beiden Fällen jedoch eine sehr gute Abbildung auf das \textit{Internal Object Model Level}, damit alle Anforderungen der Definition zugeordnet werden können.
-Die Bewertung dieser Definition ist abhängig der Form, es gilt aber anzunehmen, dass Definitionen auf Basis der Verarbeitungsanweisungen des Inhalts (siehe \ref{ch:eu_content}) eine genauere Definition abbilden als Definitionen auf Basis der Metadaten-Annotationen (siehe \ref{ch:eu_meta}). 
-Für letztere wäre es sogar möglich, dass -- entgegen der Annahme von Arnold et al. -- die \ac{IA} Metrik $K$ einen Wert von $K > 1$ annimmt, da ungenaue Angaben der Änderung\footnote{Bsp.: Änderung in Anhang II} Anforderungen mit einschließen, welche inhaltlich nicht geändert wurden. 
-
-\medskip
-Die Strukturierung der Daten der \ac{EASA} beschreibt, anders als Cellar, keine direkte Änderungsdefinition.
-Änderungen im Datensatz werden hier einzig über die Attribute @RegulatorySource und @AmendedBy beschrieben.
-Diese Herangehensweise bestimmt bereits eine Menge an Anforderungen, welche aus den Daten des \textit{Internal Object Model} hervorgehen.
-Dies vereinfacht sowohl die Übersetzung der Daten zwischen \textit{Internal Object Model} und \textit{Interface Object Model} als auch den allgemeinen Ablauf der \ac{IA}.
-Es ist hiernach davon auszugehen, dass die primäre Änderungsdefinition bereits ziemlich genau beschreibt, welche Anforderungen betroffen sind (Fall 1, Tabelle \ref{tab:sis_eis}, $K \approx  1$).
+    Wie in der Modellierung beschrieben, bedarf es für die Automatisierte \ac{IA} einer Möglichkeit, eine primäre Änderungsdefinition abzustecken. 
+    Diese Menge definiert, welche Anforderungen durch eine Änderung von ihrem Inhalt oder ihrer Aussage abgeändert wurden.
+    Sie wird nach den Definitionen in \ref{model_ia_bew}  als \textit{Starting Impact Set} \acsfont{SIS\#} bezeichnet.
+    
+    \medskip
+    In Bezug auf die Daten aus Cellar lässt sich diese Änderungsdefinition ziemlich gut durch die analysierten Metadaten im \ac{RDF}-Graphen beschreiben (vgl. \ref{ch:eu_meta}).
+    Hiernach annotiert Cellar Änderungen an regulativen Anforderungsdokumenten mit der entsprechenden geänderten Stelle im Dokument.
+    Wenn beispielsweise eine Änderung den Punkt ,,Anhang II Art. 40--45`` eines Dokumentes betrifft\footnote{und so annotiert wurde}, so können alle eingeschlossenen Anforderungen in die Menge aufgenommen werden.
+    Diese Informationen können auch aus dem Inhalt aufgenommen, bedürfen in beiden Fällen jedoch eine sehr gute Abbildung auf das \textit{Internal Object Model Level}, damit alle Anforderungen der Definition zugeordnet werden können.
+    Die Bewertung dieser Definition ist abhängig der Form, es gilt aber anzunehmen, dass Definitionen auf Basis der Verarbeitungsanweisungen des Inhalts (siehe \ref{ch:eu_content}) eine genauere Definition abbilden als Definitionen auf Basis der Metadaten-Annotationen (siehe \ref{ch:eu_meta}). 
+    Für letztere wäre es sogar möglich, dass -- entgegen der Annahme von Arnold et al. -- die \ac{IA} Metrik $K$ einen Wert von $K > 1$ annimmt, da ungenaue Angaben der Änderung\footnote{Bsp.: Änderung in Anhang II} Anforderungen mit einschließen, welche inhaltlich nicht geändert wurden. 
+    
+    \medskip
+    Die Strukturierung der Daten der \ac{EASA} beschreibt, anders als Cellar, keine direkte Änderungsdefinition.
+    Änderungen im Datensatz werden hier einzig über die Attribute @RegulatorySource und @AmendedBy beschrieben.
+    Diese Herangehensweise bestimmt bereits eine Menge an Anforderungen, welche aus den Daten des \textit{Internal Object Model} hervorgehen.
+    Dies vereinfacht sowohl die Übersetzung der Daten zwischen \textit{Internal Object Model} und \textit{Interface Object Model} als auch den allgemeinen Ablauf der \ac{IA}.
+    Es ist hiernach davon auszugehen, dass die primäre Änderungsdefinition bereits ziemlich genau beschreibt, welche Anforderungen betroffen sind (Fall 1, Tabelle \ref{tab:sis_eis}, $K \approx  1$).
 
 \subsubsection{Bewertung der Eingrenzung \& Granularität}
-
-Eine weitere Metrik, welche in der Modellierung definiert wurde, ist die Eingrenzung der Ergebnismenge bzw. dem Verhältnis der Mächtigkeit der Ergebnismenge zu der Mächtigkeit des Gesamtsystems.
-Je genauer eine \ac{IA} das \textit{Estimated Impact Set} (\acsfont{EIS\#}) bestimmen kann, desto höher ist dessen Mehrwert für den Gesamtprozess.
-
-\medskip
-Im Vergleich beider Datenquellen lässt sich sagen, dass die konstante Granularität\footnote{auf Basis der Anforderungen} der Daten auf Seite der \ac{EASA} eine vorteilhafte Eigenschaft für das Ergebnis der \ac{IA} ist.
-Diese Eigenschaft ermöglicht es -- in Verbindung mit der bereitgestellten Regulatorischen Quelle einer Anforderung -- dass Änderungen ohne eine komplizierte \ac{IA} oder der Übersetzung in ein anderes Modell auf einzelne Anforderungen abgebildet werden können.
-Aufgabe der \ac{IA} in diesem Fall ist es lediglich zu ermitteln, die Quelle welcher Anforderungen sich im Rahmen der neuen Version der \ac{EAR} geändert haben.
-Die Menge der Anforderungen mit einer geänderten regulatorischen Quelle\footnote{nach @RegulatorySource und @AmendedBy} bildet in diesem Fall automatisch die Menge \acsfont{EIS\#} ab.
-
-\medskip
-Änderungsmodelle im Rahmen von Cellar sind nicht an die Granularität von Anforderungen gebunden, was sich sowohl vorteilhaft (im Falle einer genaueren Granularität) als auch negativ (im Gegenbeispiel) auf das Ergebnis auswerten kann.
-In beiden Fällen gilt es jedoch zu beachten, dass eine abweichende Granularität von dem \textit{artifact object model}\footnote{Im Falle von Cellar möglich} einen nicht definierbaren Mehraufwand für die Übertragung der Ergebnisse aus dem \textit{interface object model} bzw. dem \textit{internal object model} bedeuten.
-Die Größe der Ergebnismenge ist hierdurch an die Granularität des \textit{interface object models} gebunden. 
-Je nach Implementation kann dies zwar ein besseres Ergebnis\footnote{nach Bewertung der Metrik $J$} als die \ac{EASA} \ac{IA} erzeugen; in dem wahrscheinlichen Fall, dass die Granularität des \textit{interface object models} jedoch auch an die Anforderungen gebunden wird\footnote{Im Rahmen der Nachweisführung von \atmans Anforderungen größtenteils sinnvoll}, bedarf die Erarbeitung eines vergleichbaren Ergebnisses jedoch einen größeren Aufwand.  
+    
+    Eine weitere Metrik, welche in der Modellierung definiert wurde, ist die Eingrenzung der Ergebnismenge bzw. dem Verhältnis der Mächtigkeit der Ergebnismenge zu der Mächtigkeit des Gesamtsystems.
+    Je genauer eine \ac{IA} das \textit{Estimated Impact Set} (\acsfont{EIS\#}) bestimmen kann, desto höher ist dessen Mehrwert für den Gesamtprozess.
+    
+    \medskip
+    Im Vergleich beider Datenquellen lässt sich sagen, dass die konstante Granularität\footnote{auf Basis der Anforderungen} der Daten auf Seite der \ac{EASA} eine vorteilhafte Eigenschaft für das Ergebnis der \ac{IA} ist.
+    Diese Eigenschaft ermöglicht es -- in Verbindung mit der bereitgestellten Regulatorischen Quelle einer Anforderung -- dass Änderungen ohne eine komplizierte \ac{IA} oder der Übersetzung in ein anderes Modell auf einzelne Anforderungen abgebildet werden können.
+    Aufgabe der \ac{IA} in diesem Fall ist es lediglich zu ermitteln, die Quelle welcher Anforderungen sich im Rahmen der neuen Version der \ac{EAR} geändert haben.
+    Die Menge der Anforderungen mit einer geänderten regulatorischen Quelle\footnote{nach @RegulatorySource und @AmendedBy} bildet in diesem Fall automatisch die Menge \acsfont{EIS\#} ab.
+    
+    \medskip
+    Änderungsmodelle im Rahmen von Cellar sind nicht an die Granularität von Anforderungen gebunden, was sich sowohl vorteilhaft (im Falle einer genaueren Granularität) als auch negativ (im Gegenbeispiel) auf das Ergebnis auswerten kann.
+    In beiden Fällen gilt es jedoch zu beachten, dass eine abweichende Granularität von dem \textit{artifact object model}\footnote{Im Falle von Cellar möglich} einen nicht definierbaren Mehraufwand für die Übertragung der Ergebnisse aus dem \textit{interface object model} bzw. dem \textit{internal object model} bedeuten.
+    Die Größe der Ergebnismenge ist hierdurch an die Granularität des \textit{interface object models} gebunden. 
+    Je nach Implementation kann dies zwar ein besseres Ergebnis\footnote{nach Bewertung der Metrik $J$} als die \ac{EASA} \ac{IA} erzeugen; in dem wahrscheinlichen Fall, dass die Granularität des \textit{interface object models} jedoch auch an die Anforderungen gebunden wird\footnote{Im Rahmen der Nachweisführung von \atmans Anforderungen größtenteils sinnvoll}, bedarf die Erarbeitung eines vergleichbaren Ergebnisses jedoch einen größeren Aufwand.  
 
 \subsubsection{Abbildung auf Compliance Angaben}
 
-Um die Ergebnisse der \ac{IA} im Kontext der Nachweisführung verwenden zu können, müssen die Änderungen auch auf die Compliance Angaben des Produktmanagements abgebildet werden können.
-Im Rahmen der Datenmodellierung (siehe \ref{model_angaben}) wurde definiert, dass sich Angaben immer auf genau eine Anforderung beziehen. 
-Dies ermöglicht es, alle -- durch eine Änderung -- betroffenen Anforderungen direkt auf alle betroffenen Angaben zu übertragen.
-Hieraus ergibt sich dann final eine Menge Compliance Angaben, welche durch das Produktmanagement gemäß der Änderung überprüft oder aktualisiert werden sollte.
+    Um die Ergebnisse der \ac{IA} im Kontext der Nachweisführung verwenden zu können, müssen die Änderungen auch auf die Compliance Angaben des Produktmanagements abgebildet werden können.
+    Im Rahmen der Datenmodellierung (siehe \ref{model_angaben}) wurde definiert, dass sich Angaben immer auf genau eine Anforderung beziehen. 
+    Dies ermöglicht es, alle -- durch eine Änderung -- betroffenen Anforderungen direkt auf alle betroffenen Angaben zu übertragen.
+    Hieraus ergibt sich dann final eine Menge Compliance Angaben, welche durch das Produktmanagement gemäß der Änderung überprüft oder aktualisiert werden sollte.
 
 \pagebreak
 \subsubsection{Bewertung des Ergebnisses}
 
-Eine große Besonderheit der \ac{IA} in der regulativen Nachweisführung ist es, dass der Prozess nur ein partielles Feedback erzeugt.
-Der folgende Prozess erstellt hierbei eine \textit{Änderung der Nachweisführung}, welche im Folgenden als Vergleichswert und Ergebnis des Prozesses angenommen wird.
-Im Sinne der Nachweisführung wird diese Änderung bis auf Weiteres als korrekt angenommen.
-Erst durch eine mögliche Intervention des Aufsichtsamtes oder des Produktmanagements können Fehler in der \ac{IA} festgestellt werden.
-Fehler, die auf diese Weise festgestellt werden, beschreiben bemängelte Nachweise von Anforderungen, dessen Änderung nicht erkannt oder nicht korrekt bzw. gar nicht abgebildet wurden.
-Im Sinne von dem Bewertungsmodell werden diese Fehler als Menge der Anforderungen dargestellt, welche kein Teil der Ergebnismenge der \ac{IA} sind, jedoch im gewünschten Ergebnis hätten vorhanden sein müssen.
-Die Teilmenge der Fehler $F$, bei denen Entitäten im Ergebnis der \ac{IA} fehlen, werden im Folgenden als $F^-$ bezeichnet.
-$$
-    F^- = \text{\acsfont{AIS\#}} \;\backslash\; \text{\acsfont{EIS\#}}; \quad 
-    F^+ = \text{\acsfont{EIS\#}} \;\backslash\; \text{\acsfont{AIS\#}}
-$$
-
-\noindent
-Fehler von diesem Typen stellen ein großes Problem dar, da sie zu einem unsicheren Ergebnis\footnote{siehe Tabelle \ref{tab:eis_ais}} führen.
-Im Sinne der Nachweisführung bedeutet dies, dass das Statement of Compliance nicht alle relevanten Anforderungen richtig abdeckt und die Gefahr besteht, dass eine Intervention der Aufsichtsbehörde die Inbetriebnahme der Ausrüstung verbietet.
-
-\medskip
-Demgegenüber stehen alle Differenzen, welche Anforderungen abbilden, die durch die \ac{IA} als relevant markiert wurden, jedoch nicht zu einer Veränderung der Nachweisführung beigetragen haben\footnote{Es gilt anzunehmen, dass markierte Anforderungen nicht zu fälschlich geänderten Angaben führen, da kein Fehler in der händischen Anpassung der Angaben angenommen wird.}.
-Formell stellt die Menge dieser Anforderungen das Gegenstück zu der obigen Definition dar.
-
-\medskip
-Anders als bei Fehlern der Menge $F^-$ können Fehler der Menge $F^+$ bereits aus dem Anwendungsprozess der Änderung der Nachweisführung abgelesen werden.
-Gemäß der Annahme, dass die Nachweisführung -- auf Basis der vorhandenen Daten -- korrekt bearbeitet wird, können alle Änderungen von Anforderungen, welche keine Änderung der Angabe produzieren, zu dieser Menge addiert werden.
-Dies erzeugt, anders als bei der Fehlermenge $F^-$ eine Möglichkeit das Ergebnis der \ac{IA} direkt nach dem Abschluss des Prozesses zu bewerten.
+    Eine große Besonderheit der \ac{IA} in der regulativen Nachweisführung ist es, dass der Prozess nur ein partielles Feedback erzeugt.
+    Der folgende Prozess erstellt hierbei eine \textit{Änderung der Nachweisführung}, welche im Folgenden als Vergleichswert und Ergebnis des Prozesses angenommen wird.
+    Im Sinne der Nachweisführung wird diese Änderung bis auf Weiteres als korrekt angenommen.
+    Erst durch eine mögliche Intervention des Aufsichtsamtes oder des Produktmanagements können Fehler in der \ac{IA} festgestellt werden.
+    Fehler, die auf diese Weise festgestellt werden, beschreiben bemängelte Nachweise von Anforderungen, dessen Änderung nicht erkannt oder nicht korrekt bzw. gar nicht abgebildet wurden.
+    Im Sinne von dem Bewertungsmodell werden diese Fehler als Menge der Anforderungen dargestellt, welche kein Teil der Ergebnismenge der \ac{IA} sind, jedoch im gewünschten Ergebnis hätten vorhanden sein müssen.
+    Die Teilmenge der Fehler $F$, bei denen Entitäten im Ergebnis der \ac{IA} fehlen, werden im Folgenden als $F^-$ bezeichnet.
+    $$
+        F^- = \text{\acsfont{AIS\#}} \;\backslash\; \text{\acsfont{EIS\#}}; \quad 
+        F^+ = \text{\acsfont{EIS\#}} \;\backslash\; \text{\acsfont{AIS\#}}
+    $$
+    
+    \noindent
+    Fehler von diesem Typen stellen ein großes Problem dar, da sie zu einem unsicheren Ergebnis\footnote{siehe Tabelle \ref{tab:eis_ais}} führen.
+    Im Sinne der Nachweisführung bedeutet dies, dass das Statement of Compliance nicht alle relevanten Anforderungen richtig abdeckt und die Gefahr besteht, dass eine Intervention der Aufsichtsbehörde die Inbetriebnahme der Ausrüstung verbietet.
+    
+    \medskip
+    Demgegenüber stehen alle Differenzen, welche Anforderungen abbilden, die durch die \ac{IA} als relevant markiert wurden, jedoch nicht zu einer Veränderung der Nachweisführung beigetragen haben\footnote{Es gilt anzunehmen, dass markierte Anforderungen nicht zu fälschlich geänderten Angaben führen, da kein Fehler in der händischen Anpassung der Angaben angenommen wird.}.
+    Formell stellt die Menge dieser Anforderungen das Gegenstück zu der obigen Definition dar.
+    
+    \medskip
+    Anders als bei Fehlern der Menge $F^-$ können Fehler der Menge $F^+$ bereits aus dem Anwendungsprozess der Änderung der Nachweisführung abgelesen werden.
+    Gemäß der Annahme, dass die Nachweisführung -- auf Basis der vorhandenen Daten -- korrekt bearbeitet wird, können alle Änderungen von Anforderungen, welche keine Änderung der Angabe produzieren, zu dieser Menge addiert werden.
+    Dies erzeugt, anders als bei der Fehlermenge $F^-$ eine Möglichkeit das Ergebnis der \ac{IA} direkt nach dem Abschluss des Prozesses zu bewerten.
 
 % Diese Tatsache erschwert -- im Vergleich zu anderen Anwendungszwecken einer \ac{IA} -- die Schaffung einer direkten Feedbackschleife, welche in der Lage ist, die produzierten Ergebnisse auf Basis der Anwendung im Prozess zu bewerten.
-
-\medskip
-Die genaue Performance der beiden Datenquellen ist nach dieser Metrik sehr stark von der Implementation abhängig. 
-Es sollte jedoch versucht werden, möglichst keine Elemente der Fehlermenge $F^-$ zu produzieren und die Mächtigkeit der Menge $F^+$ so gering wie möglich zu halten, um Arbeitsaufwände der Anpassung der Nachweisführung effizient zu gestalten.
+    
+    \medskip
+    Die genaue Performance der beiden Datenquellen ist nach dieser Metrik sehr stark von der Implementation abhängig. 
+    Es sollte jedoch versucht werden, möglichst keine Elemente der Fehlermenge $F^-$ zu produzieren und die Mächtigkeit der Menge $F^+$ so gering wie möglich zu halten, um Arbeitsaufwände der Anpassung der Nachweisführung effizient zu gestalten.
     
     % \section{Verwendung der Daten}
     % \section{Fehlende Informationen / Impedance Mismatch}
 
 \chapter{Ausblick}\label{ch:ausblick}
-    
-    \subsubsection{Bemühungen der EASA}
+\subsubsection{Bemühungen der EASA}
 
-        Aus der Analyse der Datenquellen geht hervor, dass die \ac{EASA} viele nützliche Informationen bereitstellt, um die Integration der eigenen Daten zu fördern.
-        Im Gegensatz zur \ac{EU} verpflichtet sich die Agentur jedoch nicht, alle Daten offen bereitzustellen.
-        \acp{EAR} repräsentieren so eine kurierte Darstellung der intern verfügbaren Daten der zu ihren Publikationen.
-        Ein direkter Zugriff auf die internen Systeme (bspw. das \ac{CCMS}) wird durch die \ac{EASA} explizit ausgeschlossen.
-        In der Konferenz zur Veröffentlichung des \ac{XML} Formates \cite{easa_xml_publication} betonte die Agentur, man würde eng mit Nutzer:innen der Plattform zusammenarbeiten und die Integration von weiteren gewünschten Informationen und Features prüfen.
-        Dies könnte bspw.\footnote{Beispiel aus der Konferenz} der Zugang auf die Historie der einzelnen Dokumente oder sogar einzelner Anforderungen beinhalten.
-        Auch die Bereitstellung der Daten in einem anderen Format, wie bspw. einem Web-Dienst wurde durch die Agentur nicht ausgeschlossen.
+    Aus der Analyse der Datenquellen geht hervor, dass die \ac{EASA} viele nützliche Informationen bereitstellt, um die Integration der eigenen Daten zu fördern.
+    Im Gegensatz zur \ac{EU} verpflichtet sich die Agentur jedoch nicht, alle Daten offen bereitzustellen.
+    \acp{EAR} repräsentieren so eine kurierte Darstellung der intern verfügbaren Daten zu ihren Publikationen.
+    Ein direkter Zugriff auf die internen Systeme (bspw. das \ac{CCMS}) wird durch die \ac{EASA} explizit ausgeschlossen.
+    In der Konferenz zur Veröffentlichung des \ac{XML} Formates \cite{easa_xml_publication} betonte die Agentur, man würde eng mit Nutzer:innen der Plattform zusammenarbeiten und die Integration von weiteren gewünschten Informationen und Features prüfen.
+    Dies könnte bspw.\footnote{Beispiel aus der Konferenz} der Zugang auf die Historie der einzelnen Dokumente oder sogar einzelner Anforderungen beinhalten.
+    Auch die Bereitstellung der Daten in einem anderen Format, wie bspw. einem Web-Dienst wurde durch die Agentur nicht ausgeschlossen.
 
-        \medskip
-        Auch wenn die große Schwachstelle des Datensatzes (dessen fehlende Verbindlichkeit) bleibt, so beinhaltet die Quelle eine sehr große Menge, sehr hilfreicher Informationen und Daten, welche einen großen Mehrwert für die Nachweisführungsprozesse bietet.
-        Weitere Bemühungen der \ac{EASA} zum Ausbau von diesem Zugang stellt ein sehr großes Asset der Automatisierung dieses Themenbereiches dar und sollte definitiv weiter verfolgt werden.       
-        
+    \medskip
+    Auch wenn die große Schwachstelle des Datensatzes -- der fehlenden Verbindlichkeit -- bleibt, so beinhaltet die Quelle eine sehr große Menge, hilfreicher Informationen und Daten, welche einen großen Mehrwert für die Nachweisführungsprozesse bieten.
+    Weitere Bemühungen der \ac{EASA} zum Ausbau von diesem Zugang stellt ein sehr großes Asset der Automatisierung dieses Themenbereiches dar und sollte definitiv weiter verfolgt werden.       
     
-    \subsubsection{Verwendung beider Datenquellen}
+\subsubsection{Verwendung beider Datenquellen}
 
     Im Fall der Anforderung, eine Anwendung zu schaffen, welche gesetzlich verbindlich in der Lage ist, Änderungen von Anforderungsdokumente zu definieren und Anforderungen auf Basis von Metainformationen zu sortieren, gilt es abzuwägen, ein Modell zu entwickeln, welches beide Datenquellen integriert.
     Ein solcher Ansatz würde viele der definierten Vorteile vereinen und Nutzer:innen die meisten möglichen Informationen zur Verfügung stellen.
     
     \medskip
     Das Problem, bei der Verwendung dieses Ansatzes ist die zeitunabhängige Vereinigung der Datenmengen.
-    Eine Implementation müsste folglich berücksichtigen, dass die Daten zu unterschiedlichen Zeitpunkten veröffentlicht werden, in unterschiedlichen Formaten veröffentlicht werden\footnote{\ac{RDF} und \ac{OPC}}, ihre Inhalte in unterschiedlichen Formaten darstellen\footnote{Formex4 und \ac{OOXML}}; oder strukturelle Änderungen erfahren.
+    Eine Implementation müsste folglich berücksichtigen, dass die Daten zu unterschiedlichen Zeitpunkten veröffentlicht werden, in unterschiedlichen Formaten veröffentlicht werden\footnote{\ac{RDF} und \ac{OPC}}, ihre Inhalte in unterschiedlichen Formatierungen darstellen\footnote{Formex4 und \ac{OOXML}}; oder strukturelle Änderungen erfahren.
 
-    \pagebreak
-    \subsubsection{Erarbeitete Implementationen}
-
-Im Rahmen der zugrundeliegenden Analyse dieser Arbeit wurden mehrere Prototypen entwickelt\footnote{Quellcode nicht öffentlich zugänglich}, welche testweise demonstrieren, wie die Datenquellen verwendet werden können, um die Nachweisführungsprozesse in dieser Hinsicht zu unterstützen.
-Hierbei wurde bereits bewiesen, dass sich beide Datenquellen für das maschinelle Auslesen der Daten eignen und die gelesenen Daten in Anwendungen zur Nachweisführung eingebunden werden können.
-
+\pagebreak
+\subsubsection{Mögliche Implementationen}
     
+    Im Rahmen der zugrundeliegenden Vorbereitung dieser Arbeit wurden mehrere Prototypen entwickelt\footnote{Quellcode nicht öffentlich zugänglich}, welche testweise demonstrieren, wie die einzelnen Datenquellen verwendet werden können, um die Nachweisführungsprozesse in dieser Hinsicht zu unterstützen.
+    Hierbei wurde bereits bewiesen, dass sich beide Datenquellen für das maschinelle Auslesen der Daten eignen und die gelesenen Daten in Anwendungen zur Nachweisführung eingebunden werden können.
+    % 
+    Es gilt zu betonen, dass die Einbindung der Daten auf Seiten der \ac{EASA} deutlich unkompliziert war im Vergleich zu den Daten aus Cellar.
+    Die \ac{EASA} verweist in ihrer Dokumentation bereits auf das offizielle \ac{OOXML} Software Development Kit (\acsfont{SDK}), welches verwendet werden kann, um die Dokumente einzulesen.
+    Aufgabe der Entwickler ist es folglich nur, die entsprechenden bereitgestellten Daten ordnungsgemäß abzubilden und in die Prozesse zu integrieren.
+    Mangels der Verwendung eines offiziellen Standards für die Publikation ihrer Dokumente stellt die \ac{EU} keine Werkzeuge für die Integration ihrer Daten bereit\footnote{Es existieren Werkzeuge, welche von Nutzer:innen entwickelt wurde (bspw. \href{https://github.com/EULexNET/EULex.NET}{https://github.com/EULexNET/EULex.NET}), jedoch können diese -- meist kleinen -- Tools nicht die eigentliche Tiefe der Daten abbilden, was den Mehrwert von deren Integration sehr stark beschränkt.}.
+    Unabhängig hiervon bietet Cellar die sehr viel größere und diversere Datenmenge, welche eine große Anzahl unterschiedlicher Integrationen ermöglicht.
+    Implementationen sind so nicht an den Rahmen der \ac{EASA} und deren kurierter Inhalte gebunden, sondern deckte alle regulatorischen Anforderungen ab, auf welche Nutzer:innen, möglicherweise referenzieren wollen würden.
+    
+    \medskip
+    Bei der Entwicklung einer Implementation gilt es also abzuwiegen, welches Ziel mit welchem Aufwand und welcher rechtlichen Verbindlichkeit erreicht werden soll.
+    Die \ac{EASA} bietet einen Rahmen, welcher es ermöglicht, einfach auf anforderungsspezifische Daten zuzugreifen und diese in bestehende Betriebsabläufe zu integrieren.
+    Hierbei stellt die Agentur sogar Beispiele parat, wie \ac{XSLT} dazu werden können, die Daten in eine passende, integrierbare Struktur\footnote{bspw. JSON oder SQL} zu übersetzen.
+    Im Rahmen der Nachweisführung von \atmans-Equipment deckt diese Integration bereits einen Großteil der Use Cases ab.
+    Eine Erweiterung dieser Lösung ist jedoch nur schwer möglich und die Verwendbarkeit im Rahmen der neuen Nachweisführungsprozesse der Agentur\footnote{nach 2023} sowie die weitere Datenpflege ist noch ungewiss.
+    Cellar bietet hierbei das Gegenstück. Daten in Cellar sind nicht anforderungsspezifisch formuliert, sondern decken alle Anliegen der regulativen Publikation ab.
+    Es ist folglich die Aufgabe der Integration, die relevanten Daten zu extrahieren und im Sinne der Betriebsabläufe aufzubereiten und bereitzustellen.
+    Unter Annahme von diesem Mehraufwand ist es jedoch möglich, Anwendungen einfach zu erweitern und rechtlich integer Nachweisführungsprozesse zu unterstützen.
+
 \chapter{Zusammenfassung}
 
-
+    

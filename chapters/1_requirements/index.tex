@@ -1,109 +1,117 @@
 \chapter{Betriebliche Prozesse zu ATM/ANS Equipment}
-
-\begin{center}
-    \footnotesize
-    Im Rahmen der DFS Deutsche Flugsicherung GmbH\footnote{Im Rahmen dieser Arbeit wird die Analyse und Modellierung der Prozesse und Daten in Bezug auf den Anwendungsfall der DFS betrachtet. Sie bietet das Gegenstück der Analyse der externen Anforderungsdokumente durch EU und EASA.}
-\end{center}
-
-\noindent
-\atmans Equipment stellt die essenzielle Basis aller relevanten Prozesse im Flugsicherungsbetrieb dar und ist für die Abwicklung von Flugbewegungen unabdingbar. 
-Kommunikationsdienste, Navigationsdienste, Überwachungsdienste sowie weitere Systeme zur Unterstützung von Lotsen und Lotsinnen ermöglichen es sicher, effizient und interoperabel Flugsicherung zu betreiben.
-Das Bundesministerium für Digitales und Verkehr verfügt weiter, dass alle diese ,,Flugsicherungsdienste und die dazu erforderlichen flugsicherungstechnischen Einrichtungen`` von denen eine Notwendigkeit im Sinne der \vo{DVO}{EU}{2017/373} Artikel 3a ausgeht, entsprechend vorgehalten werden.
-\cite[§27 d]{luftvg}
-
-\medskip
-In seiner Position als deutsche Flugsicherungsorganisation betreibt -- aber auch entwickelt -- die DFS Deutsche Flugsicherung GmbH das \atmans Equipment für die Erbringung von Flugsicherungsaufgaben im Verantwortungsbereich des deutschen Luftraums 
-\cite[§27 c]{luftvg}.
-Diese, ehemals hoheitliche, Aufgabe wurde nach der Privatisierung der \ac{DFS}\footnote{ehemals Bundesamt für Flugsicherung} 1993 in das \ac{LuftVG} übertragen.
-Seit der Gültigkeit des \ac{SES} Rahmens gilt die \ac{DFS} als zertifizierter deutscher \acf{ANSP} und betreut im Rahmen des funktionalen Luftraumblockes Zentraleuropa (\acs{FABEC}) die Aufgaben \textit{Upper Airspace} und \textit{Approach}. 
-
-\medskip
-Um die verschiedenen Tätigkeiten im Rahmen der konformen Inbetriebhaltung von \atmans Equipment zu gewährleisten, definiert die \ac{DFS} einen Rahmen von betrieblichen- und fachlichen Anweisungen zu konzernweiten Rahmenprozessen und internen Anforderungen. \cite[vgl.][]{fa_freigaben,ba_technik}   
-
-    \section{Produktmanagement}
-
-\graffito{Auf Wunsch von ChriS. Ich weiß nicht ob ich es noch weiter ausbauen müsste oder ob bereits ein Mehrwert durch diesen Kontext / diese Informationen gegeben sind. Gerne auch Vorschläge}
-
-Das \ac{PdM} einer \atmans-Ausrüstung ist definitionsgemäß für die Gesamtheit von dessen Führungsaufgaben und Organisation in allen Phasen bis zum Abschluss des Projektes verantwortlich \cite[31]{ba_technik}.
-Hierzu zählt auch das Änderungsmanagement, welches auf Basis von u.a. europäischen Anforderungen entsprechende Änderungsverfahren einleitet, um diese in alle bundesweiten Einrichtungen des Projektes einzubringen. 
-
-% ist für technische und regulative Anforderungen sowie deren Änderung und bundesweiten Umsetzung verantwortlich. 
-% Die Regelungen für das Änderungsmanagement von technischen Anforderungen sind deshalb durch das Produktmanagement in eigener Verantwortung zu treffen.
-% Diese passen 
-% Das Projektmanagement stellt die Gesamtheit von Führungsaufgaben, -organisation, -techniken,und -mitteln für die Initiierung, Definition, Planung, Steuerung und den Abschluss von Projekten dar.
+    
+    \begin{center}
+        \footnotesize
+        Im Rahmen der DFS Deutsche Flugsicherung GmbH\footnote{Im Rahmen dieser Arbeit wird die Analyse und Modellierung der Prozesse und Daten in Bezug auf den Anwendungsfall der \acs{DFS} betrachtet. Sie bildet das Gegenstück der Analyse der externen Anforderungsdokumente durch \acs{EU} und \ac{EASA}.}
+    \end{center}
+    
+    \noindent
+    \atmans-Equipment stellt die essenzielle Basis aller relevanten Prozesse im Flugsicherungsbetrieb dar und ist für die Abwicklung von Flugbewegungen unabdingbar. 
+    Kommunikationsdienste, Navigationsdienste, Überwachungsdienste sowie weitere Systeme zur Unterstützung von Lotsinnen und Lotsen ermöglichen es sicher, effizient und interoperabel Flugsicherung zu betreiben.
+    Das Bundesministerium für Digitales und Verkehr verfügt weiter, dass alle diese ,,Flugsicherungsdienste und die dazu erforderlichen flugsicherungstechnischen Einrichtungen`` von denen eine Notwendigkeit im Sinne der \vo{DVO}{EU}{2017/373} Artikel 3(a) ausgeht, entsprechend vorgehalten werden.
+    \cite[§27 d]{luftvg}
+    
+    \medskip
+    In seiner Position als deutsche Flugsicherungsorganisation betreibt -- aber auch entwickelt -- die DFS Deutsche Flugsicherung GmbH das \atmans-Equipment für die Erbringung von Flugsicherungsaufgaben im Verantwortungsbereich des deutschen Luftraums 
+    \cite[§27 c]{luftvg}.
+    Diese, ehemals hoheitliche, Aufgabe wurde nach der Privatisierung der \ac{DFS}\footnote{ehemals Bundesamt für Flugsicherung} 1993 in das \ac{LuftVG} übertragen.
+    Seit der Gültigkeit des \ac{SES} Rahmens gilt die \ac{DFS} als zertifizierter deutscher \acf{ANSP} und betreut im Rahmen des funktionalen Luftraumblockes Zentraleuropa (\acs{FABEC}) die Aufgaben \textit{Upper Airspace} und \textit{Approach}. 
+    
+    \medskip
+    Um die verschiedenen Tätigkeiten im Rahmen der konformen Inbetriebhaltung von \atmans Equipment zu gewährleisten, definiert die \ac{DFS} einen Rahmen von betrieblichen- und fachlichen Anweisungen zu konzernweiten Rahmenprozessen und internen Anforderungen. \cite[vgl.][]{fa_freigaben,ba_technik}   
+    
+\section{Produktmanagement}
+    
+    \graffito{Ich weiß nicht ob ich es noch weiter ausbauen müsste oder ob bereits ein Mehrwert durch diesen Kontext / diese Informationen gegeben sind. Gerne auch Vorschläge}
+    
+    Das \ac{PdM} einer \atmans-Ausrüstung ist definitionsgemäß für die Gesamtheit von dessen Führungsaufgaben und Organisation in allen Phasen bis zum Abschluss des Projektes verantwortlich \cite[31]{ba_technik}.
+    Hierzu zählt auch das Änderungsmanagement, welches auf Basis von u.a. europäischen Anforderungen entsprechende Änderungsverfahren einleitet, um diese in alle bundesweiten Einrichtungen des Projektes einzubringen. 
+    Das \ac{PdM} wird im Rahmen von Änderungen mit der technischen Umsetzung dieser vom Anforderungsmanagement beauftragt.
 
 \pagebreak
-    \section{Anforderungsmanagement}
+\section{Anforderungsmanagement}
+    
+    Das \acf{AM} ist nach Definition der \ac{DFS} für die Ersterstellung sowie die bundesweite Pflege und Weiterentwicklung der Anforderungen an eine (FS-) technische Einrichtung während ihres Lifecycle zuständig. 
+    Hierbei erhebt es betriebliche, betriebstechnische und systemtechnische Anforderungen\footnote{gemeinsam bezeichnet als \textit{angeforderter Sollzustand}} an eine (FS-) technische Einrichtung bei den Nutzer:innen und vertritt diese gegenüber dem Produkt- und/oder dem Projektmanagement. 
+    Das betriebliche Anforderungsmanagement ist für die Betriebliche Freigabe bei der Indienststellung sowie der Umrüstung einer FS-Technischen Einrichtung zuständig. \cite[31]{ba_technik}
 
-Das \acf{AM} ist nach Definition der \ac{DFS} für die Ersterstellung sowie die bundesweite Pflege und Weiterentwicklung der Anforderungen an eine (FS-) Technische Einrichtung während ihres Lifecycle zuständig. 
-Hierbei erhebt es betriebliche, betriebstechnische und systemtechnische Anforderungen\footnote{angeforderter Sollzustand} an eine (FS-)  Technische Einrichtung bei den Nutzer:innen und vertritt diese gegenüber dem Produkt- und/oder dem Projektmanagement. 
-Das betriebliche Anforderungsmanagement ist für die Betriebliche Freigabe bei der Indienststellung sowie der Umrüstung einer FS-Technischen Einrichtung zuständig. \cite[31]{ba_technik}
-
-
-    % \pagebreak
-    \section{Nachweisführung}
-
-\begin{quote}
-    Systeme für das Flugverkehrsmanagement dürfen erst in Dienst gestellt werden, wenn sie auf die
-Einhaltung der grundlegenden Anforderungen und relevanten DVO für die Interoperabilität
-geprüft wurden und diese einhalten. \cite[17]{baf_iop}
-\end{quote}
-
-
-Die Betriebsprozesse der \ac{DFS} fordern, dass es für jede Indienststellung oder Umrüstung einer FS-technischen Einrichtung / Technischen Einrichtung Typ 1 eine technische und betriebliche Freigabe zu erstellen gilt. \cite[nf.][]{fa_freigaben}
-
-\subsection{Änderungen funktionaler Systeme}
-
-\graffito{Soweit es geht werde ich hier noch versuchen weiterzuschreiben, will mich aber nicht nur auf FA/BA beziehen.}
-
-In Bezug auf Änderungen in der Domäne des ATM/ANS-Equipments definiert die DVO (EU) 2017/373 alle Änderungen an ATM/ANS-Equipment als sogenannte a1-Änderungen (bzw. a1-Changes).
-
-
-
-% \begin{quote}
-% \textcolor{red}{Evtl. ein wenig doppelt, mit dem davor. Auch wenns nichts das Gleiche ist, kann man es u.U. zusammenfassen. Wie groß soll hier der DFS Bezug sein oder soll es eher universell gehalten werden?}
-% \end{quote}
-
-        \pagebreak
-        \subsection{Statement of Compliance}
-
-        \begin{quote}
-\textcolor{red}{Kurze Definition eines SoC, danach Bedeutung für uns etc.}
-\end{quote}
-
-        \pagebreak
-        \subsection{EG-Gebrauchtauglichkeitserklärung}
-        \subsection{EG-Konformitätserklärung}
-
-\begin{quote}
-\textcolor{red}{Definitionen zu beidem als wichtiger Bestandteil der EGP(bis '23). Wie ist da die Bedeutung unter der neuen Regularik?}
-\end{quote}
-        
-        \pagebreak
-    \section{Lifecycle von ATM/ANS Equipment}
-
+    \medskip
+    Im Rahmen dieses betrieblichen Freigabeprozesses\footnote{bei Indienststellung, Umrüstung oder Änderung der Anforderungen (darunter auch regulative Anforderungen)}, ist es die Aufgabe des Anforderungsmanagements, die Nachweisführung -- gemäß der folgenden Definition -- zu allen einschlägigen externen Anforderungsdokumenten, Verordnungen wie Durchführungsbestimmungen zu erarbeiten.
+    
+\section{Nachweisführung}
+    
     \begin{quote}
-\textcolor{red}{Allgemeine Informationen aus den BAF Richtlinien zum Lifecycle des ATM/ANS Eq.}
-\end{quote}
+        ,,Systeme für das Flugverkehrsmanagement dürfen erst in Dienst gestellt werden, wenn sie auf die Einhaltung der grundlegenden Anforderungen und relevanten \ac{DVO} für die Interoperabilität geprüft wurden und diese einhalten.``
+         (\ac{BAF}) \cite[17]{baf_iop}
+    \end{quote}
     
-        \subsection{Entity Lifecycle Support Application}
+    \noindent
+    Die Betriebsprozesse der \ac{DFS} fordern, dass es für jede Indienststellung oder Umrüstung einer FS-technischen Einrichtung / Technischen Einrichtung Typ 1 eine technische und betriebliche Freigabe zu erstellen gilt 
+    \cite{fa_freigaben}.
 
-\begin{quote}
-\textcolor{red}{Ich weiß nicht, wie wichtig ELSA hier für den Inhalt dieser Arbeit ist. u.U. würde ich es weglassen.}
-\end{quote}
-    \pagebreak
-    \section{Nachweisführung regulativer Anforderungen}
+    \medskip
+    Die Verordnungslage der Interoperabilitätsverordnung\footnote{\vo{VO}{EG}{552/2004}} verlangt hierbei, dass vor der Indienststellung eines Systems durch die jeweilige Flugsicherungsorganisation eine \acf{EGP} ausgestellt wird, mit der die Einhaltung der Vorschriften bestätigt wird, und welche im Anschluss zusammen mit technischen Unterlagen der nationalen Aufsichtsbehörde vorgelegt wird. 
+    Die Bestandteile dieser Erklärung und der technischen Unterlagen sind in Anhang IV der gleichen Verordnung aufgeführt. 
+    Die nationale Aufsichtsbehörde ist außerdem in der Lage, zusätzliche Informationen anzufordern, die zur Überwachung der Einhaltung der Vorschriften erforderlich sind
+    \cite[Art. 6 Abs. 2]{2004R0552}.
+    Im Rahmen der Verordnungen
 
-\begin{quote}
-\textcolor{red}{Teils DFS Prozesse, wie mit regulativen Anforderungen umgegangen wird, teils auch andere Quellen zu der Thematik (andere Branchen)}
-\end{quote}
+
+
     
-        \subsection{Compliance Matrizen}
-        
-        \subsection{Folgen der Nachweisführungsprozesse / Audits}
+% \subsection{Änderungen funktionaler Systeme}
+%     In Bezug auf Änderungen in der Domäne des ATM/ANS-Equipments definiert die DVO (EU) 2017/373 alle Änderungen an ATM/ANS-Equipment als sogenannte a1-Änderungen (bzw. a1-Changes).
 
-        
+
+% \pagebreak
+% \subsection{Statement of Compliance}
+
+% \pagebreak
+% \subsection{EG-Gebrauchtauglichkeitserklärung}
+% \subsection{EG-Konformitätserklärung}
+
+% \pagebreak
+% \section{Lifecycle von ATM/ANS Equipment}
+
+% \subsection{Entity Lifecycle Support Application}
+
+% \pagebreak
+% \section{Nachweisführung regulativer Anforderungen}
+
+% \subsection{Compliance Matrizen}
+
+% \subsection{Folgen der Nachweisführungsprozesse / Audits}
+
+
+\pagebreak
+\subsubsection{Durchsetzung der Compliance}
+
+    Die Einhaltung der entsprechenden verabschiedeten Rahmenbedingungen und Anforderungen unterliegen aufgrund des Trennungsgebots § 31b Abs. 1 Satz 1 des \ac{LuftVG} i.V.m. Art. 87 d Abs. 1 \ac{GG} einer ,,funktional unabhängigen``\footnote{Art. 4 Abs. 1f des selbigen Textes} Behörde. \cite[S. 14]{eu_ses_studie} 
+    In Deutschland übernimmt diese Aufgabe das \acf{BAF}.
+
+    \graffito{Hier ergänze ich noch die Bedeutung von Audits und den genauen Modus operandi der Durchsetzung}
+
+
 \begin{quote}
-\textcolor{red}{Genauerer Bezug auf die DFS und unseren ATM/ANS Use Case. Grundlage für die Anforderungen für die Impact Analyse}
+    \textcolor{red}{
+        Ich habe das gesamte Kapitel 3 zu den vorherigen Versionen stark gekürzt, da ich hier nicht allzu in die Tiefe gehen möchte und alles Wichtige m.E. vorhanden ist. Sollte noch irgendetwas fehlen. 
+        EGG / EGK / ELSA / a1 Changes etc.
+        Sagt bitte Bescheid, dann würde ich die Sachen noch ergänzen. 
+        Auch wenn Themen wie ELSA im DFS Kontext Sinn ergeben, so glaube ich nicht, dass es für die Erarbeitung des Zieles dieser Arbeit eine große Bedeutung hat.    
+    }
 \end{quote}
-        
+
+
+% (14)   Zur Gewährleistung der einheitlichen Umsetzung und Einhaltung der Absätze 2 bis 9 dieses Artikels in Bezug auf die in dieser Verordnung vorgesehenen Aufgaben der zuständigen nationalen Behörden bezüglich Zertifizierung, Aufsicht und Durchsetzung erlässt die Kommission auf der Grundlage der in Artikel 4 festgelegten Grundsätze und zur Verwirklichung der in Artikel 1 festgelegten Ziele Durchführungsrechtsakte zur Festlegung detaillierter Vorschriften in Bezug auf Folgendes:
+% a)
+% die Vorschriften und Verfahren für die Durchführung der Zertifizierung und der Untersuchungen, Inspektionen, Überprüfungen (Audits) und anderen Überwachungstätigkeiten, die zur Gewährleistung einer effektiven Aufsicht durch die zuständige nationale Behörde über die dieser Verordnung unterliegende(n) natürlichen und juristischen Personen, Erzeugnisse, Teile, Ausrüstung, ATM/ANS-Systeme und ATM/ANS-Komponenten, Flugsimulationsübungsgeräte und Flugplätze erforderlich sind;
+% b)
+% die Vorschriften und Verfahren für die Durchführung der Vorfeldinspektionen durch die zuständige nationale Behörde und für die Verhängung von Startverboten für Luftfahrzeuge für den Fall, dass das Luftfahrzeug, sein Betreiber oder seine Besatzung nicht den Anforderungen dieser Verordnung oder der auf ihrer Grundlage erlassenen delegierten Rechtsakte und Durchführungsrechtsakte entsprechen;
+% c)
+% die Vorschriften und Verfahren, nach denen die in Kapitel III geregelten Tätigkeiten aus Sicherheitsgründen untersagt, beschränkt oder bestimmten Auflagen unterworfen werden können;
+% d)
+% in Bezug auf Absatz 4 die Vorschriften und Verfahren für die Verteilung der Zuständigkeiten unter den zuständigen nationalen Behörden zur Gewährleistung einer effektiven Wahrnehmung der Aufgaben bezüglich Zertifizierung, Aufsicht und Durchsetzung;
+% e)
+% die Vorschriften und Verfahren für die Akkreditierung einer qualifizierten Stelle durch die zuständige nationale Behörde für die Zwecke des Artikels 69.
+
+% Diese Durchführungsrechtsakte werden gemäß dem in Artikel 127 Absatz 3 genannten Prüfverfahren erlassen.
