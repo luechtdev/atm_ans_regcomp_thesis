@@ -72,31 +72,32 @@
 
 \section{OpenData in der Europäischen Union}
 
-    Im Jahre 2003 wurde durch die EU die sogenannte \textit{PSI-Richtlinie} (Re-use of Public Sector Information 2003/98/EG) veröffentlicht.
+    Im Jahre 2003 wurde durch die \ac{EU} die sogenannte \textit{PSI-Richtlinie} (Re-use of Public Sector Information 2003/98/\acs{EG}) veröffentlicht.
     Ziel dieser war es, einen möglichst einfachen, unbürokratischen und allgemeinen Zugriff auf Informationen des öffentlichen Sektors zu ermöglichen.
-    Die Richtlinie wurde im November 2005 auf den Geltungsbereich des EWR ausgeweitet\cite{2005D0105} und im Dezember 2006 durch das \ac{IWG} in deutsches nationales Recht umgesetzt.
+    Die Richtlinie wurde im November 2005 auf den Geltungsbereich des Europäischen Wirtschaftsraumes \acs{EWR} ausgeweitet \cite{2005D0105} und im Dezember 2006 durch das \ac{IWG} in deutsches nationales Recht umgesetzt.
     Auf Basis von erheblichen Änderungen dieser Richtlinie im Verlaufe der Zeit entschied sich die Kommission für eine Neufassung der Richtlinie, welche im Jahr 2019 erschien und die alte Richtlinie in seiner Gültigkeit ablöst. \cite[ErwG. 1ff.]{2003L0098}
         
     \medskip
-    Diese Liberalisierung der Daten wurde unter dem Ziel definiert ,,europäisch(e) Unternehmen in die Lage (zu) versetzen, deren Potenzial zu nutzen, und zu Wirtschaftswachstum und zur Schaffung von Arbeitsplätzen bei(zu)tragen.``\cite[ErwG. 5]{2003L0098} 
+    Diese Liberalisierung der Daten wurde unter dem Ziel definiert ,,europäisch(e) Unternehmen in die Lage (zu) versetzen, deren Potenzial zu nutzen, und zu Wirtschaftswachstum und zur Schaffung von Arbeitsplätzen bei(zu)tragen``\cite[ErwG. 5]{2003L0098}. 
     Auf Basis der exponentiell steigenden Datennutzung und Produktion in den Jahren nach der Veröffentlichung in 2003 sowie einer ,,kontinuierliche(n) Weiterentwicklung der zur Analyse, Nutzung und Verarbeitung von Daten eingesetzten Technologien``\cite[ErwG. 5]{2013L0037} wurde die Zielsetzung der Richtlinie auf ,,die Schaffung neuer Dienste und Anwendungen, [beruhend] auf dem Verwenden, Aggregieren oder Kombinieren von Daten``\cite[ErwG. 5]{2013L0037} ausgeweitet. 
     
 \pagebreak
 \section{EU Cellar Plattform}
 
-    Gestützt durch die PSI-Richtlinie, dem Strategiedokument \textit{Europa 2020} für u.a. der ,,Entwicklung einer auf Wissen und Entwicklung gestützten Wirtschaft`` und dem Arbeitsvertrag der Europäischen Union(AEUV), insbesondere Art. 249, beschließt die EU im Jahre 2011 auch die Weiterverwendung der eigenen Kommissionsdokumente. \cite[ErwG. 1]{2011D0833}
+    Gestützt durch die PSI-Richtlinie, dem Strategiedokument \textit{Europa 2020} für u.a. die ,,Entwicklung einer auf Wissen und Entwicklung gestützten Wirtschaft`` und dem \acf{AEUV}, insbesondere Art. 249, beschließt die \ac{EU} im Jahre 2011 auch die Weiterverwendung der eigenen Kommissionsdokumente. \cite[ErwG. 1]{2011D0833}
     
 \subsection{Implementierung}
+\vspace{-1mm}
 
     Nach dieser Richtlinie legt sich die Kommission fest, ein Datenportal einzurichten, welches einen zentralen Zugang zu ihren strukturierten Daten ermöglicht und folglich die Verknüpfung und Weiterverwendung für kommerzielle oder nichtkommerzielle Zwecke zu erleichtern. \cite[Art. 5]{2011D0833}
     Die hieraus entstandene Cellar Plattform ist ein öffentliches semantisches Repository des \ac{OP}, welche unter anderem EUR-Lex\footnote{\href{https://eur-lex.europa.eu/homepage.html?locale=de}{https://eur-lex.europa.eu/}}, als digitales Zugangsportal zu europäischem Recht, als auch eine eigene Plattform\footnote{\href{https://bookshop.europa.eu/}{https://bookshop.europa.eu/} (ehemals EU-Bookshop)} zur Publikation von weiteren informativen wie wissenschaftlichen Dokumenten ermöglicht.
-    Die Struktur der Daten basiert auf \textit{Semantic Technologies} und ermöglicht es, Daten auf Basis von definierten Standards weiterzunutzen und zu teilen. \cite[5]{eu_cellar}
+    Die Struktur der Daten basiert auf \textit{Semantic Technologies} und ermöglicht es, Daten auf Basis von definierten Standards weiterzunutzen und zu teilen \cite[5]{eu_cellar}.
     Weiter sollen Daten auch, soweit sinnvoll und nicht mit einem unverhältnismäßigen Mehraufwand verbunden, in einem maschinenlesbaren Format zur Verfügung gestellt werden. \cite[Art. 8 Abs. 1f]{2011D0833}
 
     \medskip
-    Die Plattform stützt sich dabei auf die Technologien des \textit{Semantic Web} und dessen Tech-Stack.
-    Das Ziel des \textit{Semantic Web} ist es, durch die Verwendung von bekannten und einheitlichen Formaten, Strukturen und Standards, Automatisierungen von Aufgaben sowie die Kommunikation unter allen teilnehmenden Systemen zu ermöglichen. \cite[10]{eu_cellar}   
-    Im Verwendungsfall der EU wird durch diese Technologie ein offener Zugriff auf alle Inhaltsdateien und Metadaten digitaler Disseminationen des \ac{OP} bereitgestellt. \cite[7]{eu_cellar}
+    Die Plattform stützt sich dabei auf die Technologien des \textit{Semantic Web} und dessen Tech-Stack (siehe Abb. \ref{fig:semantic}).
+    Das Ziel des \textit{Semantic Web} ist es, durch die Verwendung von bekannten und einheitlichen Formaten, Strukturen und Standards, Automatisierungen von Aufgaben sowie die Kommunikation unter allen teilnehmenden Systemen zu ermöglichen \cite[10]{eu_cellar}.   
+    Im Verwendungsfall der \ac{EU} wird durch diese Technologie ein offener Zugriff auf alle Inhaltsdateien und Metadaten digitaler Disseminationen des \ac{OP} bereitgestellt \cite[7]{eu_cellar}.
     Hierbei gilt es zu betonen, dass die individuellen Inhalte dieser Disseminationen nicht durch das semantische Modell abgebildet werden und lediglich als Inhaltsdateien gekapselt und in den jeweiligen Formaten bereitgestellt werden.
     
     \medskip
@@ -108,12 +109,12 @@
 \label{ch:eu_meta}
 
     Wie oben bereits beschrieben, stellen Metadaten einen wesentlichen Bestandteil der Cellar Plattform dar.
-    Sie bilden alle EU Disseminationen inkl. dessen Eigenschaften sowie aller Beziehungen zu anderen Disseminationen ab. 
+    Sie bilden alle \ac{EU} Disseminationen inkl. dessen Eigenschaften sowie aller Beziehungen zu anderen Disseminationen ab. 
     
 \subsubsection{Unique Resource Identifier in Cellar} \label{cellar_uri}
 
     Die Basis der gesamten Datenabbildung stellen die \acfp{URI} dar (siehe Abb. \ref{fig:semantic}).
-    Eine URI definiert einen registrierten Namen (bspw. einer Ressource) in der Domäne eines vordefinierten Namensraums (engl. Namespace).
+    Eine \ac{URI} definiert einen registrierten Namen (bspw. einer Ressource) in der Domäne eines vordefinierten Namensraums (engl. Namespace).
     Die Kombination dieser erzeugt einen eindeutigen Eintrag in das übergeordnete einheitliche System.
     \cite[2]{eu_uri_rfc1630}
     Diese eindeutigen \acp{URI} ermöglichen es, Dokumente intern wie extern eindeutig zu identifizieren und Metainformationen wie Relationen auf die entsprechenden Dokumente rückzuführen.
@@ -127,42 +128,42 @@
     \begin{table}[h]
         \centering
         \begin{tabular}{|c|l|} \hline 
-             \multicolumn{2}{|c|}{URIs der DVO (EU) 2017/373}\\ \hline 
+             \multicolumn{2}{|c|}{\acsfont{URIs} der \acsfont{DVO} (\acsfont{EU}) 2017/373}\\ \hline 
              Cellar URI& cellar:b47f7e87-03ce-11e7-8a35-01aa75ed71a1\\ \hline 
              CELEX URI& celex:32017R0373\\ \hline 
              ELI URI&eli:reg\_impl:2017:373:oj\\ \hline
              OJ URI&oj:JOL\_2017\_062\_R\_0001\\ \hline 
         \end{tabular}
-        \caption{URIs der Durchführungsverordnung (EU) 2017/373}
+        \caption{\acsfont{URIs} der Durchführungsverordnung (\acsfont{EU}) 2017/373}
         \label{tab:uris}
     \end{table}
     
-    Die abgebildete \textit{Cellar URI} (siehe \ref{tab:uris}) entspricht dem Format eines \acf{UUID} in der Version 1 und beschreibt keinerlei Eigenschaften der Disseminationen.
+    Die abgebildete \textit{Cellar} \acs{URI} (siehe \ref{tab:uris}) entspricht dem Format eines \acf{UUID} in der Version 1 und beschreibt keinerlei Eigenschaften der Disseminationen.
     Die \textit{Cellar URI} ist, wie alle anderen \acp{URI}, sprachunabhängig.
-    Ein solches Format ist besonders für eine interne Verwendung vorteilhaft, da \ac{UUID} entwurfsbedingt einzigartig und persistent sind und deshalb dezentral, in hoher Quantität generiert werden können.  
-    \cite[2]{eu_uuid_rfc4122}
+    Ein solches Format ist besonders für eine interne Verwendung vorteilhaft, da \ac{UUID} entwurfsbedingt einzigartig und persistent sind und deshalb dezentral, in hoher Quantität generiert werden können  
+    \cite[2]{eu_uuid_rfc4122}.
     Im Rahmen der EU wird die \textit{Cellar \ac{URI}} -- im Gegensatz zu den anderen hier aufgeführten -- für alle Disseminationen erzeugt und ist so in der Lage, sämtliche Publikationen jeden Typs zu identifizieren.  
 
     \pagebreak
     \noindent
-    Die \textit{CELEX URI} beschreibt hingegen die sog. CELEX Nummer, welche die EU für die Verwendung in der Eur-Lex\footnote{ehemals ,,CELEX``} Anwendung definiert hat.
-    Sie beschreibt in ihrem Aufbau den Bereich des Dokumentes, dessen Jahr der Veröffentlichung, die Art des Dokuments und dessen Nummer. \cite[2, 24]{eu_celex}
-    Im Beispiel aus der Tabelle \ref{tab:uris} (32017R0373): Bereich ,,3`` (Rechtsakte), Jahr ,,2017``, Art ,,R`` (Verordnungen), Nummer ,,0373``.
+    Die \textit{CELEX URI} beschreibt hingegen die sog. CELEX Nummer, welche die \ac{EU} für die Verwendung in der Eur-Lex\footnote{ehemals ,,CELEX``} Anwendung definiert hat.
+    Sie beschreibt in ihrem Aufbau den Bereich des Dokumentes, dessen Jahr der Veröffentlichung, die Art des Dokuments und dessen Nummer \cite[2, 24]{eu_celex}.
+    Im Beispiel aus der Tabelle \ref{tab:uris} (32017R0373): Bereich ,,3`` (Rechtsakte), Jahr ,,2017``, Art ,,R`` (Verordnungen), Laufnummer ,,0373``.
     
     \medskip
-    Die beiden weiteren URI Namensräume, die in der Tabelle \ref{tab:uris} beschrieben wurden, beschreiben die Verordnung auf eine ähnlich deskriptive Weise.
-    Der \acf{ELI} wurde in dem Jahre 2017 durch den Rat definiert und zielt ab, in Kombination mit strukturierten Metadaten zur Kategorisierung und Klassifizierung von Rechtsvorschriften, einen einfachen Zugang zu Rechtsinformationen sowie dessen erleichterten Austausch und Weiterverwendung gewährleisten. \cite[Art. 5]{52017XG1222}
-    Der deskriptive Aufbau des \ac{ELI} soll es Nutzer:innen explizit erlauben ,,\acp{URI} manuell zusammenzustellen [, um] einen schnelleren und leichteren Zugang zu den [...] gesuchten Rechtsvorschriften (zu) ermöglich(en).``\cite[Art. 6c]{52017XG1222}
-    Die \ac{ELI} \ac{URI} wird durch Doppelpunkte, oder je nach Anwendung andere Trennzeichen, in einzelne Parts unterteilt.
+    Die beiden weiteren URI Namensräume, die in der Tabelle \ref{tab:uris} aufgelistet wurden, beschreiben die Verordnung auf eine ähnlich deskriptive Weise.
+    Der \acf{ELI} wurde in dem Jahre 2017 durch den Rat definiert und zielt ab, in Kombination mit strukturierten Metadaten zur Kategorisierung und Klassifizierung von Rechtsvorschriften, einen einfachen Zugang zu Rechtsinformationen sowie dessen erleichterten Austausch und Weiterverwendung gewährleisten \cite[Art. 5]{52017XG1222}.
+    Der deskriptive Aufbau des \ac{ELI} soll es Nutzer:innen explizit erlauben ,,\acp{URI} manuell zusammenzustellen [, um] einen schnelleren und leichteren Zugang zu den [...] gesuchten Rechtsvorschriften (zu) ermöglich(en)``\cite[Art. 6c]{52017XG1222}.
+    Die \ac{ELI} \ac{URI} wird durch Doppelpunkte -- oder je nach Anwendung andere Trennzeichen -- in einzelne Parts unterteilt.
     Das \acf{OP} beschreibt für seine registrierte Verwendung des ELI Schemas -- am oben definierten Beispiel -- folgendes Format: 
-    Dokumentenart ,,reg\_impl`` Durchführungsverordnung (von engl. ,,Implementing regulation``), Jahr der Verordnung ,,2017``,  laufende Nummer ,,373``, statische Zeichenkette ,,oj``. \cite[vgl.][]{eu_op_eli_register}
+    Dokumentenart ,,reg\_impl`` Durchführungsverordnung (von engl. ,,Implementing regulation``), Jahr der Verordnung ,,2017``,  Laufnummer ,,373``, statische Zeichenkette ,,oj``. \cite[vgl.][]{eu_op_eli_register}
     
     \medskip
-    Als letzte verwendete Standard\footnote{für das gewählte Beispieldokument. In Fällen von Dokumenten mit offiziellen Zusammenfassungen (LEGISUM) oder anderen Funktionen kommen weitere \acp{URI} zu tragen} kann das Dokument über seine Publikation im \acf{OJ} referenziert werden. \footnote{Es gilt zu beachten, dass der elektronische Zugriff sowie die Identifikation von Publikationen des Amtsblattes nach dem 1.10.2023 geändert wurde \cite[siehe][]{eu_oj_actbyact}. Da zum Zeitpunkt der Arbeit keine ATM/ANS relevanten Publikation von dieser Änderung betroffen sind, wird diese nicht weiter behandelt}
-    Die gewählte Durchführungsverordnung (EU) 2017/373 wurde gemäß Art.297 Abs. 1 \ac{AEUV} in der Reihe L des Amtsblatts der Europäischen Union veröffentlicht. 
+    Als letzter verwendete Standard\footnote{für das gewählte Beispieldokument. In Fällen von Dokumenten mit offiziellen Zusammenfassungen (LEGISUM) oder anderen Funktionen kommen weitere \acp{URI} zu tragen} kann das Dokument über seine Publikation im \acf{OJ} referenziert werden \footnote{Es gilt zu beachten, dass der elektronische Zugriff sowie die Identifikation von Publikationen des Amtsblattes nach dem 1.10.2023 geändert wurde \cite[siehe][]{eu_oj_actbyact}. Da zum Zeitpunkt der Arbeit keine ATM/ANS relevanten Publikation von dieser Änderung betroffen sind, wird diese nicht weiter behandelt}.
+    Die gewählte Durchführungsverordnung (\ac{EU}) 2017/373 wurde gemäß Art.297 Abs. 1 \ac{AEUV} in der Reihe L des Amtsblatts der Europäischen Union veröffentlicht. 
     Die \ac{URI} spiegelt hierbei wider, wie der Rechtsakt in der \textit{L-Reihe} des Amtsblatts (,,JOL``), in dem Jahre ,,2017`` in der Auflage ,,62`` auf den Seiten 1ff. (,,0001``) veröffentlicht wurde.
     Eine tiefer gehende Bedeutung des Zeichens ,,R`` konnte während der Analyse nicht festgestellt werden.
-    Die Verbindung zu der Dokumentenart ähnlich der CELEX-Nummer konnte im Rahmen der Erkenntnisse jedoch ausgeschlossen werden. 
+    Die Verbindung zu der Dokumentenart, ähnlich der CELEX-Nummer, konnte im Rahmen der Erkenntnisse jedoch ausgeschlossen werden. 
     
 \subsubsection{Resource Description Framework}
 
@@ -174,11 +175,11 @@
     \medskip
     Das zentrale Konzept hinter der abstrakten Syntax des \ac{RDF} ist das \textit{Graph-based Data Modell}.
     Dieses beschreibt Informationen als sogenannte (\ac{RDF}) \textit{Triple}, jeweils bestehend aus einem Subjekt, einem Prädikat und einem Objekt. 
-    Eine Sammlung dieser Triple werden auch \ac{RDF} Graph bezeichnet und kann auch als Kombination aus Knoten und gerichteten Kanten eines Graphen abgebildet werden.
+    Eine Sammlung dieser Triple werden auch \ac{RDF} Graph genannt, welcher als Kombination aus Knoten und gerichteten Kanten abgebildet werden kann.
     Die Knoten stellen hierbei immer \acp{URI}\footnote{nach Definition in Version 1.1 \acp{IRI}} oder feste Werte, sogenannte Literale, dar.
     \cite[Abs. 1.1]{eu_rdf_concepts}
 
-
+    \medskip
     Im Beispiel der Daten, welche von Cellar bereitgestellt werden, können hierdurch Metadaten zu Verordnungen formuliert werden (siehe Tabelle \ref{tab:rdf_example}).
     Die Durchführungsverordnung, als Knoten durch die \ac{ELI} Nummer in \ac{URI} Form referenziert, stellt hier in dem Beispiel das Subjekt dar und verweist mithilfe der im EU Kontext definierten Prädikate auf Literale (siehe Zeile 1) oder auf andere \acp{URI}, wie andere Verordnungstexte (siehe Zeile 2 \& 3). 
     \begin{table}[h]
@@ -195,10 +196,9 @@
     \end{table}
         
     \noindent
-    Die Informationen aus diesem Beispiel (Tabelle \ref{tab:rdf_example}) geben uns also nun Aufschluss darüber, dass der Verordnungstext (1.) zum aktuellen Zeitpunkt noch in Kraft ist (Zeile 1), (2.) auf der Interoperabilitätsverordnung (siehe \ref{er_552}) des \ac{SES}-Pakets 1 basiert (Zeile 2) und (3.) im Jahre 2020 durch die Durchführungsverordnung DVO (EU) 2020/469 konsolidiert wurde (Zeile 3).  
-    
+    Die Informationen aus diesem Beispiel (Tabelle \ref{tab:rdf_example}) geben uns also nun Aufschluss darüber, dass der Verordnungstext (1.) zum aktuellen Zeitpunkt noch in Kraft ist (Zeile 1), (2.) auf der Interoperabilitätsverordnung (siehe \ref{er_552}) des \ac{SES}-Pakets 1 basiert (Zeile 2) und (3.) im Jahre 2020 durch die Durchführungsverordnung (\ac{EU}) \acsfont{Nr.} 2020/469 konsolidiert wurde (Zeile 3).  
     Zusätzlich zu diesen Informationen, ergänzt Cellar in einigen Fällen Triples mit weiteren Annotationen, welche weitere Informationen über die beschriebene Metadaten geben können.
-    Im Beispiel der Konsolidierung eines Rechtsaktes (fr. Actes modifiés) (MS) werden Annotationen mit den Feldern 
+    Im Beispiel der Konsolidierung eines Rechtsaktes (fr. Actes modifiés) (MS\footnote{Typ der Annotation}) werden Annotationen mit den Feldern 
     \begin{itemize}
         \item ,,\textsf{START\_OF\_VALIDITY}`` (Inkrafttreten der Änderung),
         \item ,,\textsf{REFERENCE\_TO\_MODIFIED\_LOCATION}`` (Position der Änderung in dem Dokument) und
@@ -207,13 +207,13 @@
 
     \noindent
     Um eine sprachunabhängige Referenzierung der Änderungsposition zu gewährleisten, werden Wörter wie ,,Anhang``, ,,Absatz``, usw. durch die jeweilige \ac{URI}-Referenz auf die Übersetzungstabellen des \ac{OP} referenziert.
-    Im Beispiel ändert so die Verordnung \acs{DVO} (EU) 2020/469 die Verordnung \acs{DVO} (EU) 2017/373 durch Typ ,,R`` (Ersetzung\footnote{Übersetzung nach FD\_Table375 (siehe Tabelle \ref{tab:fd_375})}) an der Stelle 
+    Im Beispiel ändert so die Durchführungsverordnung (\ac{EU}) \acsfont{Nr.} 2020/469 die \acs{DVO} (\ac{EU}) \acsfont{Nr.} 2017/373 durch Typ ,,R`` (Ersetzung\footnote{Übersetzung nach FD\_Table375 (siehe Tabelle \ref{tab:fd_375})}) an der Stelle 
     \begin{quote}
         \centering
         \textsf{
       ,,\{fd\_370/AN\} V 
         \{fd\_370/PO\} MET 
-        \{fd\_370/PTA\} (c) PT1``\\
+        \{fd\_370/PTA\} (c) PT1``\footnote{\acp{URI} gekürzt: \href{http://publications.europa.eu/resource/authority/fd_375}{http://publications.europa.eu/resource/authority/fd\_375}}\\
       ,,Anhang V Nummer MET Buchstabe (c) PT 1`` (deutsch\footnote{Übersetzung nach FD\_Table370 (siehe Tabelle \ref{tab:fd_370})})
         }
     \end{quote}
@@ -222,7 +222,7 @@
 \subsection{Inhalte}
 \label{ch:eu_content}
     
-    Die einzelnen Inhalte der Gesetzestext werden unter Cellar, formatspezifisch und sprachabhängig bereitgestellt und ebenfalls über \acp{URI} referenziert. 
+    Die einzelnen Inhalte der Gesetzestexte werden unter Cellar, formatspezifisch und sprachabhängig bereitgestellt und ebenfalls über \acp{URI} referenziert. 
     Hierdurch besteht auch durch den \ac{RDF}-Graphen eine nachvollziehbare Relation zwischen der abstrakten Ressource und dessen Manifestierung in einem spezifischen Dateiformat.
     
 \subsubsection{Funktionale Anforderungen bibliografischer Datensätze}\label{frbr}
@@ -234,9 +234,9 @@
     \medskip
     Ein \textit{Werk}, im Sinne der \ac{FRBR}, definiert, abweichend von einem physischen Werk, die abstrakte Entität einer intellektuellen Schöpfung, welche sich auf dessen Abbildung in verschiedene Expressionen des gleichen Inhaltes stützt 
     \cite[S. 16f]{eu_frbr}.
-    Übertragen auf den Cellar Rahmen stellt ein \textit{Werk} das abstrakte Konzept einer Verordnung oder einer anderen publizierten Rechtstextes dar, wessen Vorliegen erst durch die Existenz von Ausführungen (bspw. in den entsprechenden Sprachen) mit einem einheitlichen Inhalt legitimiert wird. 
-    In gewisser Hinsicht beschreibt also das definierte \textit{Werk} der \acs{DVO} (\acs{EU}) 2017/373 lediglich den einheitlich europäische verfassten Gedanken ,,zur Festlegung gemeinsamer Anforderungen an Flugverkehrsmanagementanbieter und Anbieter von Flugsicherungsdiensten [usw.]`` welcher dann durch die Publikation der Verordnung in Expressionen umgesetzt wurde.
-    Weiter definiert die Studie, dass Veränderungen eines Werkes, welche intellektuelle Anstrengungen beinhalten und von hohem Maße sind, als Schaffung eines neuen Werkes angesehen werden. \cite[17]{eu_frbr} 
+    Übertragen auf den Cellar Rahmen stellt ein \textit{Werk} das abstrakte Konzept einer Verordnung oder eines anderen publizierten Rechtstextes dar, wessen Vorliegen erst durch die Existenz von Ausführungen (bspw. in den entsprechenden Sprachen) mit einem einheitlichen Inhalt legitimiert wird. 
+    In gewisser Hinsicht beschreibt also das definierte \textit{Werk} der \acs{DVO} (\ac{EU}) \acsfont{Nr.} 2017/373 lediglich den einheitlich europäische verfassten Gedanken ,,zur Festlegung gemeinsamer Anforderungen an Flugverkehrsmanagementanbieter und Anbieter von Flugsicherungsdiensten [usw.]`` welcher dann durch die Publikation der Verordnung in Expressionen umgesetzt wurde.
+    Weiter definiert die Studie, dass Veränderungen eines Werkes, welche intellektuelle Anstrengungen beinhalten und von hohem Maße sind, als Schaffung eines neuen Werkes angesehen werden \cite[17]{eu_frbr}.
     Dies korreliert sehr gut mit dem Anwendungsmodell der \ac{EU}, da auch hier Änderungen, welche den verfassten Gedanken des \textit{Werkes} unmittelbar abändern, die Neuschaffung eines neuen \textit{Werkes} (einer Konsolidierung) einleiten und das ursprüngliche Werk in seiner intellektuellen Aussage unangetastet bleibt.
     
     \medskip
@@ -273,7 +273,7 @@
 
 \subsubsection{Cellar Formex}
 
-    Das \acf{OP} startete bereits in dem Jahre 1985 mit der Produktion von \ac{SGML} Instanzen von -- im \ac{OJ} veröffentlichten -- Dokumenten, um den Austausch mit Auftragnehmern des \ac{OP} zu vereinfachen. \cite[75]{eu_cellar, eu_fmx4_intro}
+    Das \acf{OP} startete bereits in dem Jahre 1985 mit der Produktion von \ac{SGML} Instanzen von -- im \ac{OJ} veröffentlichten -- Dokumenten, um den Austausch mit Auftragnehmern des \ac{OP} zu vereinfachen \cite[75]{eu_cellar, eu_fmx4_intro}.
     Diese verwendete Spezifikation hierfür wurde Formex (Formalised exchange of electronic documents) genannt.
     Nach der Veröffentlichung der Celex Version 3 (ab 04/1999) und unter dem nachlassenden Erfolg des \ac{SGML} Formates migrierte das Celex Format zu der kommenden Version 4 (ab 2004) zu dem strikterem \ac{XML} Dateiformat.
     Dies ermöglichte weiter auch die Adoption anderer entwickelter Standards und Werkzeugen, wie bspw. \ac{XSL}, \ac{XSLT} oder \ac{XSLFO} zur Darstellung und der weiteren Transformation der Daten für deren Anwendungs- oder Präsentationszwecke.
@@ -283,28 +283,30 @@
     Inhaltlich definiert Formex den logischen Aufbau, die Struktur aber auch den Inhalt  dieser \textit{Expressionen} der Rechtsakten.
     Das \ac{XML}-Schema bildet dabei alle strukturellen Aspekte wie Artikel, Absätze, Anhänge, etc. durch ein jeweiliges, in dem Schema definierten, Element ab. 
     Inhalte werden, integer zur \textit{Expression}, inklusive aller wichtigen Hinweise zur Textformatierung, Verweisen und Zitaten abgebildet. 
-    Unter den Inhalten können -- entsprechend dieser Arbeit -- auch Anforderungen identifiziert werden, welche entweder, implizit in dem Gesetzestext (etwa einem Absatz) oder explizit durch eine aufgeführte Anforderung mit Anforderungsnummer\footnote{vgl. Anhänge von \acs{DVO} (\acs{EU}) 2017/373} in dem \textit{Manifestation} realisiert werden.
+    Unter den Inhalten können -- entsprechend dieser Arbeit -- auch Anforderungen identifiziert werden, welche entweder, implizit in dem Gesetzestext (etwa einem Absatz) oder explizit durch eine aufgeführte Anforderung mit Anforderungsnummer\footnote{vgl. Anhänge von \acs{DVO} (\acs{EU}) \acsfont{Nr.} 2017/373} in der \textit{Manifestation} realisiert werden.
 
     \medskip
-    Das Format ermöglicht es zumeist, einzelne strukturelle Komponenten und Elemente einer \textit{Manifestation} in Bezug auf das nächst übergeordnete Element zu referenzieren; eine absolute Referenzierung einzelner Elemente ist, über dessen Referenzierung der Position im Dokument\footnote{etwa mittels XPath}, nur in Ausnahmefällen möglich.
+    Das Format ermöglicht es zumeist, einzelne strukturelle Komponenten und Elemente einer \textit{Manifestation} in Bezug auf das nächst übergeordnete Element zu referenzieren.
+    Eine absolute Referenzierung einzelner Elemente ist, über dessen Referenzierung der Position im Dokument\footnote{etwa mittels XPath}, nur in Ausnahmefällen möglich.
     Artikel und Absätze (\textsf{ARTICLE} und \textsf{PARAG} nach Formex) verfügen so über ein verpflichtendes geteiltes Attribut ,,\textsf{@IDENTIFIER}``, welches Auskunft über die Laufnummer in Bezug auf das aktuelle Dokument\footnote{\textit{Manifestation} umfasst mehrere Dokumente, bspw. Anhänge} bietet. 
     Explizite Anforderungen, welche in Anhängen dieses Dokumentes definiert sind, oder eine kleinere Granularität benötigen, lassen sich nur durch diese Information nicht identifizieren.
     Es gilt im Kommenden abzuwiegen, ob eine solche Angabe ausreicht, um integer einzelne Anforderungen zu identifizieren. 
 
     \medskip
-    Weiter werden auch Textabschnitte, welche nicht der Expression des \textit{Ursprungswerkes} entstammen, sondern der Expression eines Änderungstextes, in den entsprechenden \textit{Manifestationen} der \textit{Expressionen} der konsolidierten \textit{Werke} maschinenlesbar, aber der \textit{Expression} gegenüber integer, annotiert. 
-    Im technischen Sinne bezeichnet dies sogenannte \ac{XML}-Processing Instructions, welche per se nicht einen Teil des \ac{XML} Inhaltes darstellen, aber weitere Verarbeitungsinformationen für Interpretation dieses bereitstellen. 
+    Weiter werden auch Textabschnitte, welche nicht der Expression des \textit{Ursprungswerkes}, sondern der Expression eines Änderungstextes entstammen, in den entsprechenden \textit{Manifestationen} der \textit{Expressionen} der konsolidierten \textit{Werke} maschinenlesbar -- aber der \textit{Expression} gegenüber integer -- annotiert. 
+    Im technischen Sinne bezeichnet dies sogenannten \ac{XML}-Processing Instructions, welche per se nicht einen Teil des \ac{XML} Inhaltes darstellen, aber weitere Verarbeitungsinformationen für die Interpretation dieses bereitstellen. 
     Die entsprechenden Anweisungen ,,\textsf{CLG.MDFO}`` (Open) und ,,\textsf{CLG.MDFC}`` (Close) markieren dabei den jeweiligen Anfang und das Ende einer Änderung. 
     Attribute der Markierungen verweisen hierbei auf die jeweils andere Begrenzung, um eine Verwirrung bei mehreren oder verschachtelten Änderungen zu vermeiden.
-    Zusätzlich hierzu verfügt die öffnende Anweisung über Informationen wie der Aktion der Änderung, ob es eine strukturelle oder inhaltliche Änderung ist und aus welchem \textit{Änderungswerk} diese Änderung hervorgeht. 
+    Zusätzlich hierzu verfügt die öffnende Anweisung über Informationen wie die Art der Änderung; ob es eine strukturelle oder inhaltliche Änderung ist; und aus welchem \textit{Änderungswerk} diese Änderung hervorgeht. 
     \cite[vgl. S. 76 -- 79]{eu_fmx4_proc}
     
 \section{Bewertung der Datenquelle}
 
-    Das \acf{OP} bereitet Nutzer:innen durch Cellar und dessen untergeordnete Plattformen einen weitreichend und sehr tiefgehenden Zugang zu allen verfügbaren Informationen.
+    Das \acf{OP} bereitet Nutzer:innen durch Cellar und dessen untergeordnete Plattformen einen weitreichenden, offenen und sehr tiefgehenden Zugang zu allen verfügbaren Informationen.
     % Dies stellt sehr wohl eine gesicherte Basis für beliebige Integrationen 
-    Im Folgenden soll erörtert werden, inwiefern -- und mit welchem Aufwand -- diese Daten genutzt werden können, um die Automatisierung einer Impact-Analyse zu ATM/ANS-Equipment gemäß den in Kapitel \ref{model_anforderungen} dieser Arbeit definierten Anforderungen zu realisieren.
-    
+    Im Folgenden soll erörtert werden, inwiefern -- und mit welchem Aufwand -- diese Daten genutzt werden können, um die Automatisierung einer Impact-Analyse zu \atmans{} Equipment gemäß den in Kapitel \ref{model_anforderungen} dieser Arbeit definierten Anforderungen zu realisieren.
+
+    \medskip
     Die Anforderungen, auf welchen die Analyse basiert, gehen zumeist aus der Verordnung \ac{DVO} (\ac{EU}) 2017/373 -- und künftig auch \ac{VO} (\ac{EU}) 2023/1769ff. -- hervor. 
     Auf dieser Basis stellt die \ac{EU}, und damit das \ac{OP}, die naheliegendste Quelle der Informationen dar, um eine möglichst hohe Integrität der Inhalte zu garantieren.
     Cellar verfügt weiter über alle relevanten Dokumente der Gesetzgebungsorgane, welche für die Erfüllung der Compliance relevant sein könnten. 
@@ -344,7 +346,7 @@
 \subsubsection{Lifecycle}
 
     Der Lifecycle einer Cellar Ressource kann allein an dessen Metadaten bestimmt werden.
-    Neben teils weitreichenden Informationen über den Entwicklungsprozess der Anforderungsdokumenten\footnote{In Fällen von Rechtsakten, die durch das ordentliche Gesetzgebungsverfahren entwickelt wurden, umfasst Cellar zusätzliche Verfahrensinformationen. \cite[vgl.][]{2004R0552}}, bildet Cellars RDF-Graph alle wichtigen Ereignisse in Bezug auf das untersuchte Dokument ab.  
+    Neben teils weitreichenden Informationen über den Entwicklungsprozess der Anforderungsdokumenten\footnote{In Fällen von Rechtsakten, die durch das ordentliche Gesetzgebungsverfahren entwickelt wurden, umfasst Cellar zusätzliche Verfahrensinformationen. \cite[vgl.][]{2004R0552}}, bildet Cellars \ac{RDF}-Graph alle wichtigen Ereignisse in Bezug auf das untersuchte Dokument ab.  
     Lediglich im Falle des Übertrags von bestehenden Anforderungen in ein neues Anforderungsdokument bedürfte es einer manuellen Migration.
 
     \vspace{3.5cm}

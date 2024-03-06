@@ -167,7 +167,7 @@
 \label{model_ia_bew}
     
     Zur Bewertung der einzelnen Impact-Analysen ziehen Arnold et al. ein Modell heran, welche verschiedene Mengen über alle Entitäten des Gesamtsystems definieren.
-    Die Impact-Analyse beschreibt hierbei einen Vorgang, welche eine geschätzte Menge aller betroffenen sekundären Entitäten\footnote{Estimated Impact Set (EIS\#)}$^,$\footnote{Arnold et al. benennen Mengen, welche sich auf dem ,,interface object model level`` befinden, mit dem ,,\#`` Suffix.} -- auf Basis der primären Änderungsdefinition\footnote{Starting Impact Set (SIS\#)} -- bildet.
+    Die Impact-Analyse beschreibt hierbei einen Vorgang, welche eine geschätzte Menge aller betroffenen sekundären Entitäten (Estimated Impact Set (\acsfont{EIS\#})\footnote{Arnold et al. benennen Mengen, welche sich auf dem ,,interface object model level`` befinden, mit dem ,,\#`` Suffix.} -- auf Basis der primären Änderungsdefinition (Starting Impact Set (\acsfont{SIS\#})) -- bildet.
     Im Rahmen der automatisierten \ac{IA} (\acsfont{AIA}, siehe Abbildung \ref{fig:aia}) soll ebenfalls die Menge primärer Änderungen (\acsfont{SIS\#}) durch mögliche Implementierungen erarbeitet werden.
     Die Ein- und Ausgaben der \acf{IA} und der \acf{AIA} lassen sich wie folgt beschreiben\footnote{Die Eingabe der \ac{AIA} ist abhängig von den vorhanden Daten der später analysierten Datensätze. Im Rahmen der Analyse (siehe \ref{anal}) kann hierfür ein Wert angenommen werden.}:
     \begin{align}
@@ -254,7 +254,7 @@
 \subsection{Bewertung des Ergebnisses}
     
     Die letzte Metrik, welche verwendet werden kann, um die \ac{IA} zu bewerten, ist der Vergleich der ermittelten Menge mit der tatsächlich betroffenen Menge.
-    Die beiden Mengen\footnote{\acsfont{EIS\#} und \acsfont{AIS\#}} stellen hierbei gegenseitige keine Teil- oder Obermengen dar, weshalb die Metrik nicht begrenzt ist.
+    Die beiden Mengen\footnote{\acsfont{EIS\#} und \acsfont{AIS\#}} stellen hierbei gegenseitig keine Teil- oder Obermengen dar, weshalb die Metrik nicht begrenzt ist.
     Eine zweite Metrik gibt an, wie groß die Schnittmenge der beiden Mengen ist, um auszuschließen, dass die Mengen keine Elemente teilen (siehe Fall 7, Tabelle \ref{tab:eis_ais}). 
     
     $$
@@ -262,7 +262,8 @@
         % M = \dfrac{|\text{\acsfont{EIS\#}}|}{|\text{\acsfont{AIS\#}}|}; \quad
         N = |\acsfont{AIS\#} \cap \acsfont{EIS\#}|
     $$
-    
+
+    \noindent
     Der Optimalfall für die Nachweisführungsprozesse der Flugsicherung sollte einer der sicheren Fälle (Fälle 1-3, Tabelle \ref{tab:eis_ais}) umfassen, da diese Fälle die Vollständigkeit der Nachweisführung nicht gefährden.
     Weiter beläuft sich die Differenz der Mengen im Optimalfall gegen null, da hierdurch der manuelle Arbeitsaufwand -- Änderungen als nicht relevant zu markieren -- so gering wie möglich ausfällt.
     \bigskip

@@ -3,7 +3,7 @@
 
     Die beiden analysierten Datenquellen ermöglichen Nutzer:innen einen teils weitreichenden Zugriff auf Metadaten regulativer Anforderungsdokumente.
     Um diese Daten auch sinnvoll in die Prozesse der regulativen Nachweisführung einzubinden, bedarf es unter anderem automatisierte Mechanismen, welche in der Lage sind Änderungen in regulativen Anforderungsdokumente zu identifizieren und diese auf die entsprechenden Nachweisführungsprozesse abzubilden.
-    Im Folgenden soll diese möglichen Implementationen der Datenquellen in einer \acf{IA} erörtert und -- nach den oben definierten Kriterien (siehe \ref{model_wa}, \ref{model_ia_bew}) -- bewertet werden.
+    Im Folgenden soll diese möglichen Implementationen der Datenquellen in einer \acf{IA} erörtert und -- nach den oben definierten Kriterien (siehe \ref{model_ia}, \ref{model_ia_bew}) -- bewertet werden.
 
 \section{Verfügbarkeit der Daten}
 
@@ -158,6 +158,24 @@
     Es ist folglich die Aufgabe der Integration, die relevanten Daten zu extrahieren und im Sinne der Betriebsabläufe aufzubereiten und bereitzustellen.
     Unter Annahme von diesem Mehraufwand ist es jedoch möglich, Anwendungen einfach zu erweitern und rechtlich integer Nachweisführungsprozesse zu unterstützen.
 
-\chapter{Zusammenfassung}
+\chapter{Fazit}
 
-    \graffito{Ich werde die Zusammenfassung am Anfang und das Fazit noch schreiben und jenachdem, wann ich es fertig habe noch nachreichen. Es soll ein bisschen sicherstellen, dass der Rote Faden der Arbeit und das eigentlich Thema nicht verloren gehen.}
+    Die regulative Nachweisführung von \atmans{} Equipment beschreibt einen nicht trivialen, alternativlosen Prozess, welcher ein tiefgehendes Verständnis der behandelten Materie benötigt.
+    Es wird erwartet, dass Produktmanager:innen die Funktion und Bedeutung einzelner regulativer Anforderungsdokumente und Stakeholder:innen verstehen und im Kontext ihrer \atmans{} Komponente / -Systems anwenden können.
+    Die vollständige, integre und effiziente Bearbeitung dieser ist hierbei für die regelkonforme Inbetriebnahme von \atmans{} Equipment unabdingbar.
+    Aufgrund des hohen Arbeitsaufwandes der manuellen Nachweisführung und der individuellen Erarbeitung regulativer Änderungen im Kontext einer jeden \atmans{} Ausrüstung bestand das Interesse, zentral Änderungsinformationen zu regulativen Anforderungen zu verwalten und zu analysieren.
+    Hierbei sollten verfügbare Daten zu Anforderungen gesammelt, auf Änderungen analysiert und auf die entsprechenden betroffenen Complianceangaben abgebildet werden.
+    
+    \medskip
+    Die \ac{EU} stellt hierfür mit ihrer Cellar Schnittstelle einen sehr tiefgehenden, offenen Zugang zu allen relevanten \ac{EU}-Dokumenten bereit, welche sehr detailliert Inhalte, Beziehungen und Metadaten jener abbildet. 
+    Die Analyse und Aufarbeitung der Daten ist hierbei aufgrund der Tiefe mit einem relativ hohen Aufwand verbunden, welche jedoch eine sehr individuelle Implementierung und Verwendung der Daten ermöglicht.
+    
+    \medskip
+    Die \ac{EASA} hingegen bereitet im Rahmen ihrer Easy Access Rules eigene Publikationen wie \ac{AMC} oder \ac{GM} -- aber auch die zugrundeliegenden Durchführungsbestimmungen -- auf, um Nutzer:innen einen vereinfachten Zugang zu diesen Informationen zu schaffen.
+    Hierbei werden regulatorische Inhalte durch Flug\-sicher\-heit-spezifische Informationen und Metadaten angereichert und Inhalte in der Granularität einzelner Anforderungen abgebildet. 
+    Beides bildet einen großen Mehrwert für die Integration in Nachweisführungsprozesse, da Anforderungen in einer strukturierten Weise an Verantwortlichen herangetragen werden.
+    
+    \medskip
+    Die fehlende Aktualität, Offenheit und rechtliche Verbindlichkeit der \ac{EASA}-Daten lässt zu diesem Zeitpunkt jedoch schlussfolgern, dass deren alleinige Nutzung -- trotz ihres Mehrwerts -- eine insuffiziente Basis für die datengestützte automatische Nachweisführung darstellt. 
+    Eine bestmögliche Implementierungsstrategie zum aktuellen Zeitpunkt wäre, die Daten Cellars entsprechend der definierten Anforderungen abzubilden und soweit vorhanden, Daten der \ac{EASA} Publikationen mit diesen Daten anzureichern.
+    Im Folgenden sollte weiter beobachtet werden, ob sich die Qualität und Aktualität der \ac{EASA}-Datensätze insoweit verbessert, als dass sie eine gesicherte Quelle für Daten der Nachweisführung darstellen und die aufwendigere Integration der Cellar Daten für obsolet erklären würde.
