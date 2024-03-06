@@ -2,34 +2,36 @@
 
 \section{Motivation}
     
-    Die Zuverlässigkeit von \atmans-Equipment spielt in der Gewährleistung von Sicherheit und Effizienz im internationalen Luftverkehr eine entscheidende Rolle. 
-    Hierbei ist die Einhaltung strikter Regularien zur Funktionalität, Sicherheit und Interoperabilität verschiedener \atmans-Ausrüstungen -- vor allem in einem zunehmend einheitlichen europäischen Luftraum -- für eine reibungslose, sichere Abwicklung des Luftverkehrs unabdingbar. 
+    Die Zuverlässigkeit von \atmans{} Equipment spielt in der Gewährleistung von Sicherheit und Effizienz im internationalen Luftverkehr eine entscheidende Rolle. 
+    Die Einhaltung strikter Anforderungen zur Funktionalität, Sicherheit und Interoperabilität verschiedener \atmans{} Systeme -- vor allem in einem zunehmend einheitlichen europäischen Luftraum -- ist hierbei für eine reibungslose, sichere Abwicklung des Luftverkehrs unabdingbar. 
 
     \medskip
-    Im europäischen Luftraum sollen einheitliche rechtlich bindende Rahmenbedingungen dafür Sorge tragen, dass \atmans-Equipment sicher genutzt werden kann.
-    Zur Gewährleistung der einheitlichen Anwendung und Einhaltung wurden hierfür -- durch die Europäische Kommission -- Vorschriften definiert, welche die Verfahren der Nachweisführung zu \atmans{}-Equip\-ment sowie die Rechte und Pflichten deren Inhaber:innen beschreiben. \cite[Art. 43]{2018R1139} 
+    In diesem europäischen Luftraum sollen einheitliche, rechtlich bindende Rahmenbedingungen dafür Sorge tragen, dass \atmans{} Equipment sicher genutzt werden kann.
+    Um die einheitliche Anwendung und Einhaltung dieser zu gewährleisten, wurden von der Europäischen Kommission Vorschriften definiert, welche die Verfahren der Nachweisführung zu \atmans{} Equip\-ment sowie die Rechte und Pflichten deren Inhaber:innen beschreiben. \cite[Art.43]{2018R1139} 
         
     \medskip
-    Die korrekte Abbildung von rechtlichen Änderungen, in Bezug auf deren Auswirkungen auf die Compliance\footnote{von \atmans{}-Komponenten} erfordert einen hohen manuellen Aufwand.
-    Der große Umfang und die unterschiedlichen Lifecycle vieler Anforderungsdokumente erschweren hierbei die Analyse der vorhandenen Anforderungen.
-    Eine automatisierte \ac{RIA} soll Betreiber:innen und Entwickler:innen die besser Abschätzung betroffener Complianceangaben im Rahmen ihres \atmans-Equipments ermöglichen.
+    Die korrekte Abbildung von rechtlichen Änderungen der Anforderungsdokumente auf die jeweilige Compliance-Erklärung erfordert einen hohen manuellen Aufwand.
+    Nicht zuletzt aufgrund des Umfangs und Lifecycles verschiedener Anforderungsdokumente ist die Abbildung dieser Anforderungen herausfordernd.
+    Im Rahmen dieser Arbeit sollen Datenquellen analysiert werden, welche regulative Anforderungsdokumente in maschinenlesbarer Form bereitstellen und somit die Basis einer Impact-Analyse bilden können. 
+    Diese soll folglich Betreiber:innen und Entwickler:innen die bessere Abschätzung betroffener Complianceangaben im Rahmen ihres \atmans{} Equipments ermöglichen.
 
     \medskip
     Auch das allgemeine Interesse an automatischer Datenverarbeitung von Rechtsdokumenten ist in den letzten Jahren stark gewachsen.
     Unternehmen profitieren fortgehend von immer neuen Werkzeugen und Prozessen, die es ermöglichen, rechtliche Informationen einzulesen, zu verarbeiten oder mit internen Ressourcen und Prozessen zu verknüpfen.
-    Bestehenden Lösungen beschränken sich jedoch meist auf einzelne Anwendungsfälle, lokale Zuständigkeitsbereiche oder stellen ihre Daten nur intransparent zur Verfügung \cite[385]{eu_open_legal_info}. 
-    Um den Mehrwert einer Integration im Rahmen von einer \ac{IA} für regulatorische Anforderungen an \atmans-Equipment zu maximieren, ist es notwendig alle qualifizierten Datenquellen gewissenhaft auf ihre mögliche Verwendung zu überprüfen. 
+    Bestehende Lösungen beschränken sich jedoch meist auf einzelne Anwendungsfälle, lokale Zuständigkeitsbereiche oder stellen ihre Daten nur intransparent zur Verfügung \cite[385]{eu_open_legal_info}. 
+    Um den Mehrwert einer Integration im Rahmen von einer \ac{IA} für regulatorische Anforderungen an \atmans{} Equipment zu maximieren, ist es notwendig alle qualifizierten Datenquellen gewissenhaft auf ihre mögliche Verwendung zu überprüfen. 
         
 \pagebreak
 \section{Definition und Rahmen}
 
-    In dem Rahmen dieser Arbeit soll eine grundlegende Einführung der behandelten Prozesse aufgeführt werden.
-    Dies beinhaltet die mit der Entwicklung von \atmans{}-Equipment verbundenen Nachweisführungsprozessen; deren regulativen Basisverordnungen; sowie der Beteiligung und Funktion externer Stakeholder:innen.
-    Für die Evaluation von Betriebsprozessen bezieht sich diese Arbeit auf das Betriebsumfeld der \ac{DFS} in seiner Rolle als deutscher \ac{ANSP} und in seiner Funktion als Hersteller, Inbetriebhalter als auch als Nutzer von \atmans-Equipment.
+    Im Rahmen dieser Arbeit sollen die Daten zwei ausgewählter Quellen für die Verwendung in einer Impact-Analyse zur regulativen Nachweisführung überprüft werden.
+    Hierfür werden zunächst die zugrundeliegenden betrieblichen Nachweisführungsprozesse; deren regulativen Basisverordnungen; sowie die Beteiligung und Funktion externer Stakeholder:innen; definiert.
+    Für die Evaluation von Betriebsprozessen bezieht sich diese Arbeit auf das Betriebsumfeld der \ac{DFS} in seiner Rolle als deutscher \ac{ANSP} und in seiner Funktion sowohl als Hersteller und Inbetriebhalter als auch als Nutzer von \atmans{} Equipment.
 
     \medskip
     Des Weiteren soll geprüft werden, welche Rahmenbedingungen und Einschränkungen existieren, um auf Basis der Anforderungsdokumente\footnote{in digitaler Form} die Auswirkungen von Änderungen auf interne Anforderungsprozesse und Complianceangaben abzubilden.
-    Hierfür analysiert diese Arbeit unter anderem zwei öffentliche Datenquellen, um deren Integration für eine mögliche Impactanalyse zu evaluieren und zu bewerten.
+    Die Arbeit definiert hierfür allgemeine Anforderungen an ein Datenmodell, welche für die Abbildung der Daten erforderlich sind und eine Vergleichbarkeit der beiden Quellen schaffen. 
+    Zur Auswahl der Datenquellen wurden zwei öffentliche, offizielle Schnittstellen relevanter Behörden der \ac{EU} berücksichtigt:  
     
     \begin{itemize}
         \item Daten des Amts für Veröffentlichung der Europäischen Union (\acs{EU})
@@ -37,12 +39,11 @@
     \end{itemize}
 
     \noindent
-    Im Rahmen der Analyse gilt es, die Quellen anhand ihrer Formate, Tiefe, Bereitstellung, rechtlicher Relevanz, Zugriff, Vergleichbarkeit; sowie deren Integration in ein vordefiniertes Datenmodell und einer Impactanalyse\footnote{gemäß eines herangezogenen Frameworks}; zu vergleichen und anhand von definierten Kriterien und Metrik zu bewerten.
-
+    Im Rahmen der Analyse gilt es, die Quellen anhand ihrer Formate, Tiefe, Bereitstellung, rechtlichen Relevanz, Zugriff, Vergleichbarkeit; sowie deren Integration in das vordefinierte Datenmodell und einer Impact-Analyse\footnote{gemäß eines herangezogenen Frameworks}; zu vergleichen und anhand von definierten Kriterien und Metriken zu bewerten.
     
 \section{Zeitliche Einordnung}
 
     Diese Arbeit entsteht in dem Zeitraum von Dezember 2023 bis März 2024.
-    Auch nach Inkrafttreten der Delegierten Verordnungen der \ac{EU} Nrn. 2023/1768ff. im September 2023 ist die Adoption der darin beschriebenen Prozesse zur Zeit des Verfassens noch nicht vollständig umgesetzt. 
+    Auch nach Inkrafttreten der Delegierten Verordnungen der (\ac{EU}) \acsfont{Nrn}. 2023/\-1768ff. im September 2023 ist die Adoption der darin beschriebenen Prozesse zur Zeit des Verfassens noch nicht vollständig umgesetzt. 
     Das \ac{BAF} stellt zwischenzeitlich eigene Anforderungen zu der Nachweisführung, welche die Zeit der europäischen Adoption und der Übernahme der \ac{EASA} sowie dessen Spezifikation der Prozesse, überbrücken soll.
     Aufgrund der noch fehlenden Spezifikationen zur Nachweisführung der \ac{EASA} sowie den entsprechenden Businessprozessen der Flugsicherungen bezieht sich diese Arbeit in Teilen der Analyse und Definition der Prozesse noch auf Prozesse zur Nachweisführung unter dem \ac{BAF}. 

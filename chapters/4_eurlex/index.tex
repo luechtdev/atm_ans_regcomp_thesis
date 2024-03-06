@@ -1,8 +1,8 @@
 \chapter{Datenquelle 1: EU Verordnungen und Cellar}
 \section{Europäische Verordnungen}
 
-    Die regulative Grundlage für alle, in dieser Arbeit thematisierten, Anforderungen werden direkt oder delegiert in europäischen Verordnungen -- und jene konsolidierende Medien -- festgehalten.
-    Die Arbeitsweise der EU und dessen beteiligte legislative Organe wird durch den \acf{EUV} und dem \acf{AEUV} festgelegt.
+    Die regulative Grundlage für alle in dieser Arbeit thematisierten Anforderungen werden direkt oder delegiert in europäischen Verordnungen -- und jene konsolidierende Medien -- festgehalten.
+    Die Arbeitsweise der EU und deren beteiligte legislative Organe wird durch den \acf{EUV} und dem \acf{AEUV} festgelegt.
         
 \subsection{Beteiligte Organisationen}
 \subsubsection{Europäische Kommission}
@@ -96,8 +96,8 @@
     \medskip
     Die Plattform stützt sich dabei auf die Technologien des \textit{Semantic Web} und dessen Tech-Stack.
     Das Ziel des \textit{Semantic Web} ist es, durch die Verwendung von bekannten und einheitlichen Formaten, Strukturen und Standards, Automatisierungen von Aufgaben sowie die Kommunikation unter allen teilnehmenden Systemen zu ermöglichen. \cite[10]{eu_cellar}   
-    Im Verwendungsfall der EU wird durch diese Technologie ein offener Zugriff auf alle Inhaltsdatein und Metadaten digitaler Disseminationen des \ac{OP} bereitgestellt. \cite[7]{eu_cellar}
-    Hierbei gilt es zu betonen, dass die individuellen Inhalte dieser Disseminationen nicht durch das semantische Modell abgebildet werden und lediglich als Inhaltsdatein gekapselt und in den jeweiligen Formaten bereitgestellt werden.
+    Im Verwendungsfall der EU wird durch diese Technologie ein offener Zugriff auf alle Inhaltsdateien und Metadaten digitaler Disseminationen des \ac{OP} bereitgestellt. \cite[7]{eu_cellar}
+    Hierbei gilt es zu betonen, dass die individuellen Inhalte dieser Disseminationen nicht durch das semantische Modell abgebildet werden und lediglich als Inhaltsdateien gekapselt und in den jeweiligen Formaten bereitgestellt werden.
     
     \medskip
     Im Beispiel einer beliebigen \acf{VO} verfügt das Modell so über sämtliche Metainformationen, bspw. Datum des Inkrafttretens, Datum und Amtsblatt der Veröffentlichung, Änderungen an oder durch andere \acp{VO}, Verweise und Zitate auf oder durch andere \acp{VO}; sowie den Verweis auf alle publizierten Inhaltsdokumente der ausgewählten Sprache in allen publizierten Formaten
@@ -227,21 +227,22 @@
     
 \subsubsection{Funktionale Anforderungen bibliografischer Datensätze}\label{frbr}
         
-    Um die einzelnen Inhalte auf ihren verschiedenen Abstraktionsebenen beschreiben zu können, verwendet Cellar mehrere Implementationen von Hierarchien des \acs{WEMI} Schemas, definiert in der \ac{FRBR}  Studie \cite[S. 29f]{eu_cellar}.
+    Um die einzelnen Inhalte auf ihren verschiedenen Abstraktionsebenen beschreiben zu können, verwendet Cellar mehrere Implementationen von Hierarchien des \acs{WEMI} Schemas, definiert in der Studie ,,\ac{FRBR}`` \cite[S. 29f]{eu_cellar}.
     Das genannte \acs{WEMI}-Schema beschreibt hierbei die Abstufung von \ac{FRBR} Entitäten der Gruppe 1 und dessen Beziehungen untereinander. 
     Die genannten Entitäten beinhalten \ac{WEMI} \cite[12]{eu_frbr}.
 
     \medskip
-    Ein \textit{Werk}, im Sinne der \ac{FRBR}, definiert, abweichend von einem physischen Werk, die abstrakte Entität einer intellektuellen Schöpfung, welche sich auf dessen Abbildung in verschiedene Expressionen des gleichen Inhaltes stützt \cite[S. 16f]{eu_frbr}.
+    Ein \textit{Werk}, im Sinne der \ac{FRBR}, definiert, abweichend von einem physischen Werk, die abstrakte Entität einer intellektuellen Schöpfung, welche sich auf dessen Abbildung in verschiedene Expressionen des gleichen Inhaltes stützt 
+    \cite[S. 16f]{eu_frbr}.
     Übertragen auf den Cellar Rahmen stellt ein \textit{Werk} das abstrakte Konzept einer Verordnung oder einer anderen publizierten Rechtstextes dar, wessen Vorliegen erst durch die Existenz von Ausführungen (bspw. in den entsprechenden Sprachen) mit einem einheitlichen Inhalt legitimiert wird. 
     In gewisser Hinsicht beschreibt also das definierte \textit{Werk} der \acs{DVO} (\acs{EU}) 2017/373 lediglich den einheitlich europäische verfassten Gedanken ,,zur Festlegung gemeinsamer Anforderungen an Flugverkehrsmanagementanbieter und Anbieter von Flugsicherungsdiensten [usw.]`` welcher dann durch die Publikation der Verordnung in Expressionen umgesetzt wurde.
     Weiter definiert die Studie, dass Veränderungen eines Werkes, welche intellektuelle Anstrengungen beinhalten und von hohem Maße sind, als Schaffung eines neuen Werkes angesehen werden. \cite[17]{eu_frbr} 
     Dies korreliert sehr gut mit dem Anwendungsmodell der \ac{EU}, da auch hier Änderungen, welche den verfassten Gedanken des \textit{Werkes} unmittelbar abändern, die Neuschaffung eines neuen \textit{Werkes} (einer Konsolidierung) einleiten und das ursprüngliche Werk in seiner intellektuellen Aussage unangetastet bleibt.
     
     \medskip
-    \textit{Expressionen} beschreiben, wie bereits angedeutet, eine spezifische Forme, welche bei der intellektuellen Realisierung eines \textit{Werkes} angenommen wird.
+    \textit{Expressionen} beschreiben, wie bereits angedeutet, eine spezifische Form, welche bei der intellektuellen Realisierung eines \textit{Werkes} angenommen wird.
     Die \textit{Expression} umfasst hierbei inhaltliche Aspekte des \textit{Werkes}, wie spezifische Wörter, Sätze, Absätze usw., die sich aus dessen Realisierung ableiten. 
-    Aspekte der physischen Form, wie Formatierung oder dem Erscheinungsbild der Realisierung, sind hierbei von der Definition einer \textit{Expression} hierbei ausgeschlossen \cite[S. 18f]{eu_frbr}.
+    Aspekte der physischen Form, wie Formatierung oder dem Erscheinungsbild der Realisierung sind hierbei von der Definition einer \textit{Expression} ausgenommen \cite[S. 18f]{eu_frbr}.
     Im Rahmen von Cellar beschreibt die Realisierung eines \textit{Werkes}, so die jeweiligen Publikationen, der Verordnung in den 23 Amtssprachen der EU\footnote{hier ausgenommen Irisch-Gälisch}.
     Diese definieren durch den entsprechenden Wortlaut ihrer Realisierung des \textit{Werkes} fortan eine eigene \textit{Expression}.
     
@@ -288,7 +289,7 @@
     Das Format ermöglicht es zumeist, einzelne strukturelle Komponenten und Elemente einer \textit{Manifestation} in Bezug auf das nächst übergeordnete Element zu referenzieren; eine absolute Referenzierung einzelner Elemente ist, über dessen Referenzierung der Position im Dokument\footnote{etwa mittels XPath}, nur in Ausnahmefällen möglich.
     Artikel und Absätze (\textsf{ARTICLE} und \textsf{PARAG} nach Formex) verfügen so über ein verpflichtendes geteiltes Attribut ,,\textsf{@IDENTIFIER}``, welches Auskunft über die Laufnummer in Bezug auf das aktuelle Dokument\footnote{\textit{Manifestation} umfasst mehrere Dokumente, bspw. Anhänge} bietet. 
     Explizite Anforderungen, welche in Anhängen dieses Dokumentes definiert sind, oder eine kleinere Granularität benötigen, lassen sich nur durch diese Information nicht identifizieren.
-    Es gilt im Kommenden abzuwiegen, ob eine solche 
+    Es gilt im Kommenden abzuwiegen, ob eine solche Angabe ausreicht, um integer einzelne Anforderungen zu identifizieren. 
 
     \medskip
     Weiter werden auch Textabschnitte, welche nicht der Expression des \textit{Ursprungswerkes} entstammen, sondern der Expression eines Änderungstextes, in den entsprechenden \textit{Manifestationen} der \textit{Expressionen} der konsolidierten \textit{Werke} maschinenlesbar, aber der \textit{Expression} gegenüber integer, annotiert. 

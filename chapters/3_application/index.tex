@@ -1,53 +1,55 @@
 \chapter{Anforderungen der Impactanalyse}
 
     Eine Umsetzung einer automatischen regulativen Impactanalyse, welche die beschriebenen betrieblichen Prozesse des Anforderungsmanagements und der Nachweisführung berücksichtigt und die Lifecycle und Struktur regulatorischen Anforderungen und Anforderungsdokumenten darstellen kann, bedarf einiger Voraussetzungen.  
-    Nach der Marktanalyse der \ac{EGRC} Plattformen durch Gartner \cite{app_gartner} unterstützt Compliance Management ,,Compliance Fachpersonal bei der Dokumentation, bei Workflows, Berichterstattung und der Visualisierung von Control Objectives [...]``\cite[S.4 (übersetzt)]{app_gartner} für verschiedene branchenspezifischen Regularien, Vereinbarungen und Anforderung externer oder interner Anforderungen.       
-    Die Impactanalyse -- oder dessen mögliche Implementation in Rahmen einer Anwendung, einer \ac{EGRC} Plattform oder eines Businessprozesses -- sollte folglich in der Lage sein, einen Mehrwert im Sinne einer Automatisierung oder einer Verringerung des händischen Workloads darzustellen.
+
+    \medskip
+    Nach der Marktanalyse der \ac{EGRC} Plattformen durch Gartner \cite{app_gartner} unterstützt Compliance Management ,,Compliance Fachpersonal bei der Dokumentation, bei Workflows, Berichterstattung und der Visualisierung von Control Objectives [...]``\cite[S. 4 (übersetzt)]{app_gartner} für verschiedene branchenspezifische Regularien, Vereinbarungen sowie externe und/oder interne Anforderungen.       
+    Die Impactanalyse -- oder dessen mögliche Implementation in Rahmen einer Anwendung, einer \ac{EGRC} Plattform oder eines Businessprozesses -- sollte folglich auch in der Lage sein, einen Mehrwert im Sinne einer Automatisierung oder einer Verringerung des händischen Workloads darzustellen.
 
 \section{Ziel der Impactanalyse}
     
-    Ziel der \acf{RIA} im Rahmen dieser Implementation ist es, eine Liste jener Complianceangaben zu erhalten, welche für die Erfüllung einer relevanten Anforderung benötigt werden und durch die analysierte Änderung \textit{betroffen} sind. 
+    Das gewünschte Ergebnis der regulatorischen \acf{IA} im Rahmen dieser Implementation ist es, eine Liste jener Complianceangaben zu erhalten, welche für die Erfüllung einer relevanten Anforderung benötigt werden und durch eine analysierte Änderung \textit{betroffen} sind. 
     Eine Complianceangabe gilt folglich als \textit{betroffen}, sowie die zugrundeliegende abgedeckte Anforderung verändert, ersetzt, gelöscht oder durch ein anderes Anforderungsdokument -- oder eine andere Anforderung -- konsolidiert wurde.
     Auch neue Anforderungen, hervorgehend aus neuen Anforderungsdokumenten oder der Ergänzung/Konsolidierung bestehender Dokumente, sollten durch die Analyse erkannt und je nach ihrer bewerteten Bedeutung entsprechend berücksichtigt werden.   
     Diese Abbildung hilft folglich dabei, den Umfang größerer regulatorischer Änderungen oder Konsolidierungen besser auf einen kleineren -- für das Projekt relevanten -- Rahmen herunterzubrechen und die Effizienz sowie die Qualität der Nachweisführungsprozesse zu optimieren. 
-    Herstellende Partein der betroffenen Komponenten könnten so, auf Basis dieser Analyse, einfach und übersichtlich betroffene Angaben bzgl. der Compliance ändern und fortan eine hohe Qualität der Nachweisführung sicherstellen.
+    Herstellende Parteien der betroffenen Komponenten könnten so, auf Basis dieser Analyse, einfach und übersichtlich betroffene Angaben bzgl. der Compliance ändern und fortan eine hohe Qualität der Nachweisführung sicherstellen.
 
     \medskip
-    Neben den Ergebnissen der Impact Analyse und dessen Verwendung in den entsprechenden Nachweisführungsprozessen werden im Zuge der Analyse Datensätze erarbeitet, die auch einen Mehrwert für andere Aufgabenbereiche erwirtschaften kann. 
+    Neben den Ergebnissen der Impact Analyse und deren Verwendung in den entsprechenden Nachweisführungsprozessen werden im Zuge der Analyse Datensätze erarbeitet, welche auch einen Mehrwert für andere Aufgabenbereiche erwirtschaften können. 
 
 
 \pagebreak
 \section{Modellierung der Daten} 
 
-    Die Basis der Analyse bedarf der Existenz eines umfassenden Datensatzes, welcher -- unabhängig von dessen Semantik -- in der Lage ist, regulative Anforderungen, \atmans-Komponenten, \atmans-Systeme, jeweils mit allen wichtigen zugehörigen Informationen, Metadaten, Lifecycle sowie dessen Beziehungen untereinander abzubilden.
+    Die Basis der Analyse bedarf der Existenz eines umfassenden Datensatzes, welcher -- unabhängig von dessen Semantik -- in der Lage ist, regulative Anforderungen, \atmans{} Komponenten und \atmans{} Systeme, jeweils mit allen wichtigen zugehörigen Informationen, Metadaten, Lifecycles sowie deren Beziehungen untereinander abzubilden.
     Im Folgenden sollen hierzu Anforderungen erarbeitet und erörtert werden, die eine Analyse unter dem oben definierten Ziel ermöglichen.
 
 \subsection{Regulative Anforderungen}\label{model_anforderungen}
 
-    Regulative (externe) Anforderungen beschreiben im Folgenden alle Anforderungen und Definition, welche von gesetzgebenden -- oder hierdurch berechtigten -- Parteien verfasst wurden und eine fortlaufende Bedeutung für die Erklärung der Compliance einer \atmans-Komponenten / eines \atmans-Systeme hat.   
+    Regulative (externe) Anforderungen beschreiben im Folgenden alle Anforderungen und Definition, welche von gesetzgebenden -- oder hierdurch berechtigten -- Parteien verfasst wurden und eine fortlaufende Bedeutung für die Erklärung der Compliance einer \atmans{} Komponenten / eines \atmans{} Systeme hat.   
     Im Rahmen dieser Analyse bilden diese Anforderungen den volatilen Teil, aus welchem die zu analysierenden Änderungen hervorgehen.
-    Dementsprechend bedarf es einer Datendarstellung, welche in der Lage ist, die entsprechenden Lifecycle und Änderungen der Anforderungen inkl. aller wichtigen Informationen integer abzubilden.   
+    Dementsprechend bedarf es einer Datendarstellung, welche in der Lage ist die entsprechenden Lifecycles und Änderungen der Anforderungen inkl. aller wichtigen Informationen integer abzubilden.   
     Wichtige Anforderungen an eine solche Abbildung beinhalten:
 
 \subsubsection{Eindeutige Kennung}
 
     Um eine einheitliche Nachweisführung sicherzustellen, muss durch die Datenmodellierung gewährleistet sein, dass Anforderungen -- auch über Konsolidierungen oder strukturelle Änderungen der Anforderungsdokumente hinweg -- eindeutig identifiziert werden können.
-    Sowie die Anforderungsdokumente und dessen Quelle keine eindeutige, struktur- und zeitunabhängige Identifizierung der  einzelnen Anforderungen zur Verfügung stellen, bedarf es eines eigenen Prozesses zur Durchsetzung eigener Kennungsmethoden.  
+    Sowie die Anforderungsdokumente und deren Quelle keine eindeutige, struktur- und zeitunabhängige Identifizierung der  einzelnen Anforderungen zur Verfügung stellen, bedarf es eines eigenen Prozesses zur Durchsetzung eigener Kennungsmethoden.  
     Die Granularität, mit welcher Textabschnitte identifiziert werden können, gilt es gesondert in Bezug auf die Struktur der einzelnen Anforderungsdokumente herauszuarbeiten.
 
     \medskip
     Im Falle von \acs{EU} Verordnungen oder anderen Gesetzestexten sind die Kennung eines Textabschnittes zumeist an die Struktur des Dokumentes gebunden. 
-    In diesem Falle ist die Kennung einer Anforderung in einem Dokumente auch unmittelbar mit dessen Position in der Gliederung verknüpft. 
-    In diesen Fällen gilt es zu prüfen, ob strukturelle Änderungen der Anforderungsdokumente Auswirkungen, die Nummerierung bestehender Textabschnitte haben kann.
+    In diesem Falle ist die Kennung einer Anforderung in einem Dokument auch unmittelbar mit dessen Position in der Gliederung verknüpft. 
+    In diesen Fällen gilt es zu prüfen, ob strukturelle Änderungen der Anforderungsdokumente Auswirkungen auf die Nummerierung bestehender Textabschnitte haben können.
     Im Beispiel von digitalen Verordnungen der EU\footnote{Publiziert durch das Amt für Veröffentlichungen der Europäischen Union (FMX Format)} besteht aus Basis der technischen Dokumentation die Möglichkeit, dass die Struktur und Nummerierung von Textabschnitten im Rahmen einer Konsolidierung oder Korrektur überarbeitet werden\footnote{Nach der Dokumentation zu Annotationen bzgl. Änderungen (siehe ,,CLG.MDFO/MDFC``) im FMX Format kann die Nummerierung ersetzt werden (siehe Codes \textit{(NN): new numbering}, \textit{(ON): old numbering})\cite[vgl S. 76-79]{eu_fmx4_proc}}. 
     Auch wenn derartige Änderungen nicht im Sinne der Integrität des Anforderungsdokumentes getätigt werden und eine eigene Prüfung der relevanten Dokumente ergab, dass kein etwaiger Fall in den Dokumenten gefunden wurde, so gilt es im Einzelfall zu eruieren, ob eine strukturelle Identifizierung einzelner Anforderungen eine ausreichend integre Identifizierungsmethode darstellt. 
 
 \subsubsection{Regulative Quelle}
     
     Die \textit{regulative Quelle} einer Anforderung soll im Folgenden definieren, aus welchem Anforderungsdokument sich eine gewisse Anforderung ableitet. 
-    Diese Angabe soll folglich sicherstellen, dass auch komplexere Lifecycle von Anforderungen, und dessen Änderungsgesetzen\footnote{Definition hier entsprechend  \textit{amending acts} (engl.) \cite{eu_consolidation}} adäquat abgebildet werden können.
+    Diese Angabe soll folglich sicherstellen, dass auch komplexere Lifecycles von Anforderungen, und dessen Änderungsgesetzen\footnote{Definition hier entsprechend  \textit{amending acts} (engl.) \cite{eu_consolidation}} adäquat abgebildet werden können.
     Im möglichen Falle einer Änderung zweiten Grades, bspw. der Korrektur eines Änderungsgesetzes, kann durch den Verweis auf das Änderungsgesetz als \textit{regulative Quelle}, auch dessen Korrektur festgestellt werden. 
-    Alle konsolidieren Dokumente, jeden Grades, werden somit in den digitalen Lifecycle des Datenmodells mitaufgenommen, entsprechend abgebildet und berücksichtigt.  
+    Alle konsolidierenden Dokumente, jeden Grades, werden somit in den digitalen Lifecycle des Datenmodells mitaufgenommen, entsprechend abgebildet und berücksichtigt.  
 
     \medskip
     Sowie -- durch die Analyse -- erschlossen, bietet dieses Attribut Auskunft über die Versionierung individueller Anforderungen und ermöglicht es, einfach nachzuvollziehen, welche Anforderungen durch welche Konsolidierung betroffen sind und möglichen inhaltlichen Änderungen unterliegen.
@@ -71,54 +73,55 @@
 
     Der Lifecycle einer Anforderung stellt den Hauptfokuspunkt der Analyse dar. 
     Folglich sollte das Datenmodell in der Lage sein, alle möglichen Arten von Änderungen und Auflösungen der Anforderung darstellen zu können.
-    Dies beinhaltet im Falle von Verordnungen der \ac{EU} die Änderung oder Korrektur durch andere Änderungsgesetze oder durch eine Mitteilung im Amtsblatt; die Ablösung einer Verordnung durch eine neue Verordnung oder die Auflösung von dessen Gültigkeit; oder die mögliche Umstrukturierung eines Anforderungsdokumentes.
+    Dies beinhaltet -- im Falle von Verordnungen der \ac{EU} -- die Änderung oder Korrektur durch andere Änderungsgesetze oder durch eine Mitteilung im Amtsblatt; die Ablösung einer Verordnung durch eine neue Verordnung oder die Auflösung von dessen Gültigkeit; oder die mögliche Umstrukturierung eines Anforderungsdokumentes.
     
     \medskip
-    Weiter benötigen einige Formen der Nachweisführung\footnote{bspw. das Format der Compliance-Matrix zur Dokumentation der EG-Prüferklärung (Gültigkeit bis 2023)} die Dokumentation der gesamten inhaltlichen Historie einer Anforderung.
+    Im Weiteren benötigen einige Formen der Nachweisführung\footnote{bspw. das Format der Compliance-Matrix zur Dokumentation der EG-Prüferklärung (Gültigkeit bis 2023)} die Dokumentation der gesamten inhaltlichen Historie einer Anforderung.
     Hierfür ist es notwendig, auch auf vorherige Konsolidierungen/Versionen einer Anforderung inhaltlich zugreifen zu können. 
     
 \subsection{ATM/ANS Equipment}
     
-    Die Abbildung des einzelnen \atmans-Equipments im Rahmen dieser Datenmodellierung ist es lediglich, eine Entität zu definieren, für welchen die Compliance einer bestimmten Sammlung Anforderungen nachgewiesen werden kann.
-    Hierbei gilt es zwischen den einzelnen Komponenten und Baselines der Ausrüstung zu differenzieren.
+    Die Funktion der einzelnen \atmans{} Ausrüstung, im Rahmen dieser Datenmodellierung, ist es lediglich eine Entität zu definieren, für welche die Compliance einer bestimmten Sammlung an Anforderungen erklärt werden kann.
+    Hierbei gilt es zwischen den einzelnen standortabhängigen Komponenten und standortabhängigen Baselines der Ausrüstung zu differenzieren.
     Die Ausrüstung sollte innerhalb des Datenmodells eindeutig identifiziert werden können und sich gut in die bestehende Infrastruktur und Dienste der Flugsicherung integrieren lassen können.
     
 
 \subsection{Angaben zur Compliance} \label{model_angaben}
 
-    Das Hauptziel der Analyse sowie der Nachweisführung von \atmans-Equip\-ment ist es, dessen Compliance nachzuweisen, um einen sicheren Gebraucht und Inbetriebnahme sicherzustellen. 
-    Hierbei wird in den entsprechenden Compliancedokumenten (\ac{SoC}) auf Basis der technischen Dokumentation (bspw. \ac{SSS}) die Compliance zu den einzelnen Anforderungen erklärt.
+    Das Hauptziel der Analyse -- sowie der Nachweisführung von \atmans{} Equip\-ment -- ist es, die Compliance der einzelnen Anforderungen zu erklären, um den sicheren Gebrauch und die sichere Inbetriebnahme der Ausrüstung sicherzustellen. 
+    Hierbei wird in den entsprechenden Compliancedokumenten (\ac{SoC}) auf Basis der technischen Dokumentation (z.B. \ac{SSS}) die Compliance zu den einzelnen Anforderungen erklärt.
     Aus Perspektive der Datenmodellierung stellt eine solche Complianceangabe die Relation zwischen den einzelnen regulativen Anforderungen und den entsprechenden Baselines / Komponenten dar.
     Complianceangaben sollten dabei für die Kombination an Equipment und Version der Anforderung einmalig vorliegen. 
     Für die Angabe einer jeden Baseline bestehen folgende Informationen: 
 
-% \subsubsection{Equipmentreferenz}
-% Auf der anderen Seite der Relation referenziert die Relation eine Baseline / Komponente von ATM/ANS-Equipments.
-
 \pagebreak
 \subsubsection{Anforderungsreferenz}
+\vspace{-1mm}
     
     Dadurch, dass die Anforderungsreferenz sinngemäß beschreibt, welche Anforderung durch die Angabe gerade erklärt wird, ist es notwendig, neben der Anforderung selber, auch zu beschreiben, welche Version der Anforderung gerade erklärt wird. 
-    So lässt sich später einfacher ableiten, dass Angaben, dessen Anforderungen bereits konsolidiert wurden, nicht mehr den aktuellen Soll-Zustand der Compliance abbilden. 
+    So lässt sich später einfacher ableiten, dass Angaben, deren Anforderungen bereits konsolidiert wurden, nicht mehr den aktuellen Soll-Zustand der Compliance abbilden. 
     Neben der Möglichkeit, die Gültigkeit der Angabe an dessen Erstellungszeitpunkt zu binden und diesen mit Zeitpunkten neuerer Änderungen gegenzuprüfen, ermöglicht die vorhergehende Modellierung der Anforderungen (siehe \ref{model_anforderungen}) alternativ einen Verweis auf die bereits definierte \textit{regulative Quelle} der Anforderung. 
     So würde eine Angabe beispielsweise die Anforderung \textsf{ATS.OR.130} der \vo{DVO}{EU}{2017/373}, in ihrem Inhalt zuletzt konsolidiert durch die \vo{DVO}{EU}{2020/469}, erklären. 
     Der Eintrag verweist so im Modell sowohl auf die Anforderung (\textsf{ATS.OR.130}) als auch auf die Verordnung (\vo{DVO}{EU}{2020/469}) und kann bei neuen Konsolidierungen des Anforderungsdokumentes mit der hinterlegten regulativen Quelle abgleichen, um die Integrität der Angabe über die Änderung hinweg zu gewährleisten.
 
 \subsubsection{Art der Compliance / Zuständigkeit}
+\vspace{-1mm}
     
-    Auch wenn das Ziel der Erklärung einer Anforderung ist, diese auch zu erfüllen, so bestehen Fälle, in denen begründet werden kann, besagte 
-    bspw. bei fehlender Implementation anderer EU-Mitgliedstaaten zu Interoperabilitätsstandards, rechtlich definierten Ausnahmeregelungen oder anderer Begründung der non-compliance.
-    Die Bewertung einer nicht Compliance wird abhängig von der Begründung abgewägt und unterliegt der zuständigen nationalen Aufsichtsbehörde, 
+    Neben dem annehmbaren Fall der positiven Erklärung der Compliance kann in einigen Fällen auch eine Nicht-Com\-pli\-ance oder gar keine Compliance bzgl. einer Anforderung definiert werden.
+    Mögliche Begründungen einer solchen Angabe sind bspw. die fehlende Implementation von Interoperabilitätsstandards durch andere EU-Mitgliedstaaten; oder die Regelung durch eine rechtlich definierte Ausnahmeregelung.
+    Die Bewertung einer Nicht-Com\-pli\-ance wird abhängig von der Begründung abgewägt und unterliegt der zuständigen nationalen Aufsichtsbehörde.
 
 \subsubsection{Begründung der Compliance}
+\vspace{-1mm}
     
     Die Begründung stellt den Hauptinhalt der Angabe, als Relation zwischen Anforderung und Equipment, dar. 
     In dieser sollte die Compliance zu der Anforderung in seiner zum aktuellen Zeitpunkt geltenden Form begründet und anhand technischer Referenzen belegt werden.
 
 \subsection{Compliance Matrizen}
+\vspace{-1mm}
 
     Compliance Matrizen stellen das Endprodukt der Nachweisführungsprozesse dar\footnote{Format der \ac{EASA} \ac{SoC} zum Zeitpunkt dieser Arbeit noch unbekannt.}.
-    In der einfachsten Form beschreibt die Compliance Matrix, aus Sicht der Datenmodellierung, eine Auflistung aller eine\atmans-Einrichtung betreffende Anforderungen inklusive dessen jeweiliger Compliancenachweis (siehe \ref{model_angaben}).
+    In der einfachsten Form beschreibt die Compliance Matrix, aus Sicht der Datenmodellierung, eine Auflistung aller eine \atmans{} Einrichtung betreffende Anforderungen inklusive deren jeweiliger Compliancenachweis (siehe \ref{model_angaben}).
     Das genaue Format, in dem die Compliancematrix abgebildet werden soll, ist abhängig von den entsprechenden Vorgaben der zuständigen Aufsichtsbehörde.
 
 % \pagebreak
@@ -133,8 +136,8 @@
     Automatisch beschreibt hierbei, dass Änderungen durch mögliche Implementationen selbstständig erkannt und beschrieben werden können.
     
     \medskip
-    Um verschiedene Ansätze der Impact-Analyse zu vergleichen, definierten Arnold und Bohner (1993) \cite{app_bohner} ein abstraktes Framework, welches die Analyse betroffener Entitäten\footnote{oder sekundären Änderungen} auf Basis von bekannten primären Änderungen definiert und deren Effektivität bewerten kann.
-    \cite[22]{app_lindvall}
+    Um verschiedene Ansätze der Impact-Analyse zu vergleichen, definierten Arnold und Bohner (1993) \cite{app_bohner} ein abstraktes Framework, welches die Analyse betroffener Entitäten\footnote{oder sekundären Änderungen} auf Basis von bekannten primären Änderungen definiert und deren Effektivität bewerten kann
+    \cite[22]{app_lindvall}.
     Das Framework identifiziert u.a. die folgenden Bestandteile:\footnote{Definitionen, welche sich mehr auf die Implementierung der \ac{IA} als auf die Modellierung (bspw. ,,repository``) beziehen, wurden ausgelassen}
     
     \paragraph{Änderung}
@@ -145,7 +148,7 @@
         Das System, als Gesamtheit aller Entitäten, über welche die Auswirkungen der primären Änderungsdefinition analysiert werden soll und welches die Abhängigkeiten von Entitäten beschreibt.
     
     \paragraph{Interface Object Model}
-        Das \textit{interface object model}, ermöglicht die Kommunikation mit der \ac{IA}\footnote{\ac{IA} findet auf der Ebene des \textit{internal object model} statt} und wird dazu verwendet, zu analysierende Artefakte\footnote{bspw. die eine regulative Durchführungsbestimmung}$^,$\footnote{definiert auf dem \textit{artifact object model level}} an der Schnittstelle der Analyse bereitzustellen und die Ergebnisse der Analyse entgegenzunehmen.  
+        Das \textit{interface object model} ermöglicht die Kommunikation mit der \ac{IA}\footnote{\ac{IA} findet auf der Ebene des \textit{internal object model} statt} und wird dazu verwendet, zu analysierende Artefakte\footnote{bspw. die eine regulative Durchführungsbestimmung}$^,$\footnote{definiert auf dem \textit{artifact object model level}}, die primäre Änderungsdefinition sowie Ergebnisse der Analyse mit einer einheitlichen Semantik abzubilden.  
     
     \paragraph{Internal Object Model}
         Das \textit{internal object model} beschreibt, auf welche Informationen der Ansatz zurückgreift, um die \ac{IA} durchzuführen.
@@ -153,7 +156,7 @@
         Die Verwendung dieser Daten setzt meist eine Art ,,repository`` voraus, was einen Zugriff und die Bearbeitung der vorhandenen Daten ermöglicht. \cite[295]{app_bohner}
     
     \paragraph{Impact Modell}
-        Das Impact Modell, welches beschreibt, wie Abhängigkeiten modelliert werden und wie diese im Rahmen der \ac{IA} berücksichtigt werden.
+        Das Impact Modell beschreibt, wie Abhängigkeiten modelliert werden und wie diese im Rahmen der \ac{IA} berücksichtigt werden.
     
     \bigskip
     \noindent
@@ -164,7 +167,7 @@
 \label{model_ia_bew}
     
     Zur Bewertung der einzelnen Impact-Analysen ziehen Arnold et al. ein Modell heran, welche verschiedene Mengen über alle Entitäten des Gesamtsystems definieren.
-    Die Impact-Analyse beschreibt hierbei einen Vorgang, welche eine geschätzte Menge aller betroffenen sekundär Entitäten\footnote{Estimated Impact Set (EIS\#)}$^,$\footnote{Arnold et al. benennen Mengen, welche sich auf dem ,,interface object model level`` befinden, mit dem ,,\#`` Suffix.} -- auf Basis der primären Änderungsdefinition\footnote{Starting Impact Set (SIS\#)} -- bildet.
+    Die Impact-Analyse beschreibt hierbei einen Vorgang, welche eine geschätzte Menge aller betroffenen sekundären Entitäten\footnote{Estimated Impact Set (EIS\#)}$^,$\footnote{Arnold et al. benennen Mengen, welche sich auf dem ,,interface object model level`` befinden, mit dem ,,\#`` Suffix.} -- auf Basis der primären Änderungsdefinition\footnote{Starting Impact Set (SIS\#)} -- bildet.
     Im Rahmen der automatisierten \ac{IA} (\acsfont{AIA}, siehe Abbildung \ref{fig:aia}) soll ebenfalls die Menge primärer Änderungen (\acsfont{SIS\#}) durch mögliche Implementierungen erarbeitet werden.
     Die Ein- und Ausgaben der \acf{IA} und der \acf{AIA} lassen sich wie folgt beschreiben\footnote{Die Eingabe der \ac{AIA} ist abhängig von den vorhanden Daten der später analysierten Datensätze. Im Rahmen der Analyse (siehe \ref{anal}) kann hierfür ein Wert angenommen werden.}:
     \begin{align}
@@ -173,7 +176,7 @@
     \end{align}
     
     \noindent
-    Die \acsfont{EIS\#} Menge kann im Folgenden auf den eigentlichen analysierten Prozess\footnote{Im Fall dieser Arbeit der Nachweisführungsprozess zu \atmans-Equipment} übertragen werden, um die eigentlichen Änderungen -- unter Berücksichtigung  aller wichtigen Spezifikationen -- durchzuführen.
+    Die \acsfont{EIS\#} Menge kann im Folgenden auf den eigentlichen analysierten Prozess\footnote{Im Fall dieser Arbeit der Nachweisführungsprozess zu \atmans{} Equipment} übertragen werden, um die eigentlichen Änderungen -- unter Berücksichtigung  aller wichtigen Spezifikationen -- durchzuführen.
     Das Ergebnis dessen Kontrolle ist eine Menge eigentlich betroffener Entitäten (\acsfont{AIS}) welche, zur Bewertung der \ac{IA}, mit dem \acsfont{EIS\#} verglichen werden kann.\footnote{Hierfür wird das \acsfont{AIS} wieder auf das \textit{interface object model level} abgebildet (\acsfont{AIS\#})}
     
     \begin{figure}[H]
@@ -188,7 +191,7 @@
     \noindent
     Die definierten Mengen und Transformationen erlauben es im Folgenden Metriken zu definieren, welche Aussagen über die Genauigkeit und Effizienz des Verfahrens\footnote{der Impact-Analyse} treffen können.
     Hierbei entstehen drei sinnvolle Relationen, welche man im Folgenden betrachten kann:
-    Die Relation zwischen der primären Anforderungsdefinition und der erarbeiteten Menge betroffener Entitäten\footnote{Bewertung der primären Änderungsdefinition}; das Verhältnis zwischen der erarbeiteten Menge betroffener Entitäten und dem Gesamtsystem\footnote{Bewertung der Eingrenzung}; und dem Abgleich der projizierten Menge betroffener Entitäten mit den eigentlich Betroffenen\footnote{Bewertung des Ergebnisses}.
+    Die Relation zwischen der primären Änderungsdefinition und der abgeschätzten Menge betroffener Entitäten\footnote{Bewertung der primären Änderungsdefinition}; das Verhältnis zwischen der abgeschätzten Menge betroffener Entitäten und dem Gesamtsystem\footnote{Bewertung der Eingrenzung}; und dem Abgleich der abgeschätzten Menge betroffener Entitäten mit den eigentlich Betroffenen\footnote{Bewertung des Ergebnisses}.
 
     
 \subsection{Bewertung der primären Änderungsdefinition}
@@ -233,17 +236,18 @@
 \pagebreak
 \subsection{Bewertung der Eingrenzung}
     
-    Im Weiteren kann bewertet werden, wie gut die Ergebnismenge eingeschränkt ist.
+    Des Weiteren kann bewertet werden, wie genau die Ergebnismenge eingegrenzt werden kann.
     Bei der Natur einiger Änderungen kann diese Metrik auch eine Aussage darüber treffen, wie Änderungen innerhalb von Abhängigkeiten propagiert werden. 
     So beschreibt ein hoher Wert der Metrik entweder ein stark vernetztes System, welches Änderungen leicht propagiert oder eine \ac{IA}, welche viele abhängige Entitäten in die Ergebnismenge mit einschließt.
-    Je genauer die \ac{IA} die Ergebnismenge einschränken kann, desto nützlicher ist das Ergebnis für den weiteren Prozess, da der Arbeitsaufwand so gering wie möglich bleibt. 
+    Je genauer die \ac{IA} die Ergebnismenge eingrenzen kann, desto nützlicher ist das Ergebnis für den weiteren Prozess, da der Arbeitsaufwand so gering wie möglich bleibt. 
     
     $$
         J = \dfrac{|\text{\acsfont{EIS\#}}|}{|\text{System\#}|} \leq 1
     $$
-    
+
+    \noindent
     Für die Prozesse der Nachweisführung regulativer Anforderungen ist diese Metrik direkt mit dem Arbeitsaufwand des Änderungsprozesses verknüpft.
-    Es gilt also im für die Bewertung einer \ac{IA} als vorteilhaft, sowie Änderungen möglichst präzise auf die betroffenen Anfoderungen eingegrenzt werden kann, da hierdurch Effizienz der Nachweisführungsprozesse verbessert werden kann.
+    Es gilt also im für die Bewertung einer \ac{IA} als vorteilhaft, sowie Änderungen möglichst präzise auf die betroffenen Anforderungen eingegrenzt werden kann, da hierdurch Effizienz der Nachweisführungsprozesse verbessert werden kann.
     
     \input{chapters/3_application/table2}
 

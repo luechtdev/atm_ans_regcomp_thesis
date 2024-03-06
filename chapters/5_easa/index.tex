@@ -46,9 +46,9 @@
         
     \pagebreak
     \noindent
-    Die Einrichtung der Agentur nach diesem Plan ist im Vergleich mit anderen \ac{EU} Agenturen sehr ambitioniert und spiegelt wider, wie Agenturen einen immer wichtigeren Stellenwert in den legislativen Prozessen der \ac{EU} einnehmen. 
+    Die Einrichtung der Agentur nach diesem Plan ist im Vergleich mit anderen \ac{EU}-Agenturen sehr ambitioniert und spiegelt wider, wie Agenturen einen immer wichtigeren Stellenwert in den legislativen Prozessen der \ac{EU} einnehmen. 
     Durch die \ac{EASA}-Grundverordnung erhält die Agentur die rechtliche Grundlage, Durchführungsbestimmungen und Guidelines zu definieren, welche in ihrer rechtlichen Wirksamkeit nicht von anderen Rechtsakten zu unterscheiden sind.
-    Weiter benötigen \ac{EU}-Mitgliedsstaaten, welche sich gegen die Durchsetzung von Anforderungen der \ac{EASA} entscheiden, dessen explizite Zustimmung.   
+    Weiter benötigen \ac{EU}-Mitgliedsstaaten, welche sich gegen die Durchsetzung von Anforderungen der \ac{EASA} entscheiden, deren explizite Zustimmung.   
     \cite[260]{easa_administrative_innovation}
             
 
@@ -75,12 +75,13 @@
 \pagebreak
 \section{EASA eRules Plattform}
 
-    Die \ac{EASA} eRules Plattform ist ,,einheitliche, einfach zugängliche, online Datenbank für alle in der Luftfahrt anwendbaren Regeln für Stakeholder im europäischen Luftraum``.
-    \cite[5]{easa_xml_doc}
+    Die \ac{EASA} eRules Plattform ist ,,einheitliche, einfach zugängliche, online Datenbank für alle in der Luftfahrt anwendbaren Regeln für Stakeholder im europäischen Luftraum``\cite[5]{easa_xml_doc}.
+    Als ein Produkt dieser Plattform werden die sogenannten Easy Access Rules definiert und bis dato (24.6.22) in zwei Formaten veröffentlicht. 
+    Am 26. Januar 2023 veröffentlichte die \ac{EASA} die Entscheidung, Easy Access Rules fortan auch in einem maschinenlesbaren \ac{XML} Format Endnutzern bereitzustellen. \cite{easa_xml_publication}
 
     \medskip
-    Als ein Produkt dieser Plattform werden die sogenannten Easy Access Rules definiert und bis dato (24.6.22) in zwei Formaten veröffentlicht. 
-    Am 26. Januar 2023 veröffentlichte die EASA die Entscheidung, Easy Access Rules fortan auch in einem maschinenlesbaren XML Format Endnutzern bereitzustellen. \cite{easa_xml_publication}
+    Diese Entscheidung qualifiziert die Quelle der eRules Plattform auch als mögliche Quelle der Anforderungsdaten für die Analyse im Kontext der Nachweisführung. 
+    
 
 \subsection{Informationsarchitektur}
 \label{ch:easa_arch}
@@ -111,7 +112,7 @@
 
     % \medskip
     Nach diesem Standard sind die textuellen Inhalte der einzelnen Topics Teil des Textverarbeitungsdokumentes\footnote{Part Name: "\textit{/word/document.xml}"} und lassen sich damit auch über eine grafische Textbearbeitungsoberfläche (bspw. \ac{MS} Word) einsehen und bearbeiten.
-    Hierbei werden Textinhalte des Dokumentes so strukturiert, dass die einzelnen Entitäten voneinander isoliert und über eine -- innerhalb des Dokumentes -- lokal einzigartige ID, eindeutig identifizierbar gemacht werden.
+    Hierbei werden Textinhalte des Dokumentes so strukturiert, dass die einzelnen Entitäten voneinander isoliert und über eine -- innerhalb des Dokumentes -- lokal einzigartige ID eindeutig identifizierbar gemacht werden.
     So können die Inhalte bei Bedarf beliebig bearbeitet werden, ohne die Struktur der Topics oder die Integrität anderer strukturellen Verweise zu gefährden.
             % Außerdem ist es so möglich, Einträge in den Metadaten auf die entsprechenden Anforderungsinhalte verweisen zu lassen. 
 
@@ -148,7 +149,7 @@
     Die \textit{Domain} und der \textit{Activity Type} eines Topics bezeichnen dessen Aufgabenbereich sowie die technische Beschreibung der darin vollbrachten Aufgabe \cite[S. 18]{easa_xml_doc}.
     Im Umfang der nach \vo{VO}{EU}{2018/1139} i.V.m. \vo{VO}{EU}{628/2013} definierten Aufgabenbereiche kann in unserem Falle immer die \textit{Domain} \atmans angenommen werden.
     
-    Mögliche Werte des \textit{ActivityType}-Attributs beinhalten u.a.\footnote{Nicht holistische Liste an Beispielen \cite[vgl.][S.18 -- 19]{easa_xml_doc}} die unter \atmans definierten Aufgaben (siehe \ref{beg:atmans}).
+    Mögliche Werte des \textit{ActivityType}-Attributs beinhalten u.a.\footnote{Nicht holistische Liste an Beispielen \cite[vgl.][S.18 -- 19]{easa_xml_doc}} die unter \atmans{} definierten Aufgaben (siehe \ref{beg:atmans}).
     Sie geben in der folgenden Analyse Auskunft darüber, für welche \atmans Ausrüstungen die Topics eine Relevanz aufweisen.
     Dies kann u.a. genutzt werden, um die Relevanz neuer Anforderungen zu ermitteln oder irrelevante Anforderungen im Nachweisführungsprozess anderer Ausrüstungen auszuschließen.  
     
@@ -159,7 +160,7 @@
    
 \subsubsection{AircraftCategory / AircraftUse / RegistryState}
     
-    Die Attribute \textit{AircraftCategory}, \textit{AircraftUse} und \textit{RegistryState} beziehen sich auf die Klassifizierung und Zuordnung von Anforderungen an Flugzeuge und haben für \atmans Equipment kein Gewicht\footnote{Eine vorangehende Analyse hat ergeben, dass diese Attribute in den \atmans Dokumenten nicht verwendet werden}. \cite[20, 21, 26]{easa_xml_doc}
+    Die Attribute \textit{AircraftCategory}, \textit{AircraftUse} und \textit{RegistryState} beziehen sich auf die Klassifizierung und Zuordnung von Anforderungen an Flugzeuge und haben für \atmans{} Equipment kein Gewicht\footnote{Eine vorangehende Analyse hat ergeben, dass diese Attribute in den \atmans Dokumenten nicht verwendet werden}. \cite[20, 21, 26]{easa_xml_doc}
     
 \subsubsection{AmendedBy}
 
@@ -182,8 +183,8 @@
         
 \subsubsection{EquivalentForeignRegulation}
 
-    Das Attribut \textit{EquivalentForeignRegulation} äquivalente Regularien von nicht \ac{EU} Mitgliedstaaten.
-    Diese Informationen werden -- nach Angaben der \ac{EASA} -- hauptsächlich zum Angleichen von Designstandards von Flugzeugdesigns genutzt \cite[22]{easa_xml_doc}, finden nach eigener Auswertung aber auch im \atmans Sektor Anwendung, um bspw. international gemeinschaftliche Nachweisverfahren zur Luftdatenverarbeitung zu etablieren (siehe Beispiel).
+    Das Attribut \textit{EquivalentForeignRegulation} äquivalente Regularien von nicht \ac{EU}-Mitgliedstaaten.
+    Diese Informationen werden -- nach Angaben der \ac{EASA} -- hauptsächlich zum Angleichen von Designstandards von Flugzeugdesigns genutzt \cite[22]{easa_xml_doc}, finden nach eigener Auswertung aber auch im \atmans{} Sektor Anwendung, um bspw. international gemeinschaftliche Nachweisverfahren zur Luftdatenverarbeitung zu etablieren (siehe Beispiel).
     
     \begin{quote}
         Beispiel:
@@ -211,12 +212,12 @@
 
 \subsubsection{RegulatedEntity}
 
-    Die regulierte juristische Person (\textit{regulated entity}) definiert, an wen die -- im \textit{Topic} definierte -- Anforderung gerichtet ist und wer diese im gleichen Zug zu erfüllen hat.
+    Die regulierte juristische Person\footnote{im Sinne eines Trägers rechtlicher Pflichten. Hier zumeist Betreiber:innen von \atmans{} Equipment} (\textit{regulated entity}) definiert, an wen die -- im \textit{Topic} definierte -- Anforderung gerichtet ist und wer diese im gleichen Zug zu erfüllen hat.
     Diese \textit{Entities} beschreiben entweder Stakeholder:innen der Luftfahrtindustrie oder der zuständigen Behörde\footnote{hier \ac{EASA}} \cite[26]{easa_xml_doc}.
     
     \medskip
-    Im Rahmen der \atmans Anforderungen kann dieses Attribut auch die Anbieter der definierten \atmans Dienste definieren.
-    Diese Informationen können so eine sehr gute Abbildung erzeugen, welche Bereiche im \atmans Sektor von entsprechende \textit{Topics} reguliert werden.  
+    Im Rahmen der \atmans{} Anforderungen kann dieses Attribut auch die Anbieter der definierten \atmans{} Dienste definieren.
+    Diese Informationen können so eine sehr gute Abbildung erzeugen, welche Bereiche im \atmans{} Sektor von entsprechende \textit{Topics} reguliert werden.  
         \begin{quote}
         Beispiel:
         \textsf{RegulatedEntity="{}ATS provider; ANS provider;"}
@@ -237,7 +238,7 @@
 
     Der Regulierungsgegenstand (\textit{Regulatory Subject}) referenziert das relevante Material des \textit{Topics}. 
     Dieses beschreibt den strukturellen Teil, in welchem es durch das Amtsblatt oder die \ac{EASA} Website publiziert wurde \cite[28]{easa_xml_doc}.
-    Im Falle der \atmans Anforderungen aus der \vo{DVO}{EU}{2017/373} bezieht sich dieses Attribut entweder auf den eigenen Verordnungstext\footnote{Wert ,,cover regulation``} oder einer der, in den Anhängen, definierten ,,Parts``.
+    Im Falle der \atmans{} Anforderungen aus der \vo{DVO}{EU}{2017/373} bezieht sich dieses Attribut entweder auf den eigenen Verordnungstext\footnote{Wert ,,cover regulation``} oder einer der, in den Anhängen, definierten ,,Parts``.
     \begin{quote}
         Beispiel:
         \textsf{RegulatorySubject="Part-ATS;"}
@@ -246,7 +247,7 @@
     
 \subsubsection{TechnicalSubjectMatter / EASACategory}
     
-    Referenziert zumeist technische Systeme von Flughäfen oder \ac{EASA} Kategorisierungen von Landebahnen und findet für \atmans Equipment keine Anwendung. \cite[28--29, 31]{easa_xml_doc} 
+    Referenziert zumeist technische Systeme von Flughäfen oder \ac{EASA} Kategorisierungen von Landebahnen und findet für \atmans{} Equipment keine Anwendung. \cite[28--29, 31]{easa_xml_doc} 
     
 \pagebreak
 \subsubsection{TypeOfContent}
@@ -306,7 +307,7 @@
 \subsubsection{Inkrafttreten / Anwendungszeitraum}
     
     Auch die Angaben zum Anwendungszeitraum gehen explizit aus den Daten hervor. 
-    So definieren die Attribute \textit{Applicability-} und \textit{EntryIntoForceDate} bereits das Ende der Übergangsperiode und das rechtliche Inkrafttreten der Anforderung ab, auf Basis welcher ein Anwendungszeitraum (gemäß \ref{model_anforderungen}) angenommen werden kann.
+    So definieren die Attribute \textit{Applicability-} und \textit{EntryIntoForceDate} bereits das Ende der Übergangsperiode und das rechtliche Inkrafttreten der Anforderung, auf Basis welcher ein Anwendungszeitraum (gemäß \ref{model_anforderungen}) angenommen werden kann.
 
 \subsubsection{Lifecycle}
     

@@ -12,7 +12,7 @@
 
     \medskip
     Da die Daten, welche durch die \ac{EU} (Cellar) bereitgestellt werden, direkt an die Publikation der verbundenen Rechtsakte gekoppelt ist, ist hier bereits dessen Verfügbarkeit vorausgesetzt.
-    Man kann folglich annehemen, dass alle notwendigen Daten immer über Cellar abrufbar sind\footnote{Wartungsarbeiten der Plattform ausgenommen: Während der Analyse von Cellar konnten einige Einschränkungen festgestellt werden. Wartungsarbeiten der Plattform werden jedoch durch die EurLex Plattform kommuniziert.} und immer den aktuellen regulativen Stand abbilden.
+    Man kann folglich annehmen, dass alle notwendigen Daten immer über Cellar abrufbar sind\footnote{Wartungsarbeiten der Plattform ausgenommen: Während der Analyse von Cellar konnten einige Einschränkungen festgestellt werden. Wartungsarbeiten der Plattform werden jedoch durch die EurLex Plattform kommuniziert.} und immer den aktuellen regulativen Stand abbilden.
 
     \medskip
     Im Fall von den Daten aus der zweiten analysierten Datenquelle (\ac{EASA} Easy Access Rules) ist die Bereitstellung der Daten nicht an die Publikation der Rechtsakte -- aber an die Erarbeitung von deren Zusatzmaterialien und dessen Abbildung in den \ac{EAR} -- gebunden.
@@ -31,7 +31,7 @@
     
 \subsubsection{Primäre Änderungsdefinition}
 
-    Wie in der Modellierung beschrieben, bedarf es für die Automatisierte \ac{IA} einer Möglichkeit, eine primäre Änderungsdefinition abzustecken. 
+    Wie in der Modellierung beschrieben, bedarf es für die automatisierte \ac{IA} einer Möglichkeit, eine primäre Änderungsdefinition abzustecken. 
     Diese Menge definiert, welche Anforderungen durch eine Änderung von ihrem Inhalt oder ihrer Aussage abgeändert wurden.
     Sie wird nach den Definitionen in \ref{model_ia_bew}  als \textit{Starting Impact Set} \acsfont{SIS\#} bezeichnet.
     
@@ -81,7 +81,7 @@
     Der folgende Prozess erstellt hierbei eine \textit{Änderung der Nachweisführung}, welche im Folgenden als Vergleichswert und Ergebnis des Prozesses angenommen wird.
     Im Sinne der Nachweisführung wird diese Änderung bis auf Weiteres als korrekt angenommen.
     Erst durch eine mögliche Intervention des Aufsichtsamtes oder des Produktmanagements können Fehler in der \ac{IA} festgestellt werden.
-    Fehler, die auf diese Weise festgestellt werden, beschreiben bemängelte Nachweise von Anforderungen, dessen Änderung nicht erkannt oder nicht korrekt bzw. gar nicht abgebildet wurden.
+    Fehler, die auf diese Weise festgestellt werden, beschreiben bemängelte Nachweise von Anforderungen, deren Änderung nicht erkannt oder nicht korrekt bzw. gar nicht abgebildet wurden.
     Im Sinne von dem Bewertungsmodell werden diese Fehler als Menge der Anforderungen dargestellt, welche kein Teil der Ergebnismenge der \ac{IA} sind, jedoch im gewünschten Ergebnis hätten vorhanden sein müssen.
     Die Teilmenge der Fehler $F$, bei denen Entitäten im Ergebnis der \ac{IA} fehlen, werden im Folgenden als $F^-$ bezeichnet.
     $$
@@ -128,11 +128,11 @@
     
 \subsubsection{Verwendung beider Datenquellen}
 
-    Im Fall der Anforderung, eine Anwendung zu schaffen, welche gesetzlich verbindlich in der Lage ist, Änderungen von Anforderungsdokumente zu definieren und Anforderungen auf Basis von Metainformationen zu sortieren, gilt es abzuwägen, ein Modell zu entwickeln, welches beide Datenquellen integriert.
+    Im Fall der Anforderung, eine Anwendung zu schaffen, welche gesetzlich verbindlich in der Lage ist, Änderungen von Anforderungsdokumenten zu definieren und Anforderungen auf Basis von Metainformationen zu sortieren, gilt es abzuwägen, ein Modell zu entwickeln, welches beide Datenquellen integriert.
     Ein solcher Ansatz würde viele der definierten Vorteile vereinen und Nutzer:innen die meisten möglichen Informationen zur Verfügung stellen.
     
     \medskip
-    Das Problem, bei der Verwendung dieses Ansatzes ist die zeitunabhängige Vereinigung der Datenmengen.
+    Das Problem bei der Verwendung dieses Ansatzes ist die zeitunabhängige Vereinigung der Datenmengen.
     Eine Implementation müsste folglich berücksichtigen, dass die Daten zu unterschiedlichen Zeitpunkten veröffentlicht werden, in unterschiedlichen Formaten veröffentlicht werden\footnote{\ac{RDF} und \ac{OPC}}, ihre Inhalte in unterschiedlichen Formatierungen darstellen\footnote{Formex4 und \ac{OOXML}}; oder strukturelle Änderungen erfahren.
 
 \pagebreak
@@ -152,9 +152,9 @@
     Bei der Entwicklung einer Implementation gilt es also abzuwiegen, welches Ziel mit welchem Aufwand und welcher rechtlichen Verbindlichkeit erreicht werden soll.
     Die \ac{EASA} bietet einen Rahmen, welcher es ermöglicht, einfach auf anforderungsspezifische Daten zuzugreifen und diese in bestehende Betriebsabläufe zu integrieren.
     Hierbei stellt die Agentur sogar Beispiele parat, wie \ac{XSLT} dazu werden können, die Daten in eine passende, integrierbare Struktur\footnote{bspw. JSON oder SQL} zu übersetzen.
-    Im Rahmen der Nachweisführung von \atmans-Equipment deckt diese Integration bereits einen Großteil der Use Cases ab.
+    Im Rahmen der Nachweisführung von \atmans{} Equipment deckt diese Integration bereits einen Großteil der Use Cases ab.
     Eine Erweiterung dieser Lösung ist jedoch nur schwer möglich und die Verwendbarkeit im Rahmen der neuen Nachweisführungsprozesse der Agentur\footnote{nach 2023} sowie die weitere Datenpflege ist noch ungewiss.
-    Cellar bietet hierbei das Gegenstück. Daten in Cellar sind nicht anforderungsspezifisch formuliert, sondern decken alle Anliegen der regulativen Publikation ab.
+    Cellar bietet hierbei das Gegenstück. Daten in Cellar sind nicht anforderungsspezifisch formuliert, sondern decken alle Anliegen der regulativen Publikationen ab.
     Es ist folglich die Aufgabe der Integration, die relevanten Daten zu extrahieren und im Sinne der Betriebsabläufe aufzubereiten und bereitzustellen.
     Unter Annahme von diesem Mehraufwand ist es jedoch möglich, Anwendungen einfach zu erweitern und rechtlich integer Nachweisführungsprozesse zu unterstützen.
 
