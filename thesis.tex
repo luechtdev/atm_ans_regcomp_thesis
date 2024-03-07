@@ -33,7 +33,7 @@
     %\WarningFilter{scrreprt}{Activating an ugly workaround}
     \WarningFilter{titlesec}{Non standard sectioning command detected}
 \documentclass[ openright,titlepage,numbers=noenddot,headinclude,%twoside, %1headlines,% letterpaper a4paper
-                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+                footinclude=true,oneside,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
                 BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
                 ngerman,american,%
                 ]{scrreprt}
@@ -56,6 +56,8 @@
 \usepackage{multirow}
 \usepackage{float}
 % \usepackage{pgfplots}
+
+\let\cleardoublepage\clearpage
 
 \newcommand{\vo}[3]{\acs{#1} (\acs{#2}) \acsfont{Nr.} #3}
 \newcommand{\vos}[3]{\acs{#1} (\acs{#2}) \acsfont{Nrn.} #3}
@@ -102,8 +104,9 @@
 \cleardoublepage\include{frontbackmatter/AbstractDE}
 %\cleardoublepage\include{frontbackmatter/Publications}
 %\cleardoublepage\include{frontbackmatter/Acknowledgments}
+\cleardoublepage~
 \cleardoublepage\include{frontbackmatter/Contents}
-\cleardoublepage\include{frontbackmatter/Figures}
+\include{frontbackmatter/Figures}
 \cleardoublepage\include{frontbackmatter/Tables}
 % \cleardoublepage\include{frontbackmatter/Listings}
 \cleardoublepage\include{frontbackmatter/Acronyms}
@@ -139,12 +142,8 @@
 %\renewcommand{\thechapter}{\alph{chapter}}
 \cleardoublepage
 \part{Anhang}
-% \include{chapters/examples/appendix01}
-% \include{chapters/examples/appendix02}
-\include{chapters/iv_eu/index}
-% \include{chapters/i_dfs_definitionen/index}
-% \include{chapters/ii_analysis/index}
-\include{chapters/iii_euro/index}
+\input{chapters/iv_eu/index}
+\input{chapters/iii_euro/index}
 %*************************************************************************
 % Other Stuff in the Back
 %*************************************************************************

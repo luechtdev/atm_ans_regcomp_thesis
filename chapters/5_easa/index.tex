@@ -124,6 +124,28 @@
     Diese Metadaten enthalten interne Informationen zu der Struktur des Dokumentes und den einzelnen Anforderungen und stehen dem Endnutzer in Form eines \ac{OPC} Parts  zur Verfügung.
     Dessen Struktur beruht auf einem eigenen \ac{XML} Schema, welches in der entsprechenden Dokumentation der \ac{EASA} definiert ist.
 
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}[language=XML]
+<pkg:package 
+    xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage"
+>
+  <pkg:part pkg:name="/_rels/.rels"> [...]
+  <pkg:part pkg:name="/word/document.xml"> [...]
+  <pkg:part pkg:name="/word/footnotes.xml"> [...]
+  <pkg:part pkg:name="/word/media/image1.png" [...]> [...]
+  <pkg:part pkg:name="/customXml/item1.xml"> [...]
+  <pkg:part pkg:name="/customXml/item2.xml"> [...]
+  <pkg:part pkg:name="/customXml/item3.xml"> [...]
+  <pkg:part pkg:name="/customXml/item4.xml"> [...]
+</pkg:package>
+    \end{lstlisting}
+    \caption{Beispiel der \acsfont{OPC} Strukturierung einer \ac{EAR}}
+    \label{fig:opcear}
+\end{figure}
+
+
 \pagebreak
 \subsection{Analyse der Metadaten}
 \label{ch:easa_anal}
